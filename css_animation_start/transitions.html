@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="transitions.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>CSS Transitions</h1>
+    </header>
+    <main>
+        <h2>Example 1: Simple Transition</h2>
+
+        <!-- Put example 1 html here -->
+        <div id="ex1"> </div>
+
+        <p>On the transitions.css stylesheet, try moving the transition property from the #ex1:hover rule to the #ex1 rule. See what happens! Also try setting the amount of time for the transition to 500ms.</p>
+        <p>Example 1 animates the width property, but lots of properties in CSS can be animated. Check out <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">this page on the MDN</a> for a full list.</p>
+
+        <h2>Example 2: Transition Multiple Properties</h2>
+
+        <!-- Put example 2 html here -->
+        <div id="ex2">Hover Over Me!</div>
+
+        <p>Please notice in this example:</p>
+        <ul>
+            <li>This example is animating some of the different properties from the list above.</li>
+            <li>Multiple properties can be animated by listing them, or you can use 'all' to animate all of them.</li>
+            <li>What happens if you move the transition from the hover rule to the #ex2 rule in this example?</li>
+            <li>Notice how this content is pushed down as the animation happens.</li>
+        </ul>
+
+        <h2>Example 3: Easing</h2>
+
+        <!-- Put example 3 html here -->
+        <div id="ex3">
+            <div id="ex3a">Linear</div>
+            <div id="ex3b">ease</div>
+            <div id="ex3c">ease-in</div>
+            <div id="ex3d">ease-out</div>
+            <div id="ex3e">ease-in-out</div>
+            <div id="ex3f">custom</div>
+        </div>
+
+        <p>Easing can provide a more natural look to an animation. CSS has some presets for linear, ease, ease-in, ease-out and ease-in-out. For a deeper understanding of what exactly these presets are you can check out <a href="https://css-tricks.com/ease-out-in-ease-in-out/">this great article</a>            on the CSS Tricks website.
+        </p>
+
+        <p>As Chris Coyier notes in his article, the general rule is to ease-in when things are moving out, and ease-out as things are moving in.</p>
+
+        <p>For creating custom animations check out Matthew Lein's CSS easing tool: <a href="https://matthewlein.com/tools/ceaser">Ceaser</a></p>
+
+        <p>Finally, notice that the transition properties here are separated into "transition-property", "transition-duration", and "transition-timing-function". There is also a "transition-delay" property that can be used to delay a transition from starting.
+            You can also combine all these into the shortcut "transition" property.</p>
+
+        <p>Check out the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transition">MDN page on
+                transition.</a></p>
+
+    </main>
+</body>
+
+</html>

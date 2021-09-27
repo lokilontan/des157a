@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animationg the CSS Transform Properties</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="transforms.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Animating the CSS Transform Properties</h1>
+    </header>
+    <main>
+        <h2>2 Dimensional Transforms</h2>
+
+        <p>There are several 2 dimensional transform methods built into CSS</p>
+
+        <ul>
+            <li><strong>translate(), translateX(), translateY()</strong> moves and item on the X and/or Y axis</li>
+            <li><strong>rotate()</strong> rotates an item by a certain number of degrees</li>
+            <li><strong>scale(), scaleX(), scaleY()</strong> scales items on either axis or both.</li>
+            <li><strong>skew(), skewX(), skewY()</strong> skews items on either axis or both.</li>
+            <li><strong>matrix()</strong> combines all of these properties.</li>
+        </ul>
+
+        <p>View the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">MDN page on CSS Transforms for
+                specifics on syntax and some demos.</a> Be sure to note the accessibility concerns, and that for some users scaling and zooming animations may cause migraines.</p>
+
+        <h3>Example 1: Rotate</h3>
+
+        <!-- Put example 1 html here -->
+        <div id="ex1"></div>
+
+        <h3>Example 2: Scale and Translate</h3>
+
+        <!-- Put example 2 html here -->
+        <div id="ex2"></div>
+
+
+        <p>Notice that unlike transtioning the size property, transtioning the transform property does not affect the position of other elements on the page. It is not pushing this paragraph down, for example.</p>
+
+        <h3>Example 3: Matrix</h3>
+
+        <!-- Put example 3 html here -->
+        <div id="ex3">!</div>
+
+
+        <p>Note that to get the numbers for the matrix, <a href="http://angrytools.com/css-generator/transform/">this tool</a> was used. Tje exclaimation point shows that the content is getting skewed and it's not just changing the shape of the box.</p>
+
+        <h3>Example 4: Transform Origin</h3>
+        <!-- Put example 4 html here -->
+        <div id="ex4"></div>
+
+
+        <p>It is occasionally useful to set the origin point for the transform. See <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin">this page on the MDN</a> for a few more demos.</p>
+
+        <h2>3 Dimensional Transformations</h2>
+
+        <p>The 3d transforms make use of the z axis and the perspective and perspective-origin properties.</p>
+
+        <h3>Example 5: Perspective from the Parent</h3>
+        <!-- Put example 5 html here -->
+        <div id="ex5">
+            <div id="ex5a"></div>
+            <div id="ex5b"></div>
+            <div id="ex5c"></div>
+        </div>
+
+
+        <p>Notice that when the perspective is on the parent, the parent creates one vanishing point, which is determined by the perspective-origin. Try changing the perspective-origin to 'top left' and then to 'bottom right' to see some differences.</p>
+
+        <h3>Example 6: Perspective Transform on the Child</h3>
+
+        <!-- Put example 6 html here -->
+
+        <p>Notice the difference here. The perspective transform is set on the child items, so they are all seen from their own vanishing points. Also note that the number used for the distance in the perspective determines how far away from the z-axis the
+            viewer is. Try changing the perspective in the hover rule to 100px, or 10px or 1px.</p>
+
+        <p>Perspective in CSS can be somewhat difficult to wrap your head around, but there are lots of great articles and examples around the web, including <a href="https://css-tricks.com/almanac/properties/p/perspective/">this one from CSS Tricks</a>.
+            Also, there are some great demos on how to do things like flip cards or make a cube with CSS, like <a href="https://riptutorial.com/css/example/8071/3d-cube">this example</a>. Perspective in CSS is often used in combination with translateZ
+            and scale to create CSS parallax effects, as <a href="https://keithclark.co.uk/articles/pure-css-parallax-websites/">demonstrated here</a>.</p>
+
+    </main>
+</body>
+
+</html>

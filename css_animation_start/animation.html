@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="animation.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>CSS Animations</h1>
+    </header>
+    <main>
+        <h2>CSS Animation Properties</h2>
+        <ul>
+            <li><strong>@keyframes</strong> Allows you to set a timeline for transitions</li>
+            <li><strong>animation-name</strong> Give a name to an animation, so you can apply it to different elements.
+            </li>
+            <li><strong>animation-duration</strong>How long will it take for the animation to complete?</li>
+            <li><strong>animation-delay</strong> Wait a certain amount of time before starting the animation.</li>
+            <li><strong>animation-iteration-count</strong> How many times should an animation repeat? It can be infinite.
+            </li>
+            <li><strong>animation-direction</strong> You can make an animation run forwards, backwards or alternate between the two.</li>
+            <li><strong>animation-timing-function</strong> You can add easing to these animations.</li>
+            <li><strong>animation-fill-mode</strong> specifies a style for the target element when the animation is not playing.
+            </li>
+            <li><strong>animation</strong> Shorthand property</li>
+        </ul>
+
+        <p>You can find out more about each of <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation">these properties on the MDN</a>. We will build a few examples below to test it out.</p>
+
+        <h2>Example 1</h2>
+
+        <!-- Put example 1 html here -->
+        <div id="ex1">
+            <div id="ex1a"></div>
+        </div>
+
+        <p>Notice in the keyframes, the left property is set for both the from and to keyframes, rather than specifying right: 0.</p>
+
+        <h2>Example 2</h2>
+
+        <!-- Put example 2 html here -->
+        <div id="ex2">
+            <div id="ex2a"></div>
+        </div>
+
+        <p>Notice the use of percentages in the keyframes for this one. What happens if you add some different easing? What happens if you remove 'forwards'?</p>
+
+        <h2>Example 3</h2>
+
+        <!-- Put example 3 html here -->
+        <div id="ex3">
+            <div id="ex3a">$</div>
+        </div>
+
+        <p>To solve the easing across the whole animation, each segment gets an animation timing function. Working with the perspective is challenging. It's common to work on each segment one at a time to get the desired effects.</p>
+
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+#ex1 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(45deg);
+    margin: 50px;
+}
+
+#ex1:hover {
+    transform: rotate(2475deg);
+    background-color: blue;
+    transition: all 5s ease-out;
+}
+
+#ex2 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 50px;
+}
+
+#ex2:hover {
+    transform: scale(0) rotate(2475deg) translate(200px, 100px);
+    background-color: blue;
+    transition: all 2s ease-in-out;
+}
+
+#ex3 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 50px;
+    text-align: center;
+    line-height: 100px;
+    color: white;
+    font-weight: bold;
+    font-size: 48px;
+}
+
+#ex3:hover {
+    background-color: blue;
+    transform:matrix(0.88,0.88,0.18,1.59,0,0);
+    transition: all 5s;
+}
+
+
+#ex4 {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 50px;
+    transform-origin: bottom right;
+}
+
+#ex4:hover{
+    transform: rotate(2160deg);
+    background-color: blue;
+    transition: all 5s ease-out;
+}
+
+#ex5 {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: thistle;
+    perspective: 300px;
+    perspective-origin: 50% 50%;
+}
+
+#ex5 div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotateY(45deg);
+    
+}
+
+#ex5 div:hover {
+    background-color: blue;
+    transform: rotateY(2205deg);
+    transition: all 5s ease-out;
+}
+

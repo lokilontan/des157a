@@ -1,0 +1,71 @@
+#ex1{
+    width: 100px;
+    height: 100px;
+    border: 10px solid blue;
+    background-color: red;
+    transition: all 2s;
+}
+
+#ex1:hover{
+    width: 500px;
+    background-color: purple;   
+}
+
+#ex2{
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: normal;
+    color: skyblue;
+}
+
+#ex2:hover{
+    font-size:48px;
+    font-weight:bold;
+    letter-spacing: 5px;
+    color: tomato;
+    transition: all 2s;
+}
+
+#ex3{
+    background-color: lightgray;
+    padding: 20px;
+}
+
+#ex3 div{
+    background-color: mediumaquamarine;
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: #fff;
+    transition-property: width;
+    transition-duration: 1s;
+}
+
+#ex3 div:hover{
+    width: 600px;
+    cursor:pointer;
+}
+
+#ex3a {
+    transition-timing-function: linear;
+}
+
+#ex3b{
+    transition-timing-function: ease;
+}
+
+#ex3c{
+    transition-timing-function: ease-in;
+}
+
+#ex3d{
+    transition-timing-function: ease-out;
+}
+
+#ex3e{
+    transition-timing-function: ease-in-out;
+}
+
+#ex3f{
+    transition-timing-function: cubic-bezier(1.000, -0.600, 0.000, 1.650);
+}
