@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Basics</title>
+</head>
+
+<body>
+    <main>
+        <h1>HTML Basics</h1>
+
+        <p>Notice that if you create a new file in Visual Studio Code, save the file with a .html extension, you can
+            type an exclaimation point (!) then press tab on your keyboard and you will get all the boiler plate html
+            structure you need.</p>
+
+        <h2>Other Things to Notice</h2>
+
+        <p>Notice the inclusion of a language attribute on the html tag. This is a best practice. Please include it.</p>
+
+        <p>The title of the document inside the head shows up on the browser tab. It is important. Please be sure to set
+            it to something appropriate on all your HTML files.</p>
+
+        <p>Notice proper indenting. This is a simple document, so there isn't a lot to indent. As your documents begin
+            to have more complex structure, it is important that you get indenting right, as it will make your documents
+            more readable (in code view) and maintainable. You can indent blocks of code by selecting them and either
+            pressing tab, or shift tab (to exdent them).</p>
+
+        <h2>Semantic HTML</h2>
+
+        <p>The idea of semantic HTML is that the structure of content in your HTML documents is appropriate to the
+            meaning of that content. This content is in a paragraph, because this is a paragraph. In CSS you can make
+            this paragraph look any way you want, but it will still be a paragraph and hold a paragraph of text.</p>
+
+        <p>Notice the use of the headings. You should never skip heading levels in your HTML documents. So if you use an
+            h3 heading level, there should be a higher level h2 and h1 on the page.</p>
+
+        <p>Structural tags, such as article, section, aside, nav, ul, li, p, and div all create blocks on the page, but
+            you should use one that helps provide context and meaning for the content inside that element. All of these
+            elements can be styled to look any way you want them to look. So it's not about how they look, but the
+            structure of the document and the content they hold.</p>
+
+        <div>
+            <h3>What About the Almighty Div?</h3>
+            <p>A div element adds no structural value to the content. It is just a generic block element that doesn't
+                add any meaning. Avoid them if you can possibly use an element that makes more senes. For example, this
+                div could perhaps be an aside element, since it is separate, but related content.</p>
+
+            <p>Also, notice how the indenting changed for the content inside this div.</p>
+        </div>
+
+        <footer>
+            <h2>Summary</h2>
+            <p>Notice the content on this page has been marked up for meaning, not for the way it displays in the
+                browser. Keep the structure of your documents simple and the indenting correct. Use semantic markup
+                wherever possible.</p>
+
+            <p>Add a link to the bottom of your HTML file so you can quickly and easily validate the HTML. Note that
+                this link will only work for pages that are up on the internet. It won't work if you open the html file
+                directly from your desktop and click the link</p>
+            <p><a href="https://validator.w3.org/check?uri=referer">Valid HTML</a></p>
+        </footer>
+    </main>
+</body>
+
+</html>

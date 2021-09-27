@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Basics</title>
+
+    <!-- Normalize script first -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Google Fonts Second -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- Your stylesheet last!!!! -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <h1>CSS Basics</h1>
+
+        <p>Please always follow these best practices when working with CSS</p>
+
+        <h2>Linking Files</h2>
+        <p>Always add files in this order: the normalize.css link first, any google fonts second and the link to your
+            styles LAST. The normalize.css is a best practice to keep styles consistent across different browsers.</p>
+
+        <p>You can get fonts from lots of places, but for this course, please just stick to Google fonts unless you have
+            a really good reason not to do so. (Please run by me)</p>
+
+        <p>Your stylesheet should always load last so that you can override styles from any other stylesheet that is
+            included. Note that if you spel 'rel' or 'stylesheet' wrong, the styles wil not load. (Fairly common
+            mistake).</p>
+
+        <p style="color: red;">This paragraph has an inline style. Never do this. It is hard to maintain and it mucks up
+            your HTML. Put all style rules in an external, linked, stylesheet. Always.</p>
+
+        <h2>IDs and Classes</h2>
+
+        <p id="onlyonce">This is super important: IDs are unique and can only be used once on a page. Classes can be
+            used multiple times. This paragraph has an ID and can be targeted with a rule that starts with a # sign,
+            like this: #onlyonce. IDs should be used sparingly, and are either for large sections of a page, or for
+            unique items, like a specific button that you will need to target specifically.</p>
+
+        <p class="multipletimes">This paragraph has a class attribute. Classe are for groups of things and can be used
+            on the page multiple times. They are not as specific as IDs, but can be useful. You would target this
+            paragraph with a rule that starts with a period, like this: .multipletimes</p>
+
+        <h2>Keep your CSS as Lean and Mean as Possible</h2>
+
+        <p>Use tags without any classes and IDs as much as possible. Write compound rules to get to elements inside,
+            instead of adding unique IDs to all the elements. A rule with a selector like <strong>#mainsection
+                p:first-of-type</strong> will target the first paragraph inside the element with ID mainsection. No need
+            to add an ID to the paragraph. It takes practice to write lean CSS, but always strive for it!</p>
+
+        <h2>Additional Tips for Organizing CSS</h2>
+
+        <p>Keep general full page rules at the top of the CSS file, and add more specific rules for sections of your
+            webpage further down the file. I usually have the rule for body tag first, where settings such as the
+            font-family can be inherited by all the other elements on the page.</p>
+
+        <p>Often I will create a little reset rule that removes padding and margin from specific elements, so I am not
+            fighting the margin and padding built in by default to most browsers. See the attached stylesheet for
+            examples.</p>
+
+    </main>
+
+
+</body>
+
+</html>

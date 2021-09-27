@@ -1,0 +1,43 @@
+/* Remove margin and padding from some elements so you are not fighting built in styles */
+
+h1, h2, h3, h4, p, ul, ol, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Images are inline elements by default sometimes it's helpful to make them display as block elements. Also setting max-width means images will never overfow their containers */
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* I might add other resets before the body rule, such as a rule to get rid of the underline on all anchor tags. */
+
+/* The body rule can contain generic settings for the whole page. */
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+    line-height: 1.5em;
+}
+
+/* since I removed all margins above, I need to add some back. Also general typography rules would go in this section */
+h1, h2, h3, h4, p {
+    margin-bottom: 1em;
+}
+
+h1 {/* general rules here */}
+
+p {/* general rules here */}
+
+/* Then add rules that are more specific, or target specific areas of the document, such as navigation. Always add comments so that rules are easy to find later */
+
+#onlyonce {
+    /* special rules here */
+}
+
+.multipletimes{
+    /* special rules here */
+}
+
