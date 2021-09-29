@@ -63,7 +63,7 @@
     justify-content: space-between;
     padding: 50px;
     background-color: thistle;
-    perspective: 300px;
+    perspective: 1000px;
     perspective-origin: 50% 50%;
 }
 
@@ -72,7 +72,6 @@
     height: 100px;
     background-color: red;
     transform: rotateY(45deg);
-    
 }
 
 #ex5 div:hover {
@@ -81,3 +80,22 @@
     transition: all 5s ease-out;
 }
 
+#ex6 {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+    background-color: thistle;
+}
+
+#ex6 div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: perspective(1000px) rotateY(45deg);
+}
+
+#ex6 div:hover {
+    background-color: blue;
+    transform: perspective(1000px) rotateY(2205deg);
+    transition: all 5s ease-out;
+}
