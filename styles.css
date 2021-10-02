@@ -7,7 +7,7 @@
     border: 1px solid black;
     display:flex; 
     flex-direction:column;
-    background-image: url('/images/background.jpeg');
+    background-image: url('../images/background.jpeg');
     background-color:darkgrey;
     
 }
