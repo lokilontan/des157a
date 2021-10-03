@@ -62,10 +62,10 @@ body {
 
 #banner h2{
     font-family: 'Julius Sans One', sans-serif;
-    font-size:20px;
+    font-size:25px;
     color: rgb(110, 0, 0);
     margin: 0;
-    transition: color 3.3s, font-size 3.3s;
+    transition: color 2s, font-size 2s linear;
 }
 
 #name{
@@ -81,12 +81,12 @@ body {
 #course {
     width: 1100px;
     position: absolute;
-    top: 65%;
+    top: 69%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     cursor: pointer;
-    transition: top 3.3s;
+    transition: top 2s linear;
 }
 
 #banner:hover #course {
@@ -112,7 +112,7 @@ span{
         scale(1);
     opacity: 1;
     text-shadow: 0 0 0px whitesmoke;
-    transition: transform 3.3s, opacity 3.3s, text-shadow 3.3s;
+    transition: transform 2s, opacity 2s, text-shadow 2s linear;
 }
 
 #banner:hover span {
