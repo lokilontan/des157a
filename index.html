@@ -10,7 +10,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Nixie+One&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Julius+Sans+One&family=Michroma&family=Nixie+One&display=swap"
+        rel="stylesheet">
 
     <!-- Styles -->
     <link href="styles.css" rel="stylesheet">
@@ -24,17 +26,41 @@
 
 <body>
     <div id="canvas">
-        
+
         <header>
             <div id="banner">
-                <h1>Vladimir Plagov</h1>
-                <h2>DES 157A - Interactive Media II - Fall 2021</h2>
+                <div id="banner-background-opacity"> <svg height="250" width="1100" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="border-shape" height="250" width="1100" />
+                        <div id="name">
+                            <h1>
+                                <span>V</span>
+                                <span>l</span>
+                                <span>a</span>
+                                <span>d</span>
+                                <span>i</span>
+                                <span>m</span>
+                                <span>i</span>
+                                <span>r</span>
+                                &nbsp;
+                                <span>P</span>
+                                <span>l</span>
+                                <span>a</span>
+                                <span>g</span>
+                                <span>o</span>
+                                <span>v</span>
+                            </h1>
+                        </div>
+                        <div id="course">
+                            <h2>DES 157A - Interactive Media II - Fall 2021</h2>
+                        </div>
+                    </svg>
+                </div>
             </div>
         </header>
 
         <main>
             <div id="section1">
-            
+
                 <div id="section_content1">
 
                     <h3>Studios</h3>
@@ -57,14 +83,14 @@
                 </div>
 
             </div>
-            
+
             <div id="section2">
                 <img id="section_background2" src="https://lokilontan.github.io/des157a/images/gear.png">
                 <div id="section_content2">
-                    
+
                     <h3>Research & Development</h3>
                     <ul>
-                        <li><a class="link" href="" >project brief</a></li>
+                        <li><a class="link" href="">project brief</a></li>
                         <li><a class="link" href="">digital comp</a></li>
                         <li><a class="link" href="">refined comp</a></li>
                         <li><a class="link" href="">prototype 1</a></li>
@@ -78,24 +104,25 @@
                     <h3>Final</h3>
                     <ul>
                         <li><a class="link" href="">final project</a></li>
-                    </ul> 
+                    </ul>
                 </div>
             </div>
         </main>
         <footer>
-            <a 
-               id="emailMe" href="mailto:&#118;&#112;&#108;&#097;&#103;&#111;&#118;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email
+            <a id="emailMe"
+                href="mailto:&#118;&#112;&#108;&#097;&#103;&#111;&#118;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email
                 Me</a> or
-            Validate: <a id="validateHTML" href="https://validator.w3.org/check?uri=https://lokilontan.github.io/des157a">HTML 5</a> | <a id="validateCSS"
-                href="https://jigsaw.w3.org/css-validator/check/referer">CSS</a>
-                
+            Validate: <a id="validateHTML"
+                href="https://validator.w3.org/check?uri=https://lokilontan.github.io/des157a">HTML 5</a> | <a
+                id="validateCSS" href="https://jigsaw.w3.org/css-validator/check/referer">CSS</a>
+
         </footer>
         <audio id="click" preload="auto">
             <source src="/rollover.mp3">
         </audio>
         <script>
-            var clickOne= $("#click")[0];
-            $("a").mouseenter(function() {
+            var clickOne = $("#click")[0];
+            $("a").mouseenter(function () {
                 clickOne.play();
             });
         </script>
