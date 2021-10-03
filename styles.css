@@ -10,7 +10,7 @@ body {
     border: 1px solid black;
     display:flex; 
     flex-direction:column;
-    background-image: url('/images/background.jpg');
+    background-image: url('https://lokilontan.github.io/des157a/images/background.jpg');
     background-color:darkgrey;
 }
 
