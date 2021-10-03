@@ -65,7 +65,8 @@ body {
     font-size:25px;
     color: rgb(110, 0, 0);
     margin: 0;
-    transition: color 2s, font-size 2s linear;
+    transition: color 2s, font-size 2s;
+    transition-timing-function: linear;
 }
 
 #name{
@@ -86,7 +87,8 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     cursor: pointer;
-    transition: top 2s linear;
+    transition: top 2s;
+    transition-timing-function: linear;
 }
 
 #banner:hover #course {
@@ -112,7 +114,8 @@ span{
         scale(1);
     opacity: 1;
     text-shadow: 0 0 0px whitesmoke;
-    transition: transform 2s, opacity 2s, text-shadow 2s linear;
+    transition: transform 2s, opacity 2s, text-shadow 2s;
+    transition-timing-function: linear;
 }
 
 #banner:hover span {
