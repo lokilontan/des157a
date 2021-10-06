@@ -42,6 +42,20 @@ body {
     stroke: red;
     border-bottom: 5px solid black;
     transition: stroke-width 2s, stroke-dashoffset 2s, stroke-dasharray 2s, stroke 2s;
+    animation: banner-border-animation 5s 2 alternate forwards ;
+    animation-iteration-count: infinite ;
+  }
+
+  @keyframes banner-border-animation {
+      0% {
+          stroke: red;
+      }
+      50% {
+          stroke: whitesmoke;
+      }
+      100% {
+          stroke: red;
+      }
   }
 
 #banner:hover #border-shape {
