@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 1</title>
+</head>
+
+<body>
+    <h1>Experiment 1</h1>
+    <h2>Open the console to check the functionality of the JS code</h2>
+    <h3>Experiment: Write a program that reverses the letters in each word in a string of words, but keeps the words in
+        the same order</h3>
+
+    <script>
+
+
+
+        var string = prompt("Enter a sentence with more than one word!", "An example of a valid sentence");
+
+        // check if string is not NULL so the page does not crash with uncaught exception 
+        // it's null if the user refuses to enter a string and closes the prompt window
+        // split method used later does not like the null objects
+        if (string) {
+
+            // Splits the given string in tokens where the delimiter is a whitespace
+            // Returned value is an array of tokens
+            var stringTokens = string.split(" ");
+
+            // Check if the input is valid (has more than one word)
+            while (stringTokens.length < 2) {
+
+                // do the same stuff
+                var string = prompt("It's funnier to see the reversed one if it's longer!", "An example of a valid sentence");
+
+                var stringTokens = string.split(" ");
+
+            }
+
+            // keep the reversed word here
+            var reversedWord = "";
+
+            // concatinate each reversed word here
+            var outputString = "";
+
+            // iterate through all words from the string
+            for (var i = 0; i < stringTokens.length; i++) {
+
+                // iterate through each letter from a word from the string starting from the last 
+                for (var j = stringTokens[i].length - 1; j >= 0; j--) {
+
+                    // concatenate a character to the word
+                    reversedWord += stringTokens[i][j];
+
+                }
+
+                // ready to concatinate a reversed word to the final string
+                outputString += reversedWord + " ";
+
+                // make the string empty so we can add new characters here for the next word
+                reversedWord = "";
+            }
+
+            console.log(outputString);
+        } 
+        else {
+            console.log("You failed to type a sentence! I'm so sad!");
+        } 
+
+    </script>
+
+</body>
+
+</html>
