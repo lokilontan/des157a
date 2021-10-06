@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basic Challenges: Challenge 9</title>
+</head>
+<body>
+    <h1>JavaScript Basic Challenges</h1>
+    <h2>Challenge 9</h2>
+
+    <script>
+
+        var color = prompt("type a color name", "");
+
+        var primaryColors = ["red", "blue", "yellow"];
+
+        var secondaryColors = ["orange", "green", "purple"];
+
+        color = color.toLowerCase();
+
+        if (primaryColors.includes(color)) {
+            console.log(`You picked a primary color: ${primaryColors[primaryColors.indexOf(color)]}`);
+        } 
+        else if (secondaryColors.includes(color)) {
+            console.log(`You picked a secondary color: ${secondaryColors[secondaryColors.indexOf(color)]}`);
+        }
+        else {
+            console.log(`You picked nor primary or secondary color`);
+        }
+       
+
+    </script>
+    
+</body>
+</html>
