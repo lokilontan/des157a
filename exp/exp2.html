@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2</title>
+</head>
+
+<body>
+    <div id="container">
+    <h1>Experiment 2</h1>
+    <h2>Experiment: Prompt the user for a color that the computer is "thinking of" - either red, yellow, green, or blue.
+        Then pick a random color from an array. If the color entered by the user matches the color picked by the
+        program, it displays the output message "You are right!". Otherwise, it displays "Try again!". (Credit: Krithika
+        Govind)</h2>
+    </div>
+
+    <!-- The script prompts the user to guess one of the four colors. If user wins the backgroundColor is chaged to the guessed color, all elements are deleted from the page and a congratulation message is printed out. -->
+    <script>
+
+        var color;
+
+        var colorBank = ["red", "black", "green", "purple"] ;
+
+        var randInd = Math.floor( Math.random() * colorBank.length );
+
+        do {
+
+            color = prompt("Guess a color?! (red, black, green, purple)" , "red");
+
+            // check if string is not NULL so the page does not crash with uncaught exception 
+            // it's null if the user refuses to enter a string and closes the prompt window
+            // split method used later does not like the null objects
+            if (color) {
+
+                // Splits the given string in tokens where the delimiter is a whitespace
+                // Returned value is an array of tokens(maybe)
+                var colorTokens = color.split(" ");
+
+                // Check if the input is valid (has only one word)
+                while (colorTokens.length != 1) {
+
+                    // do the same stuff
+                    var string = prompt("I can handle only one-word colors, sorry...", "blue");
+
+                    var stringTokens = string.split(" ");
+
+                }
+
+
+                color = color.toLowerCase();
+
+
+                if (guessIt(color)) {
+
+                    var element = document.querySelector("h1");
+                    element.remove();
+
+                    var element = document.querySelector("h2");
+                    element.remove();
+
+                    changeBackGround(color);
+
+                    displayText("CONGRATULATIONS!");
+
+                }
+                
+            }
+            else {
+                console.log("You failed to choose a color! I'm so sad!");
+            }
+        }
+        while (!guessIt(color));
+
+
+        function guessIt(colorIn) {
+
+            console.log(randInd);
+            return colorIn == colorBank[randInd];
+
+        }
+
+        function changeBackGround(color) {
+
+            var container = document.getElementsByTagName("body")[0];
+
+            console.log(container);
+
+            container.style.backgroundColor=color;
+
+        }
+
+        function displayText(text) {
+
+            var myCongratsElement = document.createElement("p");
+            var myCongratsText = document.createTextNode(text);
+
+            myCongratsElement.appendChild(myCongratsText);
+
+            myCongratsElement.style.color = "white";
+            myCongratsElement.style.fontSize = "50px";
+            myCongratsElement.style.textAlign = "center";
+            myCongratsElement.style.margin = "auto";
+            myCongratsElement.style.marginTop = "25%";
+
+
+
+            document.querySelector("body").appendChild(myCongratsElement);
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

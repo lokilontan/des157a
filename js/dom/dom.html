@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Examples</title>
+
+    <style>
+    
+        .blue {
+        
+            color: blue;
+            
+        }
+        .large {
+
+            font-size: large;
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- <p class="blue"> MY TEXT </p>
+    <p>Some more text</p>
+    <p class="blue">And even more text</p> -->
+
+    <!-- <div id="special"> 
+
+        <p class="cheese">Some cheesy text</p>
+        <p>Here is some more cheesy text</p>
+
+    </div>
+
+    <p>Not this paragraph</p> -->
+
+    <!-- <form>
+        <label><input type="checkbox"> no</label>
+    </form> -->
+
+    <div>
+        <p>Here is a paragraph</p>
+        <p>Remove this paragraph</p>
+
+    </div>
+
+    <script>
+
+        // document.getElementById("one").style.color = "red";
+        
+        // var myText = document.getElementsByTagName("p");
+        // console.log(myText);
+
+        // for (const i in myText) {
+        //     myText[i].style.color = "red";
+        //     alert(`this is element ${i}`);
+        // }
+
+        // var myText = document.getElementsByClassName("blue");
+
+        // for (const i in myText) {
+        //     myText[i].style.color = "blue";
+        // }
+
+        // var myText = document.querySelector('#special .cheese');
+
+        // myText.style.fontSize = "24px"; 
+
+        // myText.style.backgroundColor = "orange";
+
+        // var myText = document.querySelectorAll('p');
+
+        // for (var i = 0; i<myText.length; i++) {
+        //     myText[i].style.fontWeight = 'bold';
+        // }
+
+        // var myDiv = document.getElementById("special");
+        // myDiv.innerHTML += "<p>I love chocolate!</p>";
+
+        // var firstPara = document.querySelector('p');
+        // firstPara.className = "blue large";
+
+        // var checkbox = document.querySelector("input");
+        // checkbox.setAttribute("checked", "checked");
+
+        // var myTag = document.createElement("p");
+        // var mySentence = document.createTextNode("Second paragraph");
+        // myTag.appendChild(mySentence);
+        // document.querySelector("div").appendChild(myTag);
+
+        var myDiv = document.querySelector('div');
+        myDiv.removeChild(myDiv.children[1]);
+
+    </script>
+    
+</body>
+</html>
