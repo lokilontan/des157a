@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Event Challenges: Challenge 30</title>
+	<style>
+		body {
+			height: 3000px
+		}
+
+		.one {
+			background-color: beige;
+			transition: all 3s;
+		}
+
+		.two {
+			background-color: blueviolet;
+			transition: all 3s;
+		}
+
+		.three {
+			background-color: coral;
+			transition: all 3s;
+		}
+
+		.four {
+			background-color: cornflowerblue;
+			transition: all 3s;
+		}
+
+		.five {
+			background-color: darkgoldenrod;
+			transition: all 3s;
+		}
+	</style>
+
+</head>
+
+<body class="one">
+
+	<h1>JavaScript Event Challenges: Challenge 30</h1>
+
+	<p>Press the B key to turn the page beige</p>
+	<p>Press the V key to turn the page blueviolet</p>
+	<p>Press the C key to turn the page coral</p>
+	<p>Press the F key to turn the page cornflowerblue</p>
+	<p>Press the G key to turn the page darkgoldenrod</p>
+
+
+	<script>
+
+		var bodyTag = document.querySelector("body");
+
+		var nastyMessage = "Wrong keyboard key!";
+
+		var keyPressed;
+
+		// WOW THIS IS ONE OF THE COOLEST EFFECTS I'VE SEEN
+
+		window.addEventListener("keydown", function (e) {
+
+			keyPressed = e.key.toLowerCase();
+
+			switch (keyPressed) {
+				case "b": {
+					bodyTag.className = "one";
+					break;
+				}
+				case "v": {
+					bodyTag.className = "two";
+					break;
+				}
+				case "c": {
+					bodyTag.className = "three";
+					break;
+				}
+				case "f": {
+					bodyTag.className = "four";
+					break;
+				}
+				case "g": {
+					bodyTag.className = "five";
+					break;
+				}
+				default: {
+					alert(nastyMessage);
+					break;
+				}
+
+			}
+
+		})
+
+
+	</script>
+
+</body>
+
+</html>

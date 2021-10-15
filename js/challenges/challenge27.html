@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Event Challenges: Challenge 27</title>
+</head>
+
+<body>
+
+	<h1>JavaScript Event Challenges: Challenge 27</h1>
+
+	<form>
+		<label>Enter a number <input type="text"></label>
+		<input type="submit" value="send value">
+	</form>
+
+
+	<script>
+
+		var fTag = document.querySelector("form");
+
+		fTag.addEventListener("submit", function (e) {
+
+			e.preventDefault();
+
+			var newSize = parseInt(document.querySelector("input").value);
+
+			if (newSize) {
+				document.querySelector("h1").style.fontSize = newSize+"px";
+			}
+			else {
+
+				alert("A number is expected!");
+
+			}
+
+		})
+
+		
+
+
+	</script>
+
+</body>
+
+</html>

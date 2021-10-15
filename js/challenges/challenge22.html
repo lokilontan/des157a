@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Event Challenges: Challenge 22</title>
+</head>
+
+<body>
+
+	<h1>JavaScript Event Challenges: Challenge 22</h1>
+	<p>Here is a paragraph of text</p>
+
+	<button>Turn Green!</button>
+
+	<script>
+
+		var btn = document.querySelector("button");
+
+		btn.addEventListener("click", function(){
+			document.querySelector("p").style.color = "green";
+		})
+
+	</script>
+
+</body>
+
+</html>

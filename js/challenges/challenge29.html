@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript Event Challenges: Challenge 29</title>
+<style>
+	body { height: 3000px }
+	.one { background-color: beige; transition: all 3s;	}
+	.two { background-color: blueviolet; transition: all 3s; }
+	.three { background-color: coral; transition: all 3s; }
+	.four { background-color: cornflowerblue; transition: all 3s; }
+	.five { background-color: darkgoldenrod; transition: all 3s; }
+</style>
+
+</head>
+
+<body>
+
+	<h1>JavaScript Event Challenges: Challenge 29</h1>
+
+	<p>Scroll Down!</p>
+
+	<script>
+
+		var bodyTag = document.querySelector("body");
+	
+		var classNumber;
+
+		// WOW THIS IS ONE OF THE COOLEST EFFECTS I'VE SEEN
+
+		window.addEventListener("scroll", function() {
+
+			classNumber = ~~(window.pageYOffset/500);
+
+			switch(classNumber) {
+				case 0: {
+					bodyTag.className = "one";
+					break;
+				} 
+				case 1: {
+					bodyTag.className = "two";
+					break;
+				} 
+				case 2: {
+					bodyTag.className = "three";
+					break;
+				} 
+				case 3: {
+					bodyTag.className = "four";
+					break;
+				} 
+				case 4: {
+					bodyTag.className = "five";
+					break;
+				} 
+				default : {
+					console.log("Something is bad! Class Number should be: " + classNumber);
+					break;
+				}
+
+			}
+
+		})
+		
+
+	</script>
+
+</body>
+
+</html>
