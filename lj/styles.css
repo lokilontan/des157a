@@ -1,0 +1,135 @@
+body {
+    background-color: rgb(116, 116, 116);
+
+}
+
+#container {
+    /*font-family: Roboto; */
+    width: 1368px;
+    height: 768px;
+    min-width: 800px;
+    margin: auto;
+    font-size: .8em;
+    display:flex; 
+    position: relative;
+}
+
+#box1 {
+    width: 683px;
+    height: 768px;
+    background: linear-gradient(to top right, white 50%, transparent 50%), rgb(33, 168, 231);
+    font-family: 'Cinzel Decorative', cursive;
+
+}
+
+h1{
+    width: 60%;
+    margin-top: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 60px;
+}
+
+#learning {
+    text-align: left;
+}
+
+#journal {
+    text-align: right;
+}
+
+#box1 h3 {
+    margin-top: 5%;
+    text-align: center;
+    letter-spacing: 10px;
+}
+
+h5 {
+    margin-top: 45%;
+    text-align: center;
+}
+
+#box2 {
+    width: 683px;
+    height: 768px;
+    background: linear-gradient(to top left, red 50%, transparent 50%), black;
+    color: white;    
+}
+
+#lines {
+    width: 65%;
+    height: 230px;
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+    /* box-shadow: rgba(255, 255, 255, 0.4) 0px 1px, rgba(255, 255, 255, 0.3) 0px 2px, rgba(255, 255, 255, 0.2) 0px 3px, rgba(255, 255, 255, 0.1) 0px 4px, rgba(255, 255, 255, 0.05) 0px 5px,
+                rgba(255, 255, 255, 0.4) 0px -1px, rgba(255, 255, 255, 0.3) 0px -2px, rgba(255, 255, 255, 0.2) 0px -3px, rgba(255, 255, 255, 0.1) 0px -4px, rgba(255, 255, 255, 0.05) 0px -5px; */
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    font-family: 'Cinzel Decorative', cursive;
+    text-align: center;
+}
+
+#lines h2 {
+    font-size: 40px;
+}
+
+#lines h3 {
+    font-size: 10px;
+}
+
+#lines h4 {
+    font-size: 8px;
+    margin-top: 10%;
+}
+
+
+article {
+    margin: 4em;
+    column-count: 2;
+    column-gap: 30px;
+    column-width: 1in;
+    line-height: 1.7em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: smaller;
+}
+
+p {
+    text-align: left;
+}
+
+section p:first-child {
+    /* for columns */
+    margin-top: 0;
+}
+
+section p:first-child::first-letter {
+    font-size: 250%;
+    letter-spacing: 2px;
+}
+
+section p::first-letter {
+    margin-left: 20px;
+}
+
+a {
+    color: whitesmoke;
+}
+
+
+#contact {
+    background-color: rgb(116, 116, 116);
+    width: 1366px;
+    height: 20px;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+
+}
+
+#contact a{
+    color: black;
+}
