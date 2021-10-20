@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay Example 1</title>
+
+    <link href="styles.css" rel="stylesheet">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <h1>Creating an Overlay Effect</h1>
+
+        <p><a href="#" class="open" id="one">Open the first overlay.</a></p>
+        <p><a href="#" class="open" id="two">Open the second overlay.</a></p>
+        <p><a href="#" class="open" id="three">Open the third overlay.</a></p>
+
+    </main>
+
+    <section id="ol-one" class="overlay hidden">
+        <article>
+            <h2>Overlay content here</h2>
+            <img src="http://placekitten.com/g/300/300" alt="kitten">
+            <button class="close">close</button>
+            <button class="corner close">&otimes;</button>
+        </article>
+    </section>
+    <section id="ol-two" class="overlay hidden">
+        <article>
+            <h2>Overlay content here</h2>
+            <img src="http://placekitten.com/g/400/400" alt="kitten">
+            <button class="close">close</button>
+            <button class="corner close">&otimes;</button>
+        </article>
+    </section>
+    <section id="ol-three" class="overlay hidden">
+        <article>
+            <h2>Overlay content here</h2>
+            <img src="http://placekitten.com/g/200/200" alt="kitten">
+            <button class="close">close</button>
+            <button class="corner close">&otimes;</button>
+        </article>
+    </section>
+
+</body>
+
+</html>

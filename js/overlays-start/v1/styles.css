@@ -1,0 +1,42 @@
+body {
+    font-family: arial;
+    color: #333;
+    padding-top: 200px;
+    line-height: 1.4em;
+}
+
+main {
+    max-width: 600px;
+    padding: 20px;
+    margin: auto;
+    background-color: aliceblue;
+}
+
+#overlay{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgba(0,0,0,.5);
+}
+
+#overlay article {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    box-sizing: border-box;
+    padding: 20px;
+    width: 50vw;
+    height: 80vh;
+    background-color: white;
+    transform: translate(-50%, -100%);
+}
+
+.hidden {
+    display: none;
+}
+
+.showing {
+    display: block;
+}

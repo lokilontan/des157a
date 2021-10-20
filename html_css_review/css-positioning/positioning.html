@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Positioning Exampless</title>
+    <link href="positioning.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Understanding Relative and Absolute Positioning in CSS</h1>
+    <main>
+        <article>
+            <h2>Example 1</h2>
+            <p>Below there is a parent element that is set to relative positioning. Inside that element is another
+                element
+                set to absolute postioning.</p>
+
+            <p>Absolutely positioned items position relative to the nearest positioned ancestor. Since outerbox1 has
+                <code>position: relative;</code> set, innerbox1, is positioned at the top right corner.
+            </p>
+
+            <p><strong>Experiment 1:</strong> Remove <code>position: relative</code> from the #outerbox1 rule and
+                refresh the
+                page. Notice that the red box goes to the top left corner of the browser window. This is because there
+                is no positioned ancestor anymore, so the box is positioned relative to the window. </p>
+
+            <p><strong>Experiment 2:</strong> Put <code>position: relative</code> back into the #outerbox1 rule and then
+                change <code>top: 0;</code> and <code>left: 0;</code> in the #innerbox1 rule to <code>right: 0;</code>
+                and <code>bottom: 0;</code> and you should see the red box move to the bottom right corner of the yellow
+                box.</p>
+
+            <p><strong>Experiment 3:</strong> Try setting different pixel amounts for the top or bottom properties, and
+                left or right properties to see what you get. Try both positive and negative numbers for each. Notice
+                you can not set BOTH the top AND bottom properties, or BOTH the left AND right properties. You can
+                position the red box anywhere inside or outside the yellow box, using this coordinate system.</p>
+
+            <p><strong>Experiment 4:</strong> Set the top property to -200px, and the left property to 300px on the
+                #innerbox1 rule and notice that the red box is now covering the text in the paragrahs above the yellow
+                box. This is because absolutely positioned elements are taken completely out of the flow of the document
+                and are ignored by other elements.</p>
+        </article>
+
+        <div id="outerbox1">
+            <div id="innerbox1"></div>
+        </div>
+
+        <article>
+            <h2>Example 2</h2>
+
+            <p><strong>Experiment 1:</strong> Add the top property and set it to -200px to the #innerbox2 rule. You will
+                see that it moves the box, but it leaves a space where the box would normally display. For this reason,
+                you don't usually use top/bottom or left/right properties with <code>position: relative;</code>. Usually
+                <code>position: relative;</code> is just used to set a reference point for absolutely positioned
+                elements, as shown in example 1 above.
+            </p>
+
+            <p><strong>Experiment 2:</strong> Change the positioning for #innerbox2 to <code>position: absolute;</code>
+                to see what happens to the paragraph inside #outerbox2. You will see that when the positioning is
+                switched, the paragraph now moves, because once #innerbox2 is set to absolute positioning, it is taken
+                out of the flow of the document entirely.</p>
+
+        </article>
+
+        <div id="outerbox2">
+            <div id="innerbox2"></div>
+            <p>You can move elements that have <code>position: relative;</code> set on them with the top/bottom,
+                left/right properties, but they leave a space where the element would normally be displayed. Notice this
+                paragraph stays where it is, if you follow the instructions in the experiment above.</p>
+        </div>
+
+        <article>
+            <h2>Example 3</h2>
+            <p><strong>Experiment 1:</strong> Change the top property for #innerbox3 from 200px to -50px and see what
+                happens. Because the parent element, #outerbox3 has <code>overflow: hidden;</code> set, anything
+                overflowing that element (spilling outside it) is hidden, so only half the #innerbox3 is showing. This
+                is useful for when you want to think of #outerbox3 as a stage that elements can enter and leave.</p>
+
+            <p><strong>Experiment 2:</strong> Try setting <code>left: 50%;</code> and <code>top: 50%</code> on
+                #innerbox3.
+                You will see that puts the left side of the box half way across the #outerbox3 and the top of the box
+                halfway down the #outerbox3.</p>
+
+            <p><strong>Experiment 3</strong> Try adding <code>transform: translate(-50%, -50%);</code> to #innerbox3.
+                This is a way of centering elements with absolute positioning. There are other ways of centering
+                elements using CSS flexbox and Grid, but this is sometimes useful.</p>
+        </article>
+
+        <div id="outerbox3">
+            <div id="innerbox3"></div>
+        </div>
+
+        <article>
+            <h2>Example 4</h2>
+
+            <p><strong>Experiment 1:</strong> In this example there are three absolutely positioned elements. Notice the
+                third element is on top. That
+                is because it loads last. Try adding <code>z-index: 1;</code> to #innerbox4a, and you should see it move
+                to the top.</p>
+
+            <p><strong>Experiment 2:</strong> Remove <code>z-index: 1;</code> from #innerbox4a and add
+                <code>z-index: -1;</code> to #innerbox4c and you should see it move to the back. In fact, it looks like
+                it disappeared entirely, but now it is behind #outerbox4.
+            </p>
+
+            <p><strong>Experment 3:</strong> Set <code>z-index: 1;</code> on #innerbox4a and set
+                <code>z-index: 2;</code> on #innerbox4b and remove the z-index property (or set it to 0) on #innerbox4c.
+                That will put the second box on top, then the first box, and then the third box on the bottom.
+            </p>
+
+            <p>The property, z-index, will only affect elements with some sort of explicit positioning set, such as
+                <code>positoning: relative;</code> or <code>positioning: absolute</code>. Also, z-index is 0 by default
+                and can be used with positive or negative integers to create a lot of layers within a stacking context.
+            </p>
+        </article>
+
+        <div id="outerbox4">
+            <div id="innerbox4a"></div>
+            <div id="innerbox4b"></div>
+            <div id="innerbox4c"></div>
+        </div>
+
+        <article>
+            <h2>Bonus</h2>
+            <p>Notice the <code>h1</code> is set to <code>position: fixed;</code>. I recommend you play around with the
+                settings for the <code>h1</code> rules. Notice that <code>position: fixed;</code> also takes the element
+                out of the flow of the document also, and so there is some additional margin on the body.</p>
+        </article>
+
+    </main>
+
+</body>
+
+</html>
