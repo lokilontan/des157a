@@ -6,11 +6,12 @@ body {
 #container {
     /*font-family: Roboto; */
     width: 1368px;
-    height: 768px;
+    height: 100%;
     min-width: 800px;
     margin: auto;
     font-size: .8em;
     display:flex; 
+    flex-wrap: wrap;
     position: relative;
 }
 
@@ -18,8 +19,6 @@ body {
     width: 683px;
     height: 768px;
     background: linear-gradient(to top right, white 50%, transparent 50%), rgb(33, 168, 231);
-    font-family: 'Cinzel Decorative', cursive;
-
 }
 
 #lj{
@@ -28,6 +27,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     font-size: 35px;
+    font-family: 'Cinzel Decorative', cursive;   
 }
 
 #learning {
@@ -40,10 +40,15 @@ body {
     text-align: right;
 }
 
-#box1 h3 {
+#name {
     margin-top: 5%;
     text-align: center;
     letter-spacing: 10px;
+    font-family: 'Cinzel Decorative', cursive;   
+}
+
+#course{
+    font-family: 'Cinzel Decorative', cursive;   
 }
 
 h5 {
@@ -58,14 +63,27 @@ h5 {
     color: white;    
 }
 
-#lines {
+#box3 {
+    width: 683px;
+    height: 768px;
+    background: linear-gradient(to top left, rgb(33, 168, 231) 50%, transparent 50%), white;
+}
+
+#box4 {
+    width: 683px;
+    height: 768px;
+    background: linear-gradient(to top right, black 50%, transparent 50%), red;
+    color: white;
+}
+
+
+
+.lines {
     width: 65%;
     height: 230px;
-    border-top: 2px solid whitesmoke;
-    border-bottom: 2px solid whitesmoke;
     /* box-shadow: rgba(255, 255, 255, 0.4) 0px 1px, rgba(255, 255, 255, 0.3) 0px 2px, rgba(255, 255, 255, 0.2) 0px 3px, rgba(255, 255, 255, 0.1) 0px 4px, rgba(255, 255, 255, 0.05) 0px 5px,
                 rgba(255, 255, 255, 0.4) 0px -1px, rgba(255, 255, 255, 0.3) 0px -2px, rgba(255, 255, 255, 0.2) 0px -3px, rgba(255, 255, 255, 0.1) 0px -4px, rgba(255, 255, 255, 0.05) 0px -5px; */
-
+                
     margin-left: auto;
     margin-right: auto;
     margin-top: 5%;
@@ -73,20 +91,30 @@ h5 {
     text-align: center;
 }
 
-#lines h2 {
+.lines.white {
+    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
+}
+
+.lines.black {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.lines h2 {
     margin: 0;
     font-size: 40px;
 }
-#lines h2:first-child {
+.lines h2:first-child {
     margin-top: 5%;
 }
 
-#lines h3 {
+.lines h3 {
     margin-top: 8%;
     font-size: 10px;
 }
 
-#lines h4 {
+.lines h4 {
     font-size: 8px;
     margin-top: 10%;
 }
@@ -120,8 +148,12 @@ section p::first-letter {
     margin-left: 20px;
 }
 
-a {
+.white {
     color: whitesmoke;
+}
+
+.black {
+    color: black;
 }
 
 
