@@ -1,40 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Build Mad Lib Script</title>
+    <!-- Normalize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Julius+Sans+One&family=Michroma&family=Nixie+One&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- Scripts -->
     <script src="script.js" defer></script>
+
+    <title>MadLibs: Code Style Story</title>
 </head>
+
 <body>
 
     <header>
         <h1>Build a Mad Lib Script</h1>
     </header>
     <main>
-        <form id="myform">
-            <label for="in1">Provide a noun</label>
-            <input type="text" id="in1" >
+        <div id="screen1">
 
-            <label for="in2">Provide another noun</label>
-            <input type="text" id="in2" >
+            <section id="logo">
 
-            <label for="in3">Provide an Adjective</label>
-            <input type="text" id="in3" >
+            </section>
 
-            <label for="in4">Provide a Verb</label>
-            <input type="text" id="in4" >
+            <section id="form">
+                <form id="myform">
+                    <label for="in1">Provide a noun</label>
+                    <input type="text" id="in1">
 
-            <input type="submit" value="Send">
-        </form>
-        <article id="madlib">
+                    <label for="in2">Provide another noun</label>
+                    <input type="text" id="in2">
 
-        </article>
+                    <label for="in3">Provide an Adjective</label>
+                    <input type="text" id="in3">
+
+                    <label for="in4">Provide a Verb</label>
+                    <input type="text" id="in4">
+
+                    <input type="submit" value="Send">
+                </form>
+            </section>
+
+        </div>
+
+        <div id="screen1">
+
+            <section id="logo">
+
+            </section>
+
+            <article id="madlib">
+
+            </article>
+
+        </div>
+
     </main>
     <footer>
-
+        <a id="emailMe"
+            href="mailto:&#118;&#112;&#108;&#097;&#103;&#111;&#118;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email
+            Me</a> or
+        Validate: <a id="validateHTML"
+            href="https://validator.w3.org/check?uri=https://lokilontan.github.io/des157a/studio1">HTML 5</a> | <a
+            id="validateCSS" href="https://jigsaw.w3.org/css-validator/check/referer">CSS</a>
     </footer>
-    
+
 </body>
+
 </html>
