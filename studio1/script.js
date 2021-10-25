@@ -28,6 +28,8 @@
         }
         progressBarAt(currentEntry);
 
+        fromData
+
     });
 
     backBtn.addEventListener("click", function (event) {
