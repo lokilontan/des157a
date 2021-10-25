@@ -24,60 +24,75 @@
 
 <body>
 
-    <header>
-        <h1>Build a Mad Lib Script</h1>
-    </header>
-    <main>
-        <div id="screen1">
+    <div id="canvas">
+        <header>
+            <!-- <h1>Mad Libs</h1> -->
+        </header>
+        <main>
+            <div id="main-layer">
 
-            <section class="logo">
+                <section class="logo">
+                    <div id="logo-upper">
+                        {<div id="cubes-region">
+                            <div id="cube-1" class="cube"></div>
+                            <div id="cube-2" class="cube"></div>
+                            <div id="cube-3" class="cube"></div>
+                            <div id="cube-4" class="cube"></div>
+                            <div id="cube-5" class="cube"></div>
+                            <div id="cube-6" class="cube"></div>
+                            <div id="cube-7" class="cube"></div>
+                            <div id="cube-8" class="cube"></div>
+                            <div id="cube-9" class="cube"></div>
+                            <div id="cube-10" class="cube"></div>
+                        </div>}
+                    </div>
+                    <h1>Code Style Story</h1>
+                </section>
 
-            </section>
+                <section id="form">
 
-            <section id="form">
+                    <form id="myform">
+                        <label for="in1">Provide a noun</label>
+                        <input type="text" id="in1">
 
-                <form id="myform">
-                    <label for="in1">Provide a noun</label>
-                    <input type="text" id="in1">
+                        <label for="in2">Provide another noun</label>
+                        <input type="text" id="in2">
 
-                    <label for="in2">Provide another noun</label>
-                    <input type="text" id="in2">
+                        <label for="in3">Provide an Adjective</label>
+                        <input type="text" id="in3">
 
-                    <label for="in3">Provide an Adjective</label>
-                    <input type="text" id="in3">
+                        <label for="in4">Provide a Verb</label>
+                        <input type="text" id="in4">
 
-                    <label for="in4">Provide a Verb</label>
-                    <input type="text" id="in4">
+                        <input type="submit" value="Send">
+                    </form>
 
-                    <input type="submit" value="Send">
-                </form>
-                
-            </section>
+                </section>
 
-        </div>
+            </div>
 
-        <div id="screen2">
+            <div class="overlay hidden">
 
-            <section class="logo">
+                <section class="logo">
+                    LogoHERE
+                </section>
 
-            </section>
+                <article id="madlib">
+                    MadlibHERE
+                </article>
 
-            <article id="madlib">
+            </div>
 
-            </article>
-
-        </div>
-
-    </main>
-    <footer>
-        <a id="emailMe"
-            href="mailto:&#118;&#112;&#108;&#097;&#103;&#111;&#118;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email
-            Me</a> or
-        Validate: <a id="validateHTML"
-            href="https://validator.w3.org/check?uri=https://lokilontan.github.io/des157a/studio1">HTML 5</a> | <a
-            id="validateCSS" href="https://jigsaw.w3.org/css-validator/check/referer">CSS</a>
-    </footer>
-
+        </main>
+        <footer>
+            <a id="emailMe"
+                href="mailto:&#118;&#112;&#108;&#097;&#103;&#111;&#118;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email
+                Me</a> or
+            Validate: <a id="validateHTML"
+                href="https://validator.w3.org/check?uri=https://lokilontan.github.io/des157a/studio1">HTML 5</a> | <a
+                id="validateCSS" href="https://jigsaw.w3.org/css-validator/check/referer">CSS</a>
+        </footer>
+    </div>
 </body>
 
 </html>

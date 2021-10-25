@@ -1,0 +1,88 @@
+body {
+    background-color: gray;
+}
+
+#canvas {
+    width: 1366px;
+    height: 768px;
+    min-width: 800px;
+    margin: auto;
+    background-color: white;
+}
+
+#main-layer{
+    width: 1366px;
+    height: 738px;
+    min-width: 800px;
+    display: flex;
+}
+
+.overlay{
+    position: absolute;
+    top:0;
+    width: 1366px;
+    height: 738px;
+    min-width: 800px;
+    background-color: wheat;
+    display: flex;
+}
+
+.logo{
+    width:50%;
+    position: relative;
+    top: 30%;
+    left: 18%
+}
+
+#logo-upper {
+    display: flex;
+    font-size: 130px;
+    letter-spacing: 0;
+
+    
+}
+
+#cubes-region {
+    width: 20%;
+    
+    margin: 2%;
+}
+
+#cubes-region:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+}
+
+.cube {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 2px;
+    transform-origin: center;
+    transition: transform 10s, background-color 8s ;
+}
+
+#form{
+    width:50%;
+}
+
+#madlib {
+    width:50%;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.showing {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+h1 {
+    margin-top: 0;
+}

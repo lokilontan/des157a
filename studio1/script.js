@@ -1,6 +1,8 @@
 (function () {
     'use strict';
 
+    console.log("Reading JS...");
+
     const myForm = document.querySelector("#myform");
 
     const myArticle = document.querySelector("#madlib");
@@ -40,6 +42,36 @@
         }
 
     }
+    const randSize = () =>  Math.floor(Math.random()+1.2);
+    const randCol = () => Math.floor(Math.random()*256);
+
+
+    // innitialize random values to the cubes in logo
+    for (let i = 1 ; i <= 10; i++) {
+        let cube = document.getElementById(`cube-${i}`);
+        cube.style.top = `${Math.floor( Math.random() * (15 - 2) + 2 )}%`;
+        cube.style.left = `${Math.floor( Math.random() * (25 - 10) + 10 )}%`;
+        cube.style.backgroundColor = `rgb(${randCol()},${randCol()},${randCol()})`;
+
+        const newSize = Math.floor(Math.random() * (60 - 15) + 15);
+        cube.style.width = `${newSize}px`;
+        cube.style.height = `${newSize}px`;
+
+    }
+
+    function changeProperties(){
+        for (let i = 1 ; i <= 10; i++) {
+            let cube = document.getElementById(`cube-${i}`);
+            const newSize = randSize();
+            cube.style.backgroundColor = `rgb(${randCol()},${randCol()},${randCol()})`;
+            cube.style.transform = `scale(${newSize}, ${newSize})`;
+        }
+    }
+
+    setInterval(changeProperties, 9000);
+
+   
+
 
 
 }());
