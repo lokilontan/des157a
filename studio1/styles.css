@@ -160,25 +160,25 @@ input[id=next]:hover {
 }
 
 .bar {
-    width: 20px;
-    height: 20px;
-    line-height: 22px;
+    width: 15px;
+    height: 15px;
+    line-height: 18px;
     border-radius: 50%;
-    font-size: 13px;
+    font-size: 12px;
     text-align: center;
     
 }
 
 .todo {
     background-color: white;
-    border: 2px solid rgb(190, 190, 190);
+    border: 2px solid white;
     color: rgb(110, 110, 110);
 }
 
 .current {
     background: rgb(15,149,196);
     background: radial-gradient(circle, rgba(15,149,196,1) 0%, rgba(0,115,156,1) 100%);
-    border: 2px solid rgb(190, 190, 190);
+    border: 2px solid white;
     color: rgb(255, 255, 255);
 
 }
@@ -186,7 +186,7 @@ input[id=next]:hover {
 .done {
     background: rgb(137,190,49);
     background: radial-gradient(circle, rgba(137,190,49,1) 0%, rgba(103,166,0,1) 100%);
-    border: 2px solid rgb(190, 190, 190);
+    border: 2px solid white;
     color: rgb(255, 255, 255);
 }
 
@@ -196,8 +196,8 @@ input[id=next]:hover {
     margin: auto;
     margin-left: 0;
     margin-right: 0;
-    border-top: 1px solid rgb(190, 190, 190);
-    border-bottom: 1px solid rgb(190, 190, 190);
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 
 
 }
