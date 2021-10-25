@@ -23,7 +23,7 @@
         event.preventDefault();
         const formData = document.querySelector("input[type=text]");
 
-        if ( currentEntry < 6 ) {
+        if (currentEntry < 7) {
             currentEntry++;
         }
         progressBarAt(currentEntry);
@@ -35,8 +35,7 @@
         event.preventDefault();
 
         const formData = document.querySelector("input[type=text]");
-        console.log("back: " + formData.value);
-        if ( currentEntry > 1 ) {
+        if (currentEntry > 1) {
             currentEntry--;
         }
         progressBarAt(currentEntry);
@@ -49,38 +48,46 @@
      */
     function progressBarAt(at) {
 
-        for (let i = 1; i < at; i++) {
-            let bar = document.getElementById(`progress-${i}`);
+        if (at <= 6) {
+            for (let i = 1; i < at; i++) {
+                let bar = document.getElementById(`progress-${i}`);
+                bar.className = "bar done";
+                bar.textContent = `✓`;
+                let connect = document.getElementById(`connect-${i}`);
+                if ((at - 1) == i) {
+                    connect.className = "connect current";
+                } else {
+                    connect.className = "connect done";
+                }
+            }
+
+            let bar = document.getElementById(`progress-${at}`);
+            bar.className = "bar current";
+            bar.textContent = `${at}`;
+            let connect = null;
+            if (at != 6) {
+                connect = document.getElementById(`connect-${at}`);
+                connect.className = "connect todo";
+            }
+
+            for (let i = at + 1; i <= 6; i++) {
+                if (i != 6) {
+                    bar = document.getElementById(`progress-${i}`);
+                    bar.className = "bar todo";
+                    bar.textContent = `${i}`;
+                    connect = document.getElementById(`connect-${i}`);
+                    connect.className = "connect todo";
+                } else {
+                    bar = document.getElementById(`progress-${i}`);
+                    bar.className = "bar todo";
+                }
+            }
+        } else if ( at==7 ) {
+            let bar = document.getElementById(`progress-6`);
             bar.className = "bar done";
             bar.textContent = `✓`;
-            let connect = document.getElementById(`connect-${i}`);
-            if ((at - 1) == i) {
-                connect.className = "connect current";
-            } else {
-                connect.className = "connect done";
-            }
-        }
-
-        let bar = document.getElementById(`progress-${at}`);
-        bar.className = "bar current";
-        bar.textContent = `${at}`;
-        let connect = null;
-        if (at != 6) {
-            connect = document.getElementById(`connect-${at}`);
-            connect.className = "connect todo";
-        }
-
-        for (let i = at + 1; i <= 6; i++) {
-            if (i != 6) {
-                bar = document.getElementById(`progress-${i}`);
-                bar.className = "bar todo";
-                bar.textContent = `${i}`;
-                connect = document.getElementById(`connect-${i}`);
-                connect.className = "connect todo";
-            } else {
-                bar = document.getElementById(`progress-${i}`);
-                bar.className = "bar todo";
-            }
+            let connect = document.getElementById(`connect-5`);
+            connect.className = "connect done";
         }
     }
 
