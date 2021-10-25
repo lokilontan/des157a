@@ -9,8 +9,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
 
     <!-- Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Julius+Sans+One&family=Michroma&family=Nixie+One&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&family=Source+Code+Pro&display=swap"
         rel="stylesheet">
 
     <!-- Styles -->
@@ -31,40 +32,58 @@
         <main>
             <div id="main-layer">
 
-                <section class="logo">
-                    <div id="logo-upper">
-                        {<div id="cubes-region">
-                            <div id="cube-1" class="cube"></div>
-                            <div id="cube-2" class="cube"></div>
-                            <div id="cube-3" class="cube"></div>
-                            <div id="cube-4" class="cube"></div>
-                            <div id="cube-5" class="cube"></div>
-                            <div id="cube-6" class="cube"></div>
-                            <div id="cube-7" class="cube"></div>
-                            <div id="cube-8" class="cube"></div>
-                            <div id="cube-9" class="cube"></div>
-                            <div id="cube-10" class="cube"></div>
-                        </div>}
+                <section class="logo-container">
+                    <div class="logo">
+                        <div id="logo-upper">
+                            {<div id="cubes-region">
+                                <div id="cube-1" class="cube"></div>
+                                <div id="cube-2" class="cube"></div>
+                                <div id="cube-3" class="cube"></div>
+                                <div id="cube-4" class="cube"></div>
+                                <div id="cube-5" class="cube"></div>
+                                <div id="cube-6" class="cube"></div>
+                                <div id="cube-7" class="cube"></div>
+                                <div id="cube-8" class="cube"></div>
+                                <div id="cube-9" class="cube"></div>
+                                <div id="cube-10" class="cube"></div>
+                            </div>}
+                        </div>
+
+                        <h1>Code Style Story</h1>
                     </div>
-                    <h1>Code Style Story</h1>
                 </section>
 
-                <section id="form">
+                <section id="form-section">
 
                     <form id="myform">
-                        <label for="in1">Provide a noun</label>
-                        <input type="text" id="in1">
 
-                        <label for="in2">Provide another noun</label>
-                        <input type="text" id="in2">
+                        <label id="prompt" for="in">A verb in the past of finding something agreeable, enjoyable, or
+                            satisfactory (ex: liked)
+                        </label>
 
-                        <label for="in3">Provide an Adjective</label>
-                        <input type="text" id="in3">
+                        <label id="part-of-speech" for="in">verb</label>
 
-                        <label for="in4">Provide a Verb</label>
-                        <input type="text" id="in4">
+                        <input type="text" id="in">
 
-                        <input type="submit" value="Send">
+                        <div id="buttons">
+                            <input id="back" type="submit" value="Back">
+                            <input id="next" type="submit" value="Next">
+                        </div>
+
+                        <div id="progress-bar">
+                            <div class="bar done" id=progress-1>✓</div>
+                            <div class="connect done" id="connect-1"></div>
+                            <div class="bar done" id=progress-2>✓</div>
+                            <div class="connect current" id="connect-2"></div>
+                            <div class="bar current" id=progress-3>3</div>
+                            <div class="connect todo" id="connect-3"></div>
+                            <div class="bar todo" id=progress-4>4</div>
+                            <div class="connect todo" id="connect-4"></div>
+                            <div class="bar todo" id=progress-5>5</div>
+                            <div class="connect todo" id="connect-5"></div>
+                            <div class="bar todo" id=progress-6>6</div>
+                        </div>
+
                     </form>
 
                 </section>
@@ -73,12 +92,26 @@
 
             <div class="overlay hidden">
 
-                <section class="logo">
-                    LogoHERE
+                <section class="logo-container">
+                    <div class="logo">
+                        <div id="logo-upper">
+                            {<div id="cubes-region">
+
+                            </div>}
+                        </div>
+
+                        <h1>Code Style Story</h1>
+                    </div>
                 </section>
 
                 <article id="madlib">
-                    MadlibHERE
+                    <p>Every <div id=madlib-1>Friday</div> we would have labs where we would work in groups of two. My partner and I had a lot of fun making our programs look <div id=madlib-2>odd</div> and confusing.</p>
+
+                    <p>We would call variable names “<div id=madlib-3>eye</div>” instead of “i” or “ex” instead of “x” and put them in for-loops like</p>
+
+                    <p>for(<div id=madlib-3>eye</div>; <div id=madlib-3>eye</div> < 100; <div id=madlib-3>eye</div>++) Sometimes we would put lots of <div id=madlib-4>stuff</div> on one line with no new lines.</p>
+                        
+                    <p>We would also write many <div id=madlib-5>silly</div> comments about obvious code. Our professor definitely did not <div id=madlib-6>like</div> it… He-he-he!!! </p>
                 </article>
 
             </div>
