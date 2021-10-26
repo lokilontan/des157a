@@ -7,11 +7,17 @@
 
     const myForm = document.querySelector("#myform");
 
-    let errorText = "";
-
     // keep track of the state of the progrss bar [1..6]
     let currentEntry = 1;
-    progressBarAt(1);
+
+    // Initiate the progress bar
+    progressBarAt(currentEntry);
+
+    // Initiate UI promts
+    setUIAt(currentEntry);
+
+    // focus the input field
+    myForm.elements["in"].focus();
 
     // keep the words entered for the final story
     let wordTokens = [];
@@ -19,47 +25,163 @@
     const nextBtn = document.querySelector("input[id=next]");
     const backBtn = document.querySelector("input[id=back]");
 
-    nextBtn.addEventListener("click", function (event) {
+    // handles Enter key for input
+    myForm.elements["in"].addEventListener("keypress", function(event){
         event.preventDefault();
         const formData = document.querySelector("input[type=text]");
 
-        if (currentEntry < 7) {
-            currentEntry++;
+        if (event.key == "Enter") {
+            getInput() 
+        } else {
+            formData.value += event.key;
         }
-        progressBarAt(currentEntry);
 
-        fromData
+
+    });
+
+    nextBtn.addEventListener("click", function (event) {
+        
+        event.preventDefault();
+        getInput() 
 
     });
 
     backBtn.addEventListener("click", function (event) {
 
         event.preventDefault();
-
         const formData = document.querySelector("input[type=text]");
+        wordTokens[currentEntry-1] = formData.value;
+        hideError();
+
         if (currentEntry > 1) {
+
             currentEntry--;
+            setUIAt(currentEntry);
+
         }
+
+        console.log(wordTokens, currentEntry);
         progressBarAt(currentEntry);
+        formData.value = wordTokens[currentEntry-1];
+        myForm.elements["in"].focus();
+
 
     });
 
     /**
-     * Maintaince a correct view of the progress bar at a particular state
+     * Main input logic
+     * Goes inside Enter and nextBtn event listeners
+     */
+    function getInput() {
+        const formData = document.querySelector("input[type=text]");
+
+        if ((formData.value || wordTokens[currentEntry-1]) ) { 
+
+            hideError();
+
+            if (currentEntry < 7) {
+
+                // if form has a value and database is empty at this location
+                if (formData.value && !wordTokens[currentEntry-1]) {
+                    
+                    
+                    if (currentEntry-1 == wordTokens.length){
+                        console.log(`Case 1.1`)
+
+                        wordTokens.push(formData.value);
+                        formData.value = "";
+                    } else {
+                        console.log(`Case 1.2`)
+
+                        wordTokens[currentEntry-1] = formData.value;
+                        formData.value = wordTokens[currentEntry];
+                    }
+                    
+                    currentEntry++;
+                    if (currentEntry != 7 ){
+                        setUIAt(currentEntry);
+                    } else {
+                        submit();
+                    }
+
+                    myForm.elements["in"].focus();
+
+                } 
+                // if form has a value and database has a value at this location
+                // override it
+                else if (formData.value && wordTokens[currentEntry-1]) {
+
+                    console.log(`Case 2`)
+
+                    wordTokens[currentEntry-1] = formData.value;
+
+                    if (wordTokens[currentEntry]) {
+                        
+                        formData.value = wordTokens[currentEntry];
+                    
+                    } else {
+
+                        formData.value = "";
+
+                    }
+
+                    currentEntry++;
+                    if (currentEntry != 7 ){
+                        setUIAt(currentEntry);
+                    } else {
+                        submit();
+                    }
+
+                    myForm.elements["in"].focus();
+
+                } 
+                // if form does not have a value and database has a value at this location
+                // insert this value innto the form
+                else if (formData.value=="" && wordTokens[currentEntry-1]) {
+
+                    console.log(`Case 3`)
+                    throwError(`Please, fill out the form.`);
+                    wordTokens[currentEntry-1] = "";
+                    myForm.elements["in"].focus();
+
+                }
+            }
+
+            console.log(wordTokens, currentEntry);
+
+            progressBarAt(currentEntry);
+
+        } else {
+
+            throwError(`Please, fill out the form.`);
+            myForm.elements["in"].focus();
+
+        }
+    }
+
+    /**
+     * Maintains a correct view of the progress bar at a particular state
      * @param { Number } at The current entry state
      */
     function progressBarAt(at) {
 
         if (at <= 6) {
+
             for (let i = 1; i < at; i++) {
+
                 let bar = document.getElementById(`progress-${i}`);
                 bar.className = "bar done";
                 bar.textContent = `✓`;
                 let connect = document.getElementById(`connect-${i}`);
+
                 if ((at - 1) == i) {
+
                     connect.className = "connect current";
+
                 } else {
+
                     connect.className = "connect done";
+
                 }
             }
 
@@ -67,42 +189,57 @@
             bar.className = "bar current";
             bar.textContent = `${at}`;
             let connect = null;
+
             if (at != 6) {
+
                 connect = document.getElementById(`connect-${at}`);
                 connect.className = "connect todo";
+
             }
 
             for (let i = at + 1; i <= 6; i++) {
+
+                bar = document.getElementById(`progress-${i}`);
+                bar.className = "bar todo";
+                bar.textContent = `${i}`;
+
                 if (i != 6) {
-                    bar = document.getElementById(`progress-${i}`);
-                    bar.className = "bar todo";
-                    bar.textContent = `${i}`;
+            
                     connect = document.getElementById(`connect-${i}`);
                     connect.className = "connect todo";
-                } else {
-                    bar = document.getElementById(`progress-${i}`);
-                    bar.className = "bar todo";
-                }
+
+                } 
             }
         } else if ( at==7 ) {
+
             let bar = document.getElementById(`progress-6`);
             bar.className = "bar done";
             bar.textContent = `✓`;
             let connect = document.getElementById(`connect-5`);
             connect.className = "connect done";
+
         }
     }
 
-    // myForm.addEventListener("submit", function (event) {
-    //     event.preventDefault();
+    /**
+     * Maintains a correct view of the prompt and part of speech
+     * @param { Number } at The current entry state
+     */
+    function setUIAt (at) {
 
-    //     const formData = document.querySelector("input[type=text]");
+        const prompts = [
+            ["Favorite weekday", "noun"],
+            ["A synonym to weird", "adjective"],
+            ["The worst variable name", "word"],
+            ["Related to coding", "noun"],
+            ["Synonym to stupid", "adjective"],
+            ["Verb in the past tense of finding something agreeable, enjoyable, or satisfactory", "adjective"]
+        ];
 
-    //     console.log(formData.value);
-    //     // getData(formData);
+        document.getElementById("prompt").textContent = prompts[at-1][0];
+        document.getElementById("part-of-speech").textContent = prompts[at-1][1];
 
-    // });
-
+    }
 
     // ----------------FORM stuff ends here--------------------
 
@@ -116,24 +253,23 @@
         myArticle.textContent = "Here are the words: " + tokens[0] + " " + tokens[1] + " " + tokens[2] + " " + tokens[3];
     }
 
-    function getData(formData) {
-        let tokens = [];
-        var emptyFields = 0;
 
-        for (var eachField of formData) {
-            if (eachField.value) {
-                tokens.push(eachField.value);
-                eachField.value = "";
-            } else {
-                emptyFields++
+    function submit() {
+        // insert all words inside the story
+        let words = document.querySelectorAll("span");
+        console.log(words);
+        for ( let word of words ) {
+            for (let i = 1; i<=wordTokens.length; i++) {
+                
+                if (word.id == `madlib-${i}`){
+               
+                    word.textContent = wordTokens[i-1];
+
+                }
             }
         }
-        if (emptyFields > 0) {
-            myArticle.textContent = 'Please fill out the  fields';
-        } else {
-            makeMadlib(tokens);
-        }
 
+        hideUnhide("lay", "overlay");
     }
 
     // ----------------MADLIB stuff ends here--------------------
@@ -145,6 +281,7 @@
 
     // innitialize random values to the cubes in logo
     for (let i = 1; i <= 10; i++) {
+
         let cube = document.getElementById(`cube-${i}`);
         cube.style.top = `${Math.floor(Math.random() * (43 - 19) + 19)}%`;
         cube.style.left = `${Math.floor(Math.random() * (52 - 35) + 35)}%`;
@@ -159,17 +296,45 @@
     // function to change background color and size to random values
     // goes over each cube in the logo
     function changeProperties() {
+
         for (let i = 1; i <= 10; i++) {
+
             let cube = document.getElementById(`cube-${i}`);
             const newSize = randSize();
             cube.style.backgroundColor = `rgba(${randCol()},${randCol()},${randCol()},0.8)`;
             cube.style.transform = `scale(${newSize}, ${newSize})`;
+
         }
+
     }
 
     // calls the changeProperties funnction each 8 seconds
     setInterval(changeProperties, 5000);
 
     // ----------------LOGO stuff ends here--------------------
+
+    // ----------------OTHER stuff starts here-----------------
+
+    function throwError(errorMessage) {
+
+        const errorElement = document.getElementById("error");
+        errorElement.className = "showing";
+        errorElement.textContent = errorMessage;
+
+    };
+
+    function hideError() {
+
+        const errorElement = document.getElementById("error");
+        errorElement.className = "hidden";
+
+    }
+
+    function hideUnhide(toHide, toUnHide) {
+        document.getElementById(`${toHide}`).className = "hidden";
+        document.getElementById(`${toUnHide}`).className = "showing";
+    }
+
+    // ----------------OTHER stuff ends here-------------------
 
 }());

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Save the Kittens!</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Montserrat:400,700'>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <h1>DONATE TO SAVE THE KITTENS!</h1>
+
+    <form method="post" action="index.html">
+
+        <label for="amount">Amount to Donate</label>
+        <span class="currency">$<input type="number" name="amount" id="amount" placeholder="20"></span>
+        <!-- The empty div is here to hold the hearts gif when the donate button is pushed -->
+        <div id="hearts"></div>
+
+        <!--I had to add this container for the perspective to work right-->
+        <div id="button-container">
+            <div class="cube">
+                <div class="default-state">
+                    <span>Donate!</span>
+                </div>
+                <div class="active-state">
+                    <span>Thank You!</span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
