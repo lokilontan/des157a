@@ -1,5 +1,7 @@
 body {
-    background-color: white;
+    background-image: url('./images/background-main.png');
+    background-position: center;
+
 }
 
 #canvas {
@@ -7,7 +9,6 @@ body {
     height: 768px;
     min-width: 800px;
     margin: auto;
-    background-color: white;
 }
 
 #lay{
@@ -34,12 +35,11 @@ body {
     font-weight: 300;
 }
 
-.logo {
+.logo { 
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
 #logo-upper{
@@ -71,12 +71,13 @@ body {
 }
 
 #myform {
+    background-color: rgb(255, 255, 255, 0.1);    
+    box-shadow: 0px 2px 30px 2px #353535;
+    border-radius: 40px;
     position: relative;
     width: 400px;
-    height: 600px;
-    
-    border-radius: 10px;
-    top: 50%;
+    height: 550px;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 5%;
@@ -93,27 +94,28 @@ body {
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 30px;
+    font-size: 40px;
 
 }
 
 #part-of-speech{
-    margin-top: 50%;
-    font-size: 40px;
+    margin-top: 60%;
+    font-size:30px;
 }
 
 #in{
-    margin-top: 20%;
+    margin-top: 15%;
+    margin-bottom: 0;
     width:89%;
     height: 6%;
     align-self: center;
     background: transparent;
-    border-radius: 3px;
+    border-radius: 10px;
     font-size: 25px;
 }
 
 .buttons {
-    margin-top: 5%;
+    /* margin-bottom: %; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -201,7 +203,7 @@ button[id=try-again]:hover #try-again-text{
     flex-direction: row;
     justify-content: center;
     position: absolute;
-    bottom: 0;
+    bottom: 3%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -291,9 +293,13 @@ button[id=try-again]:hover #try-again-text{
 }
 
 #madlib {
+    background-color: rgb(255, 255, 255, 0.1);    
+    box-shadow: 0px 2px 30px 2px #353535;
+    border-radius: 40px;
     position: relative;
     width:70%;
     height:70%;
+    padding:20px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -304,6 +310,11 @@ button[id=try-again]:hover #try-again-text{
 #madlib span {
     font-weight: bold;
 }
+
+#madlib {
+      
+}
+
 
 article p:first-child::first-letter {
     font-size: 50px;
@@ -353,6 +364,10 @@ a {
 }
 
 h1 {
-    margin-top: 0;
-    font-size: 40px;
+    
+    margin: 0;
+    font-size: 44px;
+  
 }
+
+

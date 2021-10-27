@@ -49,12 +49,12 @@
 
         if (event.key == "Enter") {
             nextBtn.style.color = "rgba(137,190,49,1)";
-                nextBtn.style.backgroundColor = "white";
-                nextBtn.style.border = "5px solid rgba(137,190,49,1)";
-        } 
+            nextBtn.style.backgroundColor = "white";
+            nextBtn.style.border = "5px solid rgba(137,190,49,1)";
+        }
 
     });
-    
+
 
     nextBtn.addEventListener("click", function (event) {
 
@@ -260,11 +260,12 @@
 
     // ----------------FORM stuff ends here--------------------
 
-    
+
     // ----------------MADLIB stuff starts here----------------
 
     const tryABtn = document.querySelector("button[id=try-again]");
     const overLay = document.getElementById("overlay");
+    let mlStory = "";
 
     // handles Enter key for starting over after madlibs is desplayed
     // some workaround had to be done so it does not reload right away after madlib is just desplayed
@@ -275,7 +276,7 @@
 
             console.log(overLay.classList[0], currentEntry);
 
-            if (currentEntry == 7){
+            if (currentEntry == 7) {
 
                 currentEntry++;
 
@@ -284,7 +285,7 @@
                 window.location.reload();
 
             }
-        } 
+        }
 
     });
 
@@ -306,11 +307,13 @@
             }
         }
 
+        mlStory = document.getElementById("madlib");
         hideUnhide("lay", "overlay");
+        //typeWriter();
     }
 
     // just simply reload the page
-    tryABtn.addEventListener("click", function(){
+    tryABtn.addEventListener("click", function () {
         window.location.reload();
     });
 
@@ -360,10 +363,10 @@
 
     // ----------------OTHER stuff starts here-----------------
 
-     /**
-     * Throws an error message
-     * @param { String } errorMessage error message
-     */
+    /**
+    * Throws an error message
+    * @param { String } errorMessage error message
+    */
     function throwError(errorMessage) {
 
         const errorElement = document.getElementById("error");
