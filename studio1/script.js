@@ -254,7 +254,7 @@
         const prompts = [
             ["Favorite weekday", "noun"],
             ["A synonym of weird", "adjective"],
-            ["How would you not name a vatiable", "noun"],
+            ["How would you not name a variable", "noun"],
             ["Related to coding", "noun, plural"],
             ["Synonym of stupid", "adjective"],
             ["Finding something agreeable, enjoyable, or satisfactory", "verb, past tense"]
