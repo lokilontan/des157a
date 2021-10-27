@@ -82,6 +82,9 @@
         formData.value = wordTokens[currentEntry - 1];
         myForm.elements["in"].focus();
 
+        if (formData.value == "undefined") {
+            formData.value = "";
+        }
 
     });
 
@@ -174,6 +177,10 @@
             myForm.elements["in"].focus();
 
         }
+
+        if (formData.value == "undefined") {
+            formData.value = "";
+        }
     }
 
     /**
@@ -247,10 +254,10 @@
         const prompts = [
             ["Favorite weekday", "noun"],
             ["A synonym of weird", "adjective"],
-            ["The worst variable name", "word"],
-            ["Related to coding", "noun"],
+            ["How would you not name a vatiable", "noun"],
+            ["Related to coding", "noun, plural"],
             ["Synonym of stupid", "adjective"],
-            ["Verb in the past tense of finding something agreeable, enjoyable, or satisfactory", "adjective"]
+            ["Finding something agreeable, enjoyable, or satisfactory", "verb, past tense"]
         ];
 
         document.getElementById("prompt").textContent = prompts[at - 1][0];
@@ -311,6 +318,7 @@
         hideUnhide("lay", "overlay");
         //typeWriter();
     }
+
 
     // just simply reload the page
     tryABtn.addEventListener("click", function () {
