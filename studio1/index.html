@@ -11,8 +11,8 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;700&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300;700&family=M+PLUS+Rounded+1c:wght@100;300&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    
     <!-- Styles -->
     <link href="styles.css" rel="stylesheet">
 
@@ -45,6 +45,26 @@
                                 <div id="cube-8" class="cube"></div>
                                 <div id="cube-9" class="cube"></div>
                                 <div id="cube-10" class="cube"></div>
+                                <div id="cube-11" class="cube"></div>
+                                <div id="cube-12" class="cube"></div>
+                                <div id="cube-13" class="cube"></div>
+                                <div id="cube-14" class="cube"></div>
+                                <div id="cube-15" class="cube"></div>
+                                <div id="cube-16" class="cube"></div>
+                                <div id="cube-17" class="cube"></div>
+                                <div id="cube-18" class="cube"></div>
+                                <div id="cube-19" class="cube"></div>
+                                <div id="cube-20" class="cube"></div>
+                                <div id="cube-21" class="cube"></div>
+                                <div id="cube-22" class="cube"></div>
+                                <div id="cube-23" class="cube"></div>
+                                <div id="cube-24" class="cube"></div>
+                                <div id="cube-25" class="cube"></div>
+                                <div id="cube-26" class="cube"></div>
+                                <div id="cube-27" class="cube"></div>
+                                <div id="cube-28" class="cube"></div>
+                                <div id="cube-29" class="cube"></div>
+                                <div id="cube-30" class="cube"></div>
                             </div>}
                         </div>
 
@@ -62,13 +82,13 @@
 
                         <label id="part-of-speech" for="in">verb</label>
 
-                        <input type="text" id="in">
+                        <input type="text" id="in" autocomplete="off">
 
                         <p class="hidden" id="error">.</p>
 
-                        <div id="buttons">
-                            <input id="back" type="submit" value="Back">
-                            <input id="next" type="submit" value="Next">
+                        <div class="buttons">
+                            <input id="back" type="submit" value="{ back }">
+                            <input id="next" type="submit" value="{ next }">
                         </div>
 
                         <div id="progress-bar">
@@ -94,10 +114,12 @@
             <div class="hidden" id="overlay">
 
                 <section class="logo-container">
-                    <div class="logo">
+                    <div class="smile-logo">
                         <div id="logo-upper">
-                            {<div id="cubes-region">
-
+                            {<div id="smile-region">
+                                <span id="smile">
+                                    <div id="hands">¯\_</div>(ツ)<div id="hands">_/¯</div>
+                                </span>
                             </div>}
                         </div>
 
@@ -117,8 +139,14 @@
                         <p>Sometimes we would put lots of <span id=madlib-4>stuff</span> on one line with no new lines.
                         </p>
                         <p>We would also write many <span id=madlib-5>silly</span> comments about obvious code. Our
-                            professor definitely did not <span id=madlib-6>like</span> it… He-he-he!!! </p>
+                            professor definitely <span id=madlib-6>did not like</span> it… He-he-he!!! </p>
                     </article>
+
+                        <button type="button" id="try-again">{<span id="try-again-text"> tryAgain </span>}</button>
+                    
+
+                    
+
                 </div>
 
 

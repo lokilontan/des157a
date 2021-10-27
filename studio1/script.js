@@ -26,23 +26,40 @@
     const backBtn = document.querySelector("input[id=back]");
 
     // handles Enter key for input
-    myForm.elements["in"].addEventListener("keypress", function(event){
+    myForm.elements["in"].addEventListener("keypress", function (event) {
         event.preventDefault();
         const formData = document.querySelector("input[type=text]");
 
         if (event.key == "Enter") {
-            getInput() 
+            nextBtn.style.color = "white";
+            nextBtn.style.backgroundColor = "rgba(137,190,49,1)";
+            nextBtn.style.border = "5px solid rgba(137,190,49,1)";
+
+            getInput();
+
         } else {
             formData.value += event.key;
         }
 
-
     });
 
-    nextBtn.addEventListener("click", function (event) {
-        
+    myForm.elements["in"].addEventListener("keyup", function (event) {
         event.preventDefault();
-        getInput() 
+        const formData = document.querySelector("input[type=text]");
+
+        if (event.key == "Enter") {
+            nextBtn.style.color = "rgba(137,190,49,1)";
+                nextBtn.style.backgroundColor = "white";
+                nextBtn.style.border = "5px solid rgba(137,190,49,1)";
+        } 
+
+    });
+    
+
+    nextBtn.addEventListener("click", function (event) {
+
+        event.preventDefault();
+        getInput()
 
     });
 
@@ -50,7 +67,7 @@
 
         event.preventDefault();
         const formData = document.querySelector("input[type=text]");
-        wordTokens[currentEntry-1] = formData.value;
+        wordTokens[currentEntry - 1] = formData.value;
         hideError();
 
         if (currentEntry > 1) {
@@ -62,7 +79,7 @@
 
         console.log(wordTokens, currentEntry);
         progressBarAt(currentEntry);
-        formData.value = wordTokens[currentEntry-1];
+        formData.value = wordTokens[currentEntry - 1];
         myForm.elements["in"].focus();
 
 
@@ -75,17 +92,17 @@
     function getInput() {
         const formData = document.querySelector("input[type=text]");
 
-        if ((formData.value || wordTokens[currentEntry-1]) ) { 
+        if ((formData.value || wordTokens[currentEntry - 1])) {
 
             hideError();
 
             if (currentEntry < 7) {
 
                 // if form has a value and database is empty at this location
-                if (formData.value && !wordTokens[currentEntry-1]) {
-                    
-                    
-                    if (currentEntry-1 == wordTokens.length){
+                if (formData.value && !wordTokens[currentEntry - 1]) {
+
+
+                    if (currentEntry - 1 == wordTokens.length) {
                         console.log(`Case 1.1`)
 
                         wordTokens.push(formData.value);
@@ -93,12 +110,12 @@
                     } else {
                         console.log(`Case 1.2`)
 
-                        wordTokens[currentEntry-1] = formData.value;
+                        wordTokens[currentEntry - 1] = formData.value;
                         formData.value = wordTokens[currentEntry];
                     }
-                    
+
                     currentEntry++;
-                    if (currentEntry != 7 ){
+                    if (currentEntry != 7) {
                         setUIAt(currentEntry);
                     } else {
                         submit();
@@ -106,19 +123,19 @@
 
                     myForm.elements["in"].focus();
 
-                } 
+                }
                 // if form has a value and database has a value at this location
                 // override it
-                else if (formData.value && wordTokens[currentEntry-1]) {
+                else if (formData.value && wordTokens[currentEntry - 1]) {
 
                     console.log(`Case 2`)
 
-                    wordTokens[currentEntry-1] = formData.value;
+                    wordTokens[currentEntry - 1] = formData.value;
 
                     if (wordTokens[currentEntry]) {
-                        
+
                         formData.value = wordTokens[currentEntry];
-                    
+
                     } else {
 
                         formData.value = "";
@@ -126,7 +143,7 @@
                     }
 
                     currentEntry++;
-                    if (currentEntry != 7 ){
+                    if (currentEntry != 7) {
                         setUIAt(currentEntry);
                     } else {
                         submit();
@@ -134,14 +151,14 @@
 
                     myForm.elements["in"].focus();
 
-                } 
+                }
                 // if form does not have a value and database has a value at this location
                 // insert this value innto the form
-                else if (formData.value=="" && wordTokens[currentEntry-1]) {
+                else if (formData.value == "" && wordTokens[currentEntry - 1]) {
 
                     console.log(`Case 3`)
                     throwError(`Please, fill out the form.`);
-                    wordTokens[currentEntry-1] = "";
+                    wordTokens[currentEntry - 1] = "";
                     myForm.elements["in"].focus();
 
                 }
@@ -204,13 +221,13 @@
                 bar.textContent = `${i}`;
 
                 if (i != 6) {
-            
+
                     connect = document.getElementById(`connect-${i}`);
                     connect.className = "connect todo";
 
-                } 
+                }
             }
-        } else if ( at==7 ) {
+        } else if (at == 7) {
 
             let bar = document.getElementById(`progress-6`);
             bar.className = "bar done";
@@ -225,45 +242,65 @@
      * Maintains a correct view of the prompt and part of speech
      * @param { Number } at The current entry state
      */
-    function setUIAt (at) {
+    function setUIAt(at) {
 
         const prompts = [
             ["Favorite weekday", "noun"],
-            ["A synonym to weird", "adjective"],
+            ["A synonym of weird", "adjective"],
             ["The worst variable name", "word"],
             ["Related to coding", "noun"],
-            ["Synonym to stupid", "adjective"],
+            ["Synonym of stupid", "adjective"],
             ["Verb in the past tense of finding something agreeable, enjoyable, or satisfactory", "adjective"]
         ];
 
-        document.getElementById("prompt").textContent = prompts[at-1][0];
-        document.getElementById("part-of-speech").textContent = prompts[at-1][1];
+        document.getElementById("prompt").textContent = prompts[at - 1][0];
+        document.getElementById("part-of-speech").textContent = prompts[at - 1][1];
 
     }
 
     // ----------------FORM stuff ends here--------------------
 
+    
     // ----------------MADLIB stuff starts here----------------
 
-    const myArticle = document.querySelector("#madlib");
+    const tryABtn = document.querySelector("button[id=try-again]");
+    const overLay = document.getElementById("overlay");
 
+    // handles Enter key for starting over after madlibs is desplayed
+    // some workaround had to be done so it does not reload right away after madlib is just desplayed
+    window.addEventListener("keypress", function (event) {
+        event.preventDefault();
 
+        if (event.key == "Enter") {
 
-    function makeMadlib(tokens) {
-        myArticle.textContent = "Here are the words: " + tokens[0] + " " + tokens[1] + " " + tokens[2] + " " + tokens[3];
-    }
+            console.log(overLay.classList[0], currentEntry);
 
+            if (currentEntry == 7){
 
+                currentEntry++;
+
+            } else if (currentEntry == 8) {
+
+                window.location.reload();
+
+            }
+        } 
+
+    });
+
+    /**
+     * Inserts the collected words to the madlibs story
+     */
     function submit() {
         // insert all words inside the story
         let words = document.querySelectorAll("span");
         console.log(words);
-        for ( let word of words ) {
-            for (let i = 1; i<=wordTokens.length; i++) {
-                
-                if (word.id == `madlib-${i}`){
-               
-                    word.textContent = wordTokens[i-1];
+        for (let word of words) {
+            for (let i = 1; i <= wordTokens.length; i++) {
+
+                if (word.id == `madlib-${i}`) {
+
+                    word.textContent = wordTokens[i - 1];
 
                 }
             }
@@ -271,6 +308,11 @@
 
         hideUnhide("lay", "overlay");
     }
+
+    // just simply reload the page
+    tryABtn.addEventListener("click", function(){
+        window.location.reload();
+    });
 
     // ----------------MADLIB stuff ends here--------------------
 
@@ -280,28 +322,30 @@
     const randCol = () => Math.floor(Math.random() * 256);
 
     // innitialize random values to the cubes in logo
-    for (let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 30; i++) {
 
         let cube = document.getElementById(`cube-${i}`);
-        cube.style.top = `${Math.floor(Math.random() * (43 - 19) + 19)}%`;
-        cube.style.left = `${Math.floor(Math.random() * (52 - 35) + 35)}%`;
-        cube.style.backgroundColor = `rgba(${randCol()},${randCol()},${randCol()},0.8)`;
+        cube.style.top = `${Math.floor(Math.random() * (57 - 20) + 20)}%`;
+        cube.style.left = `${Math.floor(Math.random() * (70 - 12) + 12)}%`;
+        cube.style.backgroundColor = `rgba(${randCol()},${randCol()},${randCol()},0.9)`;
 
-        const newSize = Math.floor(Math.random() * (50 - 15) + 15);
+        const newSize = Math.floor(Math.random() * (80 - 30) + 30);
         cube.style.width = `${newSize}px`;
         cube.style.height = `${newSize}px`;
 
     }
 
-    // function to change background color and size to random values
-    // goes over each cube in the logo
+    /**
+     * Function to change background color and size to random values
+     * goes over each cube in the logo
+     */
     function changeProperties() {
 
-        for (let i = 1; i <= 10; i++) {
+        for (let i = 1; i <= 30; i++) {
 
             let cube = document.getElementById(`cube-${i}`);
             const newSize = randSize();
-            cube.style.backgroundColor = `rgba(${randCol()},${randCol()},${randCol()},0.8)`;
+            cube.style.backgroundColor = `rgba(${randCol()},${randCol()},${randCol()},0.9)`;
             cube.style.transform = `scale(${newSize}, ${newSize})`;
 
         }
@@ -313,8 +357,13 @@
 
     // ----------------LOGO stuff ends here--------------------
 
+
     // ----------------OTHER stuff starts here-----------------
 
+     /**
+     * Throws an error message
+     * @param { String } errorMessage error message
+     */
     function throwError(errorMessage) {
 
         const errorElement = document.getElementById("error");
@@ -323,6 +372,9 @@
 
     };
 
+    /**
+     * Hides the error message
+     */
     function hideError() {
 
         const errorElement = document.getElementById("error");
@@ -330,6 +382,12 @@
 
     }
 
+    /**
+     * Applies the hidden style to the first parameter
+     * and showing style to the second parameter
+     * @param { String } toHide hide this 
+     * @param { String } toUnHide unhide this 
+     */
     function hideUnhide(toHide, toUnHide) {
         document.getElementById(`${toHide}`).className = "hidden";
         document.getElementById(`${toUnHide}`).className = "showing";
