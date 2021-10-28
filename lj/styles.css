@@ -15,12 +15,6 @@ body {
     position: relative;
 }
 
-#box1 {
-    width: 683px;
-    height: 768px;
-    background: linear-gradient(to top right, white 50%, transparent 50%), rgb(33, 168, 231);
-}
-
 #lj{
     width: 65%;
     margin-top: 23%;
@@ -56,28 +50,6 @@ h5 {
     text-align: center;
 }
 
-#box2 {
-    width: 683px;
-    height: 768px;
-    background: linear-gradient(to top left, red 50%, transparent 50%), black;
-    color: white;    
-}
-
-#box3 {
-    width: 683px;
-    height: 768px;
-    background: linear-gradient(to top left, rgb(33, 168, 231) 50%, transparent 50%), white;
-}
-
-#box4 {
-    width: 683px;
-    height: 768px;
-    background: linear-gradient(to top right, black 50%, transparent 50%), red;
-    color: white;
-}
-
-
-
 .lines {
     width: 65%;
     height: 230px;
@@ -99,6 +71,32 @@ h5 {
 .lines.black {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
+}
+
+#box1 {
+    width: 683px;
+    height: 768px;
+    background: linear-gradient(to top right, white 50%, transparent 50%), rgb(33, 168, 231);
+}
+
+#box2 {
+    width: 683px;
+    height: 768px;
+    background: linear-gradient(to top left, red 50%, transparent 50%), black;
+    color: white;    
+}
+
+#box3 {
+    width: 683px;
+    height: 768px;
+    background: linear-gradient(to top left, rgb(33, 168, 231) 50%, transparent 50%), white;
+}
+
+#box4 {
+    width: 683px;
+    height: 768px;
+    background: linear-gradient(to top right, black 50%, transparent 50%), red;
+    color: white;
 }
 
 .lines h2 {
