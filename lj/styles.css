@@ -118,7 +118,7 @@ h5 {
 }
 
 
-#section {
+.section {
     margin: 4em;
     column-count: 2;
     column-gap: 30px;
