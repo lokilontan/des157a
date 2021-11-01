@@ -73,26 +73,26 @@ h5 {
     border-bottom: 2px solid black;
 }
 
-#box1 {
+.box1 {
     width: 683px;
     height: 768px;
     background: linear-gradient(to top right, white 50%, transparent 50%), rgb(33, 168, 231);
 }
 
-#box2 {
+.box2 {
     width: 683px;
     height: 768px;
     background: linear-gradient(to top left, red 50%, transparent 50%), black;
     color: white;    
 }
 
-#box3 {
+.box3 {
     width: 683px;
     height: 768px;
     background: linear-gradient(to top left, rgb(33, 168, 231) 50%, transparent 50%), white;
 }
 
-#box4 {
+.box4 {
     width: 683px;
     height: 768px;
     background: linear-gradient(to top right, black 50%, transparent 50%), red;
