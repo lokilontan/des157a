@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example 3</title>
+    <style>
+        body {
+            padding: 0;
+        }
+
+        img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/kb-1.jpg" alt="typing">
+    <script>
+        (function () {
+            'use strict';
+
+            document.addEventListener('mousemove', reportPos);
+            const theImg = document.querySelector('img');
+            let prevXLoc = 0;
+            let prevYLoc = 0;
+
+            function reportPos(event) {
+                const windowWidth = window.innerWidth;
+                const widthPercent = windowWidth / 100;
+                const xPos = event.clientX;
+                const changePhoto = Math.floor(xPos / widthPercent);
+
+                const windowHeight = window.innerHeight;
+                const heightDegree = windowHeight / 360;
+                const yPos = event.clientY;
+                const changeRotation = Math.floor(yPos / heightDegree);
+
+                if (changePhoto !== prevXLoc) {
+                    theImg.src = `images/kb-${changePhoto}.jpg`;
+                    prevXLoc = changePhoto;
+                    console.log(prevXLoc);
+                }
+
+                if (changeRotation !== prevYLoc) {
+                    theImg.style.transform = `rotate(${changeRotation}deg)`;
+                    prevYLoc = changeRotation;
+                }
+
+
+            }
+
+        })();
+    </script>
+</body>
+
+</html>

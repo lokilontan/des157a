@@ -1,0 +1,21 @@
+body {
+    font-family: Arial;
+    color: #666;
+    text-align: center;
+}
+
+div {
+    width: 800px;
+    height: 547px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

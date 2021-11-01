@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example 2</title>
+    <style>
+        body {
+            padding: 0;
+        }
+
+        img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/kb-1.jpg" alt="typing">
+    <script>
+        (function() {
+            'use strict';
+
+            document.addEventListener('mousemove', reportPos);
+            const theImg = document.querySelector('img');
+            let prevXLoc = 2;
+
+            function reportPos(event) {
+                const windowWidth = window.innerWidth;
+                const widthpercent = windowWidth / 100;
+                const xPos = event.clientX;
+                const changePhoto = Math.floor(xPos / widthpercent);
+
+                if (changePhoto !== prevXLoc) {
+                    theImg.src = `images/kb-${changePhoto}.jpg`;
+                    prevXLoc = changePhoto;
+                    console.log(prevXLoc);
+                }
+
+            }
+        })();
+    </script>
+</body>
+
+</html>
