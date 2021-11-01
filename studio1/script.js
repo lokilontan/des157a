@@ -306,7 +306,7 @@
         for (let word of words) {
             for (let i = 1; i <= wordTokens.length; i++) {
 
-                if (word.id == `madlib-${i}`) {
+                if (word.id == `madlib-${i}` || word.classList[0] == `madlib-${i}`) {
 
                     word.textContent = wordTokens[i - 1];
 

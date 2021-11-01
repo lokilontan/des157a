@@ -42,7 +42,7 @@ body {
     transform: translate(-50%, -50%);
 }
 
-#logo-upper{
+.logo-upper{
     display: flex;
     font-size: 300px;
     justify-content: center;
@@ -271,7 +271,7 @@ button[id=try-again]:hover #try-again-text{
     
 }
 
-#hands {
+.hands {
     animation-name: up_n_down;
     animation-duration: 1.9s;
     animation-timing-function: ease-out;
