@@ -1,0 +1,79 @@
+body {
+    background-color: black;
+}
+
+#canvas {
+    width: 1366px;
+    height: 768px;
+    min-width: 800px;
+    margin: auto;
+    border: 1px solid black;
+    display:flex; 
+    flex-direction:column;
+    background-image: url('/images/background.jpg');
+    background-color:darkgrey;
+    position: relative;
+}
+
+#button {
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+    background: hsl(0 0% 10%);
+    border-radius: 12px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 600ms;
+
+  }
+#button-front {
+    display: block;
+    padding: 12px 42px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+    background: hsl(345deg 100% 0%);
+    color: white;
+    transform: translateY(-6px);
+    transition: filter 600ms;
+
+}
+
+#button:hover {
+    transition: filter 250ms;
+    filter: brightness(110%);
+}
+
+#button:hover #button-front{
+    transform: translateY(-5px);
+}
+
+#button:active #button-front {
+    transform: translateY(-1px);
+}
+
+footer {
+    height:15px;
+    text-align:center;
+    margin-top:auto; 
+    padding: 10px;
+    background-color:black;
+    font-family: 'Nixie One', cursive;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: white;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    font-size: 12px;
+
+    transition: all 0.3s;
+}
