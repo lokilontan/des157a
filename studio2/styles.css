@@ -15,42 +15,43 @@ body {
     position: relative;
 }
 
-#button {
+.btn{
+    display: inline-block;
     position: absolute;
-    bottom: 10%;
-    right: 10%;
-    background: hsl(0 0% 10%);
-    border-radius: 12px;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    outline-offset: 4px;
-    transition: filter 600ms;
-
-  }
-#button-front {
-    display: block;
-    padding: 12px 42px;
-    border-radius: 12px;
-    font-size: 1.25rem;
-    background: hsl(345deg 100% 0%);
+    right: 1vw;
+    bottom: 45%;
+    width: 100px;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #000000;/*Button Color*/
     color: white;
-    transform: translateY(-6px);
-    transition: filter 600ms;
-
+    cursor: pointer;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+    border: 0;
+    border-bottom: solid 5px #333333;
+    border-radius: 3px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.801);
 }
 
-#button:hover {
-    transition: filter 250ms;
-    filter: brightness(110%);
+.btn:hover {
+    border-bottom: solid 3px #333333;
 }
 
-#button:hover #button-front{
-    transform: translateY(-5px);
+.btn:active   {
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: solid 0px #333333;
+    text-shadow: none;
+    
 }
 
-#button:active #button-front {
-    transform: translateY(-1px);
+.active {
+    color: red;
+    text-shadow: 1px 1px 1px rgba(253, 153, 153, 0.801);
+}
+
+.inactive {
+    color: white;
 }
 
 footer {

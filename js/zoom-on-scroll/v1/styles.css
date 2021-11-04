@@ -1,0 +1,78 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial;
+	color: #333;
+}
+
+main {
+	width: 30vw;
+	padding: 20px;
+}
+
+section {
+	height: 100vh;
+}
+
+p {
+	line-height: 1.5em;
+}
+
+figure {
+	display: block;
+	margin: 0;
+	width: 70vw;
+	height: 100vh;
+	position: fixed;
+	top:0;
+	right:0;
+	overflow: hidden;
+}
+
+figure img {
+	position: absolute;
+	transition: all 3s ease;
+}
+
+.sect1{
+	width: 147vh; /*147% the height of the image is the width ratio*/
+	top:0;
+	left: 50%;
+	transform:translateX(-50%);
+}
+
+.sect2,
+.sect3,
+.sect4,
+.sect5,
+.sect6{
+    width: 3768px;
+}
+
+.sect2 {
+    top: 0;
+    left: 0;
+}
+
+.sect3 {
+    top: 0;
+    left: calc(-3768px + 70vw);
+}
+
+.sect4 {
+	top: calc(-2567px + 100vh);
+    left: 0;
+}
+
+.sect5 {
+    top: calc(-2567px + 100vh);
+    left: calc(-3768px + 70vw);
+}
+
+.sect6 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
