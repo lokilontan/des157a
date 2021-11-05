@@ -7,12 +7,89 @@ body {
     height: 768px;
     min-width: 800px;
     margin: auto;
-    border: 1px solid black;
     display:flex; 
-    flex-direction:column;
-    background-image: url('/images/background.jpg');
-    background-color:darkgrey;
+    flex-direction: column;
+    background-color:black;
     position: relative;
+}
+
+figure {
+	display: block;
+	margin: 0;
+	width: 1366px;
+    height: 768px;
+	position: fixed;
+	top:0;
+	overflow: hidden;
+}
+
+.main-pic {
+    position: absolute;
+    width: 100%;
+}
+
+.sect {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 200ms;
+}
+
+.sect:hover {
+    opacity: 0.35;
+}
+   
+#engine {
+    width: 26.5%;
+    top: 285px;
+    left: 245px;
+}
+
+#tank {
+    width: 21.5%;
+    top: 120px;
+    left:410px;
+}
+
+#exhaust {
+    width: 29%;
+    top: 247px;
+    left:7px;
+}
+
+#rwheel {
+    width: 18%;
+    top: 368px;
+    left:8px;
+}
+#fwheel {
+    width: 34%;
+    bottom: 0;
+    right: 160px;
+}
+
+#brake {
+    width: 16.2%;
+    bottom: 0px;
+    right: 288px;
+}
+
+#headlight {
+    width: 11.3%;
+    top: 85px;
+    right: 450px;
+}
+
+#speedometer {
+    width: 8.2%;
+    top: 10px;
+    right: 510px;
+}
+
+#seat {
+    width: 20.2%;
+    top: 187px;
+    left: 138px;
 }
 
 .btn{
@@ -55,7 +132,10 @@ body {
 }
 
 footer {
-    height:15px;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 1366px;
     text-align:center;
     margin-top:auto; 
     padding: 10px;
