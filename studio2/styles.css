@@ -23,20 +23,82 @@ figure {
 	overflow: hidden;
 }
 
-.main-pic {
+figure img {
+    transition: transform 2s ,width 2s;
+    transition-timing-function: ease-in-out;
+}
+
+.state-main {
     position: absolute;
     width: 100%;
+}
+
+.state-engine {
+    width: 200%;
+    transform:translateX(-15%) translateY(-34%);
+}
+
+.state-tank {
+    width: 220%;
+    transform:translateX(-10%) translateY(-3%);
+}
+
+.state-exhaust {
+    width: 240%;
+    transform: translateY(-20%);
+}
+
+.state-exhaust {
+    width: 240%;
+    transform: translateY(-20%);
+}
+
+.state-rwheel {
+    width: 230%;
+    transform: translateX(0%) translateY(-48%);
+}
+
+.state-fwheel {
+    width: 200%;
+    transform: translateX(-38%) translateY(-48%);
+}
+
+.state-brake {
+    width: 300%;
+    transform: translateX(-48%) translateY(-64%);
+}
+
+.state-headlight {
+    width: 250%;
+    transform: translateX(-48%) translateY(-2%);
+}
+
+.state-headlight {
+    width: 250%;
+    transform: translateX(-48%) translateY(-2%);
+}
+
+.state-speedometer {
+    width: 280%;
+    transform: translateX(-50%) translateY(0%);
+}
+
+.state-seat {
+    width: 300%;
+    transform: translateX(-8%) translateY(-8%);
 }
 
 .sect {
     position: absolute;
     opacity: 0;
     cursor: pointer;
-    transition: opacity 200ms;
+    transition: opacity 350ms;
+    transition-timing-function: linear;
+    visibility: visible;
 }
 
 .sect:hover {
-    opacity: 0.35;
+    opacity: 0.2;
 }
    
 #engine {
