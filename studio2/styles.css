@@ -24,18 +24,81 @@ figure {
 }
 
 figure img {
-    transition: transform 2s ,width 2s;
+    transition:transform 2s ,width 2s;
     transition-timing-function: ease-in-out;
+    
 }
 
 .state-main {
     position: absolute;
     width: 100%;
+    
 }
+
+.fade {
+    display: block;
+	margin: 0;
+	width: 1366px;
+    height: 768px;
+	position: fixed;
+	top:0;
+    opacity: 0;
+    transition: opacity 2s;
+    transition-timing-function: linear;
+}
+
+/* GRADIENT LOCATIONS START */
+.engine {
+    opacity: 1;
+    background: radial-gradient(circle at 36% 43%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.tank {
+    opacity: 1;
+    background: radial-gradient(circle at 68% 50%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.exhaust {
+    opacity: 1;
+    background: radial-gradient(ellipse at 40% 60%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.rwheel {
+    opacity: 1;
+    background: radial-gradient(circle at 20% 40%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.fwheel {
+    opacity: 1;
+    background: radial-gradient(circle at 60% 60%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.brake {
+    opacity: 1;
+    background: radial-gradient(circle at 65% 35%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.headlight {
+    opacity: 1;
+    background: radial-gradient(circle at 33% 47%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.speedometer {
+    opacity: 1;
+    background: radial-gradient(circle at 23% -10%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.seat {
+    opacity: 1;
+    background: radial-gradient(ellipse at 30% 65%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+/* GRADIENT LOCATIONS END */
+
 
 .state-engine {
     width: 200%;
-    transform:translateX(-15%) translateY(-34%);
+    transform:translateX(-15%) translateY(-33.5%);
 }
 
 .state-tank {

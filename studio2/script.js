@@ -21,15 +21,22 @@
     // BUTTON END
 
     let mainImage = document.getElementById("main");
+    let fade = document.querySelector("figure div");
+    console.log(fade);
 
     window.addEventListener("click", function(event) {
         event.preventDefault();
-        if (event.target.id == "main") {
-            mainImage.className = `state-${event.target.id}`;
+        if (event.target.id == "fade") {
+            mainImage.className = `state-main`;
+            fade.className = `fade nofade`;
+            console.log(fade, mainImage);
             this.setTimeout(unhideSectors, 2000);
         } else {
-        mainImage.className = `state-${event.target.id}`;
-        hideSectors();
+            mainImage.className = `state-${event.target.id}`;
+            fade.className = `fade ${event.target.id}`;
+            console.log(fade, mainImage);
+
+            hideSectors();
         }
     });
 
