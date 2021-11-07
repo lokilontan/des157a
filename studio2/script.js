@@ -5,21 +5,24 @@
 
     // PRELOADER
     const preloader = document.getElementById('preloader');
-	preloader.className = 'fadeout';
-
-	// wait until the animation has completed
-	preloader.addEventListener('load', function () {
-
-	//once the animation is done, remove the preloader div.
-		preloader.style.display = 'none';
-	});
+    document.onreadystatechange = function () {
+        var state = document.readyState
+        if (state == 'complete') {
+            document.getElementById('interactive');
+            preloader.className = 'fadeout';
+        }
+    }
+    // wait until the animation has completed
+    preloader.addEventListener('animationend', function () {
+        //once the animation is done, remove the preloader div.
+        preloader.style.display = 'none';
+    });
     // PRELOADER END
 
     // BUTTON
-
     const button3D = document.getElementById("btn-3d");
     let button3DStatus = "inactive";
-    button3D.addEventListener("click", function(event) {
+    button3D.addEventListener("click", function (event) {
         event.preventDefault();
         if (button3DStatus == "inactive") {
             button3D.className = "btn active";
@@ -36,7 +39,7 @@
     let fade = document.querySelector("figure div");
     console.log(fade);
 
-    window.addEventListener("click", function(event) {
+    window.addEventListener("click", function (event) {
         event.preventDefault();
         if (event.target.id == "fade") {
             mainImage.className = `state-main`;
