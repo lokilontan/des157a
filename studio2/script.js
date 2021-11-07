@@ -8,7 +8,7 @@
 	preloader.className = 'fadeout';
 
 	// wait until the animation has completed
-	preloader.addEventListener('animationend', function () {
+	preloader.addEventListener('load', function () {
 
 	//once the animation is done, remove the preloader div.
 		preloader.style.display = 'none';
