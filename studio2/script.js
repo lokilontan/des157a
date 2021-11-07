@@ -3,6 +3,18 @@
 
     console.log("reading JS...");
 
+    // PRELOADER
+    const preloader = document.getElementById('preloader');
+	preloader.className = 'fadeout';
+
+	// wait until the animation has completed
+	preloader.addEventListener('animationend', function () {
+
+	//once the animation is done, remove the preloader div.
+		preloader.style.display = 'none';
+	});
+    // PRELOADER END
+
     // BUTTON
 
     const button3D = document.getElementById("btn-3d");
@@ -29,12 +41,12 @@
         if (event.target.id == "fade") {
             mainImage.className = `state-main`;
             fade.className = `fade nofade`;
-            console.log(fade, mainImage);
+            console.log(event.target.id);
             this.setTimeout(unhideSectors, 2000);
         } else {
             mainImage.className = `state-${event.target.id}`;
             fade.className = `fade ${event.target.id}`;
-            console.log(fade, mainImage);
+            console.log(event.target.id);
 
             hideSectors();
         }
