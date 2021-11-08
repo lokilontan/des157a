@@ -29,6 +29,366 @@ figure img {
     
 }
 
+/* ARTICLES START */
+.overlay{
+    position: absolute;
+    background-image: url("./images/overlay.png");
+    background-size: 400px 548px;
+    width: 400px;
+    height: 548px;
+    background-repeat: no-repeat;
+    font-family: 'Shadows Into Light', cursive;
+    animation-duration: 700ms;
+	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+
+/* engine article stuff */
+#article-engine{
+    right: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.enter-engine {
+    animation-name: enter-engine;
+}
+
+@keyframes enter-engine {
+    0%{
+        right: -50%;
+
+    }
+    100% {
+        right: 8%;
+    }
+}
+
+.exit-engine {
+    animation-name: exit-engine;
+}
+
+@keyframes exit-engine {
+    0%{
+        right: 8%;
+
+    }
+    100% {
+        right: -50%;
+    }
+}
+
+/* tank article stuff */
+#article-tank{
+    left: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.enter-tank {
+    animation-name: enter-tank;
+}
+
+@keyframes enter-tank {
+    0%{
+        left: -50%;
+
+    }
+    100% {
+        left: 8%;
+    }
+}
+
+.exit-tank {
+    animation-name: exit-tank;
+}
+
+@keyframes exit-tank {
+    0%{
+        left: 8%;
+
+    }
+    100% {
+        left: -50%;
+    }
+}
+
+/* exhaust article stuff */
+#article-exhaust{
+    left: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.enter-exhaust {
+    animation-name: enter-exhaust;
+}
+
+@keyframes enter-exhaust {
+    0%{
+        left: -50%;
+
+    }
+    100% {
+        left: 60%;
+    }
+}
+
+.exit-exhaust {
+    animation-name: exit-exhaust;
+}
+
+@keyframes exit-exhaust {
+    0%{
+        left: 60%;
+
+    }
+    100% {
+        left: -50%;
+    }
+}
+
+/* rwheel article stuff */
+#article-rwheel{
+    left: 58%;
+    top: -50%;
+    transform: translateY(-50%);
+}
+
+.enter-rwheel {
+    animation-name: enter-rwheel;
+}
+
+@keyframes enter-rwheel {
+    0%{
+        top: -50%;
+
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+.exit-rwheel {
+    animation-name: exit-rwheel;
+}
+
+@keyframes exit-rwheel {
+    0%{
+        top: 50%;
+
+    }
+    100% {
+        top: -50%;
+    }
+}
+
+/* fwheel article stuff */
+#article-fwheel{
+    left: 2%;
+    top: 150%;
+    transform: translateY(-50%);
+}
+
+.enter-fwheel {
+    animation-name: enter-fwheel;
+}
+
+@keyframes enter-fwheel {
+    0%{
+        top: 150%;
+
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+.exit-fwheel {
+    animation-name: exit-fwheel;
+}
+
+@keyframes exit-fwheel {
+    0%{
+        top: 50%;
+
+    }
+    100% {
+        top: 150%;
+    }
+}
+
+/* brake article stuff */
+#article-brake{
+    left: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.enter-brake {
+    animation-name: enter-brake;
+}
+
+@keyframes enter-brake {
+    0%{
+        left: -50%;
+
+    }
+    100% {
+        left: 3%;
+    }
+}
+
+.exit-brake {
+    animation-name: exit-brake;
+}
+
+@keyframes exit-brake {
+    0%{
+        left: 3%;
+
+    }
+    100% {
+        left: -50%;
+    }
+}
+
+/* headlight article stuff */
+#article-headlight{
+    right: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.enter-headlight {
+    animation-name: enter-headlight;
+}
+
+@keyframes enter-headlight {
+    0%{
+        right: -50%;
+
+    }
+    100% {
+        right: 10%;
+    }
+}
+
+.exit-headlight {
+    animation-name: exit-headlight;
+}
+
+@keyframes exit-headlight {
+    0%{
+        right: 10%;
+
+    }
+    100% {
+        right: -50%;
+    }
+}
+
+/* speedometer article stuff */
+#article-speedometer{
+    right: 10%;
+    top: 150%;
+    transform: translateY(-50%);
+}
+
+.enter-speedometer {
+    animation-name: enter-speedometer;
+}
+
+@keyframes enter-speedometer {
+    0%{
+        top: 150%;
+
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+.exit-speedometer {
+    animation-name: exit-speedometer;
+}
+
+@keyframes exit-speedometer {
+    0%{
+        top: 50%;
+
+    }
+    100% {
+        top: 150%;
+    }
+}
+
+/* seat article stuff */
+#article-seat{
+    right: 15%;
+    top: -50%;
+    transform: translateY(-50%);
+}
+
+.enter-seat {
+    animation-name: enter-seat;
+}
+
+@keyframes enter-seat {
+    0%{
+        top: -50%;
+
+    }
+    100% {
+        top: 40%;
+    }
+}
+
+.exit-seat {
+    animation-name: exit-seat;
+}
+
+@keyframes exit-seat {
+    0%{
+        top: 40%;
+
+    }
+    100% {
+        top: -50%;
+    }
+}
+
+
+section article{
+    padding-top: 14.4%;
+    padding-right: 10%;
+    padding-left: 19%;
+}
+
+article p {
+    margin: 0;
+    margin-bottom: 3.9%;
+}
+
+article h1{
+    text-align: center;
+    margin-bottom:4%;
+    font-size: 25px;
+}
+
+.hidden {
+    visibility: hidden;
+    transition: visibility 1s;
+
+}
+
+.showing {
+    visibility: visible;
+}
+
+/* ARTICLES END */
+
+
 /* GRADIENTS START */
 .fade {
     display: block;
