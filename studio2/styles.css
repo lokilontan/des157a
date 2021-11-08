@@ -634,7 +634,7 @@ article h1{
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Nixie One', cursive;
     letter-spacing: 1em;
 }
 
@@ -773,7 +773,7 @@ footer {
     width: 1366px;
     text-align: center;
     background-color:black;
-    font-family: 'Poiret One', cursive;
+    font-family: 'Nixie One', cursive;
     font-size: 12px;
     letter-spacing: 3px;
     color: white;
