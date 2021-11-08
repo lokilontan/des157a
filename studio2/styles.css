@@ -32,12 +32,10 @@ figure img {
 /* ARTICLES START */
 .overlay{
     position: fixed;
-    background-image: url("./images/overlay.png");
-    background-size: 400px 548px;
-    width: 400px;
-    height: 548px;
-    background-repeat: no-repeat;
-    font-family: 'Shadows Into Light', cursive;
+    background-color: rgba(0, 0, 0, 0.605);
+    color:white;
+    border-radius: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
     animation-duration: 700ms;
 	animation-fill-mode: forwards;
 	animation-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
@@ -45,6 +43,8 @@ figure img {
 
 /* engine article stuff */
 #article-engine{
+    width: 400px;
+    height: 580px;
     right: -50%;
     top: 50%;
     transform: translateY(-50%);
@@ -80,6 +80,8 @@ figure img {
 
 /* tank article stuff */
 #article-tank{
+    width: 400px;
+    height: 300px;
     left: -50%;
     top: 50%;
     transform: translateY(-50%);
@@ -115,6 +117,8 @@ figure img {
 
 /* exhaust article stuff */
 #article-exhaust{
+    width: 400px;
+    height: 220px;
     left: -50%;
     top: 50%;
     transform: translateY(-50%);
@@ -150,7 +154,9 @@ figure img {
 
 /* rwheel article stuff */
 #article-rwheel{
-    left: 58%;
+    width: 400px;
+    height: 350px;
+    left: 50%;
     top: -50%;
     transform: translateY(-50%);
 }
@@ -185,6 +191,8 @@ figure img {
 
 /* fwheel article stuff */
 #article-fwheel{
+    width: 400px;
+    height: 350px;
     left: 2%;
     top: 150%;
     transform: translateY(-50%);
@@ -220,6 +228,8 @@ figure img {
 
 /* brake article stuff */
 #article-brake{
+    width: 430px;
+    height: 340px;
     left: -50%;
     top: 50%;
     transform: translateY(-50%);
@@ -255,6 +265,8 @@ figure img {
 
 /* headlight article stuff */
 #article-headlight{
+    width: 400px;
+    height: 220px;
     right: -50%;
     top: 50%;
     transform: translateY(-50%);
@@ -270,7 +282,7 @@ figure img {
 
     }
     100% {
-        right: 10%;
+        right: 20%;
     }
 }
 
@@ -280,7 +292,7 @@ figure img {
 
 @keyframes exit-headlight {
     0%{
-        right: 10%;
+        right: 20%;
 
     }
     100% {
@@ -290,7 +302,9 @@ figure img {
 
 /* speedometer article stuff */
 #article-speedometer{
-    right: 10%;
+    width: 400px;
+    height: 465px;
+    right: 15%;
     top: 150%;
     transform: translateY(-50%);
 }
@@ -325,6 +339,8 @@ figure img {
 
 /* seat article stuff */
 #article-seat{
+    width: 400px;
+    height: 360px;
     right: 15%;
     top: -50%;
     transform: translateY(-50%);
@@ -358,22 +374,21 @@ figure img {
     }
 }
 
-
 section article{
-    padding-top: 14.2%;
-    padding-right: 10%;
-    padding-left: 19%;
+    padding:10px;
 }
 
 article p {
     margin: 0;
     margin-bottom: 3.9%;
+    margin-left: 15px;
+    font-size: 19px;
 }
 
 article h2{
     text-align: center;
-    margin-bottom:2.8%;
-    font-size: 25px;
+    margin-bottom:6%;
+    font-size: 27px;
 }
 
 .hidden {
