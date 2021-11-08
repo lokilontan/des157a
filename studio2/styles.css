@@ -31,7 +31,7 @@ figure img {
 
 /* ARTICLES START */
 .overlay{
-    position: absolute;
+    position: fixed;
     background-image: url("./images/overlay.png");
     background-size: 400px 548px;
     width: 400px;
@@ -768,7 +768,9 @@ footer {
     position: fixed;
     bottom:0;
     padding-top: 10px;
-    width: 100%;
+    padding-bottom: 10px;
+
+    width: 1366px;
     text-align: center;
     background-color:black;
     font-family: 'Poiret One', cursive;
