@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>JSON Data</title>
+</head>
+
+<body>
+
+	<h1>Working with JSON Data</h1>
+
+	<p>Usually JSON data will come from an external source, such as a database, or an API (Application Programming
+		Interface), such as Google Maps or from Twitter. In this file, we are simply including the JSON directly.</p>
+
+	<script>
+
+		const raw = '{ "first_name": "Joe", "last_name": "Jones", "age": 25, "social_media": [ "facebook", "Twitter", "Instagram" ], "online": true, "phone_numbers": { "home": "916-123-4567", "work": "916-321-9876", "mobile": "530-212-1111" }, "status": "active" }';
+
+		const user = JSON.parse(raw);
+		// console.log(user);
+		// console.log(raw);
+
+		// console.log(user.last_name);
+		// console.log(user.social_media[0]);
+		// console.log(user.phone_numbers.home);
+
+		user.first_name="Reed";
+		console.log(user);
+
+		delete user.phone_numbers.home;
+
+		user.social_media[3] = "wordprerss";
+
+		const data = JSON.stringify(user);
+		console.log(data);
+
+
+	</script>
+
+</body>
+
+</html>

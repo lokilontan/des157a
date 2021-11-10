@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing Objects</title>
+</head>
+
+<body>
+    <h1>Working with Objects</h1>
+    <script>
+
+        // const president = {
+        //     firstname: "Vladimir",
+        //     lastname: "Putin",
+        //     age: Infinity,
+        //     pets: ["tiger", "elephant", "bear"],
+        //     contacts: {
+        //         vice_president: "543-456-4752",
+        //         ex_president: "543-456-4752"
+        //     },
+        //     greeting: function() {console.log(`Здравствуйте, товарищи! На связи ${this.firstname} ${this.lastname}!`)} 
+        // }
+
+        // console.log(president.greeting());
+
+        // function Person(first, last, age, eye) {
+        //     this.firstname=first;
+        //     this.lastname=last;
+        //     this.age=age;
+        //     this.eye=eye;
+        // }
+
+        // var presidentOfRussia = new Person("Vladimir", "Putin", Infinity, "#43B32F")
+        // var presidentOfUS = new Person("Joe", "Biden", Infinity, "#32AC90")
+
+        // console.log(`${presidentOfRussia.firstname} ${presidentOfUS.lastname} is not a correct name of a president`)
+
+        function printableMessage(){
+            let message = "HELLO!";
+            function printMessage(){
+                console.log(message);
+            }
+            function setMessage(newMessage) {
+                message=newMessage;
+            }
+            return {
+                printMessage: printMessage,
+                setMessage: setMessage
+            };
+        }
+        
+        const awesome = printableMessage();
+        awesome.printMessage();
+
+        awesome2 = printableMessage();
+        awesome2.setMessage("Hello, brother!");
+        awesome2.printMessage();
+
+    </script>
+</body>
+
+</html>
