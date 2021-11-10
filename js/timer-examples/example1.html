@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Timers 1</title>
+</head>
+
+<body>
+
+    <button id="stop">Stop the script</button>
+    <div id="thediv">Default Content</div>
+
+    <script>
+        (function() {
+            'use strict';
+            const theDiv = document.getElementById('thediv');
+            const content = '<p>adding another paragraph</p>';
+
+            const myInterval = setInterval(function() {
+                theDiv.innerHTML += content;
+            }, 1500);
+
+            document.getElementById('stop').addEventListener('click', function() {
+                clearInterval(myInterval);
+            });
+
+        })();
+    </script>
+
+</body>
+
+</html>

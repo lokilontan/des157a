@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Timers 2</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-size: 6em;
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        
+        p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p id="countdown">10</p>
+
+    <script>
+        (function() {
+            'use strict';
+
+            const countdown = document.getElementById('countdown');
+            const p = document.querySelector('p');
+            let counter = 10;
+            let myInterval = setInterval(countTimeDown, 1000)
+
+            function countTimeDown() {
+                console.log('countTimeDown triggered')
+
+                if (counter > 0) {
+                    counter--;
+                    countdown.textContent = counter;
+                } else {
+                    clearInterval(myInterval);
+                }
+            }
+
+            setTimeout(function() {
+                document.querySelector('body').style.backgroundColor = "orange";
+                countdown.textContent = 'game over!'
+            }, 10 * 1000);
+
+        })();
+    </script>
+
+</body>
+
+</html>
