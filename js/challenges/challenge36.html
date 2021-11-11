@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Challenge 36</title>
+</head>
+<body>
+
+	<script>
+		// const pet = {
+		// 	name: "Tom",
+		// 	species: "cat",
+		// }
+		
+		// pet.qualities = {
+		// 		color: "red",
+		// 		disposition: "angry",
+		// 		size: "fat",
+		// }
+
+		// pet.supplies = ["food", "toys", "cleaning tools", "collar"];
+
+		// pet.greeting = function() {
+		// 	console.log("meow");
+		// }
+		// pet.greeting();
+
+		function Pet(name, species, greetingMessage) {
+			this.name = name;
+			this.species = species;
+			this.greeting = function() {
+				console.log(greetingMessage);
+			}
+		}
+
+		const cat = new Pet("Tom", "cat", "meowwwww");
+		const dog = new Pet("Rocky", "dog", "woof");
+
+		cat.greeting();
+		dog.greeting();
+	</script>
+	
+</body>
+</html>
