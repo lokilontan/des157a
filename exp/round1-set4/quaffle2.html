@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Quaffle 2</title>
+</head>
+
+<body>
+	<h1>Quaffle 2</h1>
+
+	<h2></h2>
+	<ul></ul>
+	<script>
+
+		document.querySelector('h2').innerHTML = "List The Hogwarts Houses";
+
+		var houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"];
+		var listItems = "";
+
+		for (var i = 0; i < houses.length; i++) {
+			listItems += `<li>${houses[i]}</li>`;
+		}
+		document.querySelector('ul').innerHTML = listItems;
+
+	</script>
+
+</body>
+
+</html>

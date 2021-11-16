@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Quaffle 2</title>
+</head>
+
+<body>
+	<h1>Quaffle 2</h1>
+	<p>Find two errors!</p>
+
+	<h2>Your Favorite Harry Potter Character</h2>
+	<p id="character"></p>
+</body>
+
+<script>
+	var mainCharacter = parseInt(prompt("pick a number from 0 to 7", ""));
+	var characters = ["Harry", "Hermione", "Ron", "Neville", "Ginny", "George", "Fred", "Luna"];
+
+	if (mainCharacter > -1 && mainCharacter < 8) {
+		document.getElementById('character').innerHTML = "Your favorite character is " + characters[mainCharacter];
+	}
+	else {
+		document.getElementById('character').innerHTML = "You didn't type a number from 0 to 7";
+	}
+
+</script>
+
+</html>

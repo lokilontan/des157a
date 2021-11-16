@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Quaffle 2</title>
+</head>
+
+<body>
+	<h1>Quaffle 2</h1>
+	<p>Find two errors!</p>
+
+	<h2>Different colors for Hogwarts faculty and students</h2>
+	<p>The faculty should be red and the students should be green.</p>
+
+	<ul>
+		<li class="student">Harry Potter</li>
+		<li class="faculty">Albus Dumbledore</li>
+		<li class="faculty">Minerva McGonagall</li>
+		<li class="student">Hermione Granger</li>
+		<li class="student">Ron Weasley</li>
+		<li class="faculty">Gilderoy Lockhart</li>
+		<li class="student">Ginny Weasley</li>
+		<li class="student">Fred Weasley</li>
+		<li class="faculty">Alastor "Mad-Eye" Moody</li>
+		<li class="student">Luna Lovegood</li>
+
+	</ul>
+
+	<script>
+		var students = document.querySelectorAll('.student');
+		var faculty = document.querySelectorAll('.faculty');
+
+		for (var i = 0; i < students.length; i++) {
+			students[i].style.color = "green";
+		}
+
+		for (var i = 0; i < faculty.length; i++) {
+			faculty[i].style.color = "red";
+		}
+
+	</script>
+
+</body>
+
+
+
+</html>

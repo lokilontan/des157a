@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Quaffle 1</title>
+</head>
+
+<body>
+	<h1>Quaffle 1</h1>
+	<p>At the quiditch match between Gryffindor and Slytherin...</p>
+	<p id="score"></p>
+
+	<script>
+
+		var gScore = parseInt(prompt("Enter Gryffindor's score at the quidditch pitch", ""));
+		var sScore = parseInt(prompt("Enter Slytherin's score at the quidditch pitch", ""));
+
+		if (gScore > sScore) {
+			document.getElementById("score").innerHTML = "Gryffindor Wins!";
+		}
+		else {
+			document.getElementById("score").innerHTML = "Slytherin Wins!";
+		}
+
+	</script>
+</body>
+
+</html>
