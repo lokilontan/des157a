@@ -49,7 +49,7 @@
         gameData.roll2 = Math.floor(Math.random() * 6) + 1;
         game.innerHTML = `<p>Roll the dice for the ${gameData.players[gameData.index]}</p>`
         game.innerHTML += `<img src="./images/${gameData.dice[gameData.roll1 - 1]}">
-                               <img src="${gameData.dice[gameData.roll2 - 1]}">`;
+                               <img src="./images/${gameData.dice[gameData.roll2 - 1]}">`;
         gameData.rollSum = gameData.roll1 + gameData.roll2;
 
         // if two 1's are rolled
