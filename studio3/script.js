@@ -128,7 +128,7 @@
         }
 
         setTimeout(function () {
-            displayDiceRoll(12)
+            displayDiceRoll(dice_roll)
         }, 2500);
 
     }
@@ -151,7 +151,7 @@
             d.classList = "dice hidden";
         }
         let diceGrid = document.getElementById("dice-grid");
-        diceGrid.style.top = "545px;";
+        diceGrid.style.top = "545px";
         diceGrid.style.left = "43.75%";
     }
 
@@ -186,34 +186,34 @@
         let diceDisplay = [];
 
         switch (dice_roll) {
-            case 1:
+            case 0:
                 diceGrid.style.left = "45.7%";
                 diceDisplay.push(document.getElementById("dice5"));
                 break;
-            case 2:
+            case 1:
                 diceDisplay.push(document.getElementById("dice4"));
                 diceDisplay.push(document.getElementById("dice7"));
                 break;
-            case 3:
+            case 2:
                 diceGrid.style.left = "45.7%";
                 diceDisplay.push(document.getElementById("dice1"));
                 diceDisplay.push(document.getElementById("dice5"));
                 diceDisplay.push(document.getElementById("dice9"));
                 break;
-            case 4:
+            case 3:
                 diceDisplay.push(document.getElementById("dice4"));
                 diceDisplay.push(document.getElementById("dice5"));
                 diceDisplay.push(document.getElementById("dice6"));
                 diceDisplay.push(document.getElementById("dice7"));
                 break;
-            case 5:
+            case 4:
                 diceDisplay.push(document.getElementById("dice2"));
                 diceDisplay.push(document.getElementById("dice3"));
                 diceDisplay.push(document.getElementById("dice8"));
                 diceDisplay.push(document.getElementById("dice9"));
                 diceDisplay.push(document.getElementById("dice10"));
                 break;
-            case 6:
+            case 5:
                 diceGrid.style.left = "45.7%";
                 diceDisplay.push(document.getElementById("dice0"));
                 diceDisplay.push(document.getElementById("dice2"));
@@ -222,7 +222,7 @@
                 diceDisplay.push(document.getElementById("dice8"));
                 diceDisplay.push(document.getElementById("dice10"));
                 break;
-            case 7:
+            case 6:
                 diceGrid.style.left = "45.7%";
                 diceDisplay.push(document.getElementById("dice0"));
                 diceDisplay.push(document.getElementById("dice1"));
@@ -232,7 +232,7 @@
                 diceDisplay.push(document.getElementById("dice8"));
                 diceDisplay.push(document.getElementById("dice9"));
                 break;
-            case 8:
+            case 7:
                 diceGrid.style.top = "580px";
                 diceDisplay.push(document.getElementById("dice0"));
                 diceDisplay.push(document.getElementById("dice1"));
@@ -243,7 +243,7 @@
                 diceDisplay.push(document.getElementById("dice6"));
                 diceDisplay.push(document.getElementById("dice7"));
                 break;
-            case 9:
+            case 8:
                 diceGrid.style.left = "45.7%";
                 diceDisplay.push(document.getElementById("dice0"));
                 diceDisplay.push(document.getElementById("dice1"));
@@ -255,7 +255,7 @@
                 diceDisplay.push(document.getElementById("dice9"));
                 diceDisplay.push(document.getElementById("dice10"));
                 break;
-            case 10:
+            case 9:
                 diceDisplay.push(document.getElementById("dice1"));
                 diceDisplay.push(document.getElementById("dice2"));
                 diceDisplay.push(document.getElementById("dice4"));
@@ -267,7 +267,7 @@
                 diceDisplay.push(document.getElementById("dice10"));
                 diceDisplay.push(document.getElementById("dice11"));
                 break;
-            case 11:
+            case 10:
                 diceDisplay.push(document.getElementById("dice0"));
                 diceDisplay.push(document.getElementById("dice1"));
                 diceDisplay.push(document.getElementById("dice2"));
@@ -280,7 +280,7 @@
                 diceDisplay.push(document.getElementById("dice10"));
                 diceDisplay.push(document.getElementById("dice11"));
                 break;
-            case 12:
+            case 11:
                 diceDisplay = document.querySelectorAll(".dice");
                 break;
             default:
