@@ -4,7 +4,7 @@ body {
 
 #canvas {
     position: relative;
-    background-image: url('/studio3/images/background.jpeg');
+    background-image: url('images/background.jpeg');
     background-size: 1366px 768px;
     width: 1366px;
     height: 768px;
