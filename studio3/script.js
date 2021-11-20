@@ -129,7 +129,7 @@
 
         setTimeout(function () {
             displayDiceRoll(dice_roll)
-        }, 2500);
+        }, 2000);
 
     }
 
