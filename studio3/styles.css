@@ -38,9 +38,28 @@ header img{
 
 #players_zones{
     width: 100%;
-    height: 65%;
+    height: 62.5%;
     min-width: 800px;
     display: flex;
+    text-align: center;
+    
+}
+
+.name{
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 100px;
+    top: 10%;
+    color: white;
+}
+
+.score{
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 200px;
+    top: 13%;
+    color: white;
+
 }
 
 #player_1_zone{
@@ -49,6 +68,10 @@ header img{
     height: 100%;
     position: relative;
     font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    /* background-color: rgba(255, 255, 255, 0.239); */
+
 }
 
 #player_2_zone{
@@ -56,14 +79,27 @@ header img{
     position: relative;
     width:50%;
     height: 100%;
+    background-color: rgba(255, 255, 255, 0.239);
+    display: flex;
+    flex-direction: column;
+
 }
 
 #dice_zone{
     position: relative;
     z-index: 1;
-    width: 100%;
-    height: 25%;
+    left:42.38%;
+    width: 15.5%;
+    height: 27.5%;
+    text-align: center;
+}
 
+#roll{
+    position: relative;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 55px;
+    top: 34%;
+    color: white;
 }
 
 footer {
@@ -124,6 +160,27 @@ button {
     50%{
         background-color: #01fab3;
         box-shadow: #01fab3 0px 0px 10px 10px ;
+    }
+    100%{
+        background-color: #01986d;
+        box-shadow: #01986d 0px 0px 0px 0px;
+    }
+}
+
+.blink {
+    animation-name: blink;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+
+}
+@keyframes blink {
+    0%{
+        background-color: #01986d;
+        box-shadow: #01986d 0px 0px 0px 0px;
+    }
+    50%{
+        background-color: #ffffff;
+        box-shadow: #ffffff 0px 0px 10px 10px ;
     }
     100%{
         background-color: #01986d;
@@ -269,6 +326,60 @@ button {
 #obj27{
     top: 270px;
     left: 1361px;
+}
+
+.dice{
+    z-index: 0;
+    height: 13px;
+    width: 13px;
+    background-color: white;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: white 0px 0px 6px 2px ;
+}
+
+#dice-grid{
+    position: absolute;
+    z-index: 0;
+    top: 545px;
+    left: 43.75%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px 40px;
+    grid-auto-rows: minmax(500px, 5);
+}
+
+.dice-blink {
+    animation-name: dice-blink;
+    animation-duration: 0.2s;
+    animation-iteration-count: 1;
+
+}
+@keyframes dice-blink {
+    0%{
+        background-color: white;
+        box-shadow: white 0px 0px 6px 2px ;
+    }
+    50%{
+        background-color: #01986d;
+        box-shadow: #01986d 0px 0px 6px 2px ;
+    }
+    100%{
+        background-color: white;
+        box-shadow: white 0px 0px 6px 2px ;
+    }
+}
+
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+
+}
+
+.showing {
+    visibility: visible;
+    opacity: 1;
 }
 
 #gamecontrol, #score {

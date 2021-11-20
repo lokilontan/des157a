@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Nixie+One&family=Sunflower:wght@300&family=M+PLUS+Rounded+1c:wght@100;300&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Nixie+One&family=Orbitron:wght@400;600&family=Sunflower:wght@300&family=Russo+One&family=M+PLUS+Rounded+1c:wght@100;300&display=swap"
         rel="stylesheet">
 
     <!-- Styles -->
@@ -23,7 +23,7 @@
 
     <title>Game of PIG</title>
 
-    <link rel="shortcut icon" type="image/jpg" href="images/pig_favicon.png"/>
+    <link rel="shortcut icon" type="image/jpg" href="images/pig_favicon.png" />
 
 
 </head>
@@ -39,16 +39,19 @@
 
         <div id="players_zones">
             <section id="player_1_zone">
-
+                <span id="player_1_name" class="name">Player 1</span>
+                <span id="player_1_score" class="score">22</span>
             </section>
 
             <section id="player_2_zone">
+                <span id="player_2_name" class="name">Player 2</span>
+                <span id="player_2_score" class="score">5</span>
 
             </section>
         </div>
 
-        <section id="dice_zone">
-
+        <section id="dice_zone" class="hidden">
+            <span id="roll">ROLL</span>
         </section>
 
         <footer>
@@ -89,6 +92,23 @@
         <div id="obj25" class="obj"></div>
         <div id="obj26" class="obj"></div>
         <div id="obj27" class="obj"></div>
+
+        <div id="dice-grid">
+            <div id="dice0" class="dice hidden"></div>
+            <div id="dice1" class="dice hidden"></div>
+            <div id="dice2" class="dice hidden"></div>
+            <div id="dice3" class="dice hidden"></div>
+            <div id="dice4" class="dice hidden"></div>
+            <div id="dice5" class="dice hidden"></div>
+            <div id="dice6" class="dice hidden"></div>
+            <div id="dice7" class="dice hidden"></div>
+            <div id="dice8" class="dice hidden"></div>
+            <div id="dice9" class="dice hidden"></div>
+            <div id="dice10" class="dice hidden"></div>
+            <div id="dice11" class="dice hidden"></div>
+        </div>
+
+
 
 
 
