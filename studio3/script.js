@@ -128,7 +128,7 @@
         }
 
         setTimeout(function () {
-            displayDiceRoll(dice_roll)
+            displayDiceRoll(12)
         }, 2500);
 
     }
@@ -189,33 +189,22 @@
             case 1:
                 diceGrid.style.left = "45.7%";
                 diceDisplay.push(document.getElementById("dice5"));
-                diceDisplay[0].classList = "dice showing";
                 break;
             case 2:
                 diceDisplay.push(document.getElementById("dice4"));
                 diceDisplay.push(document.getElementById("dice7"));
-                for (let d of diceDisplay) {
-                    d.classList = "dice showing";
-                }
                 break;
             case 3:
                 diceGrid.style.left = "45.7%";
                 diceDisplay.push(document.getElementById("dice1"));
                 diceDisplay.push(document.getElementById("dice5"));
                 diceDisplay.push(document.getElementById("dice9"));
-                for (let d of diceDisplay) {
-                    d.classList = "dice showing";
-                }
                 break;
             case 4:
                 diceDisplay.push(document.getElementById("dice4"));
                 diceDisplay.push(document.getElementById("dice5"));
                 diceDisplay.push(document.getElementById("dice6"));
                 diceDisplay.push(document.getElementById("dice7"));
-
-                for (let d of diceDisplay) {
-                    d.classList = "dice showing";
-                }
                 break;
             case 5:
                 diceDisplay.push(document.getElementById("dice2"));
@@ -223,10 +212,6 @@
                 diceDisplay.push(document.getElementById("dice8"));
                 diceDisplay.push(document.getElementById("dice9"));
                 diceDisplay.push(document.getElementById("dice10"));
-
-                for (let d of diceDisplay) {
-                    d.classList = "dice showing";
-                }
                 break;
             case 6:
                 diceGrid.style.left = "45.7%";
@@ -236,10 +221,6 @@
                 diceDisplay.push(document.getElementById("dice6"));
                 diceDisplay.push(document.getElementById("dice8"));
                 diceDisplay.push(document.getElementById("dice10"));
-
-                for (let d of diceDisplay) {
-                    d.classList = "dice showing";
-                }
                 break;
             case 7:
                 diceGrid.style.left = "45.7%";
@@ -250,10 +231,6 @@
                 diceDisplay.push(document.getElementById("dice6"));
                 diceDisplay.push(document.getElementById("dice8"));
                 diceDisplay.push(document.getElementById("dice9"));
-
-                for (let d of diceDisplay) {
-                    d.classList = "dice showing";
-                }
                 break;
             case 8:
                 diceGrid.style.top = "580px";
@@ -265,10 +242,6 @@
                 diceDisplay.push(document.getElementById("dice5"));
                 diceDisplay.push(document.getElementById("dice6"));
                 diceDisplay.push(document.getElementById("dice7"));
-
-                for (let d of diceDisplay) {
-                    d.classList = "dice showing";
-                }
                 break;
             case 9:
                 diceGrid.style.left = "45.7%";
@@ -281,10 +254,6 @@
                 diceDisplay.push(document.getElementById("dice8"));
                 diceDisplay.push(document.getElementById("dice9"));
                 diceDisplay.push(document.getElementById("dice10"));
-
-                for (let d of diceDisplay) {
-                    d.classList = "dice showing";
-                }
                 break;
             case 10:
                 diceDisplay.push(document.getElementById("dice1"));
@@ -297,12 +266,8 @@
                 diceDisplay.push(document.getElementById("dice9"));
                 diceDisplay.push(document.getElementById("dice10"));
                 diceDisplay.push(document.getElementById("dice11"));
-
-                for (let d of diceDisplay) {
-                    d.classList = "dice showing";
-                }
                 break;
-            case 11:                
+            case 11:
                 diceDisplay.push(document.getElementById("dice0"));
                 diceDisplay.push(document.getElementById("dice1"));
                 diceDisplay.push(document.getElementById("dice2"));
@@ -314,23 +279,33 @@
                 diceDisplay.push(document.getElementById("dice9"));
                 diceDisplay.push(document.getElementById("dice10"));
                 diceDisplay.push(document.getElementById("dice11"));
-
-                for (let d of diceDisplay) {
-                    d.classList = "dice showing";
-                }
                 break;
-            case 12:                
+            case 12:
                 diceDisplay = document.querySelectorAll(".dice");
-
-                for (let d of diceDisplay) {
-                    d.classList = "dice showing";
-                }
+                break;
+            default:
                 break;
         }
-
-
-
-
+        blinkDice(diceDisplay);
     }
 
+    function blinkDice(diceDisplay) {
+        let blinkDiceInterval = setInterval(function () {
+            for (let d of diceDisplay) {
+                d.classList = "dice showing";
+            }
+            setTimeout(function () {
+                for (let d of diceDisplay) {
+                    d.classList = "dice hidden";
+                }
+            }, 300);
+        }, 600);
+        setTimeout(function(){
+            clearInterval(blinkDiceInterval);
+            for (let d of diceDisplay) {
+                d.classList = "dice showing";
+            }
+        }, 1799);
+        
+    }
 }());
