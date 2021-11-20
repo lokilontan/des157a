@@ -115,15 +115,21 @@
         // Hide the zones
         const player_zones = document.getElementById("players_zones");
         const dice_zone = document.getElementById("dice_zone");
+        const dice_roll = Math.floor(Math.random() * 11);
+
         player_zones.classList = "hidden";
         dice_zone.classList = "hidden";
 
-        // Blink the obj's
-        for (let i = 0; i < 40; i++) {
-            setTimeout(blinkObjs, 100 + Math.pow(i, 2.3))
-        }
-        
+        initDice();
 
+        // Blink the obj's
+        for (let i = 0; i < 20; i++) {
+            setTimeout(blinkObjs, 100 + Math.pow(i, 2.5));
+        }
+
+        setTimeout(function () {
+            displayDiceRoll(dice_roll)
+        }, 2500);
 
     }
 
@@ -137,24 +143,194 @@
 
     });
 
+    // put grid back in case it was moved somewhere
+    // (for example: one is not in the center, so I moved it there)
+    function initDice() {
+        let diceDisplay = document.querySelectorAll(".dice");
+        for (let d of diceDisplay) {
+            d.classList = "dice hidden";
+        }
+        let diceGrid = document.getElementById("dice-grid");
+        diceGrid.style.top = "545px;";
+        diceGrid.style.left = "43.75%";
+    }
+
     function blinkObjs() {
+
         let objs = document.querySelectorAll(".obj");
         let dice = document.getElementById(`dice${Math.floor(Math.random() * 11)}`);
 
         for (let obj of objs) {
             obj.classList = "obj blink showing";
         }
-        
-        dice.classList = "dice dice-blink";
 
-        setTimeout(function() {
+        dice.classList = "dice showing dice-blink";
+
+        setTimeout(function () {
             for (let obj of objs) {
                 obj.classList = "obj";
             }
             dice.classList = "dice hidden";
 
-        }, 200)
-        
+        }, 200);
+    }
+
+    function displayDiceRoll(dice_roll) {
+        let dices = document.querySelectorAll(".dice");
+        let diceGrid = document.getElementById("dice-grid");
+
+        for (let dice of dices) {
+            dice.classList = "dice hidden";
+        }
+
+        let diceDisplay = [];
+
+        switch (dice_roll) {
+            case 1:
+                diceGrid.style.left = "45.7%";
+                diceDisplay.push(document.getElementById("dice5"));
+                diceDisplay[0].classList = "dice showing";
+                break;
+            case 2:
+                diceDisplay.push(document.getElementById("dice4"));
+                diceDisplay.push(document.getElementById("dice7"));
+                for (let d of diceDisplay) {
+                    d.classList = "dice showing";
+                }
+                break;
+            case 3:
+                diceGrid.style.left = "45.7%";
+                diceDisplay.push(document.getElementById("dice1"));
+                diceDisplay.push(document.getElementById("dice5"));
+                diceDisplay.push(document.getElementById("dice9"));
+                for (let d of diceDisplay) {
+                    d.classList = "dice showing";
+                }
+                break;
+            case 4:
+                diceDisplay.push(document.getElementById("dice4"));
+                diceDisplay.push(document.getElementById("dice5"));
+                diceDisplay.push(document.getElementById("dice6"));
+                diceDisplay.push(document.getElementById("dice7"));
+
+                for (let d of diceDisplay) {
+                    d.classList = "dice showing";
+                }
+                break;
+            case 5:
+                diceDisplay.push(document.getElementById("dice2"));
+                diceDisplay.push(document.getElementById("dice3"));
+                diceDisplay.push(document.getElementById("dice8"));
+                diceDisplay.push(document.getElementById("dice9"));
+                diceDisplay.push(document.getElementById("dice10"));
+
+                for (let d of diceDisplay) {
+                    d.classList = "dice showing";
+                }
+                break;
+            case 6:
+                diceGrid.style.left = "45.7%";
+                diceDisplay.push(document.getElementById("dice0"));
+                diceDisplay.push(document.getElementById("dice2"));
+                diceDisplay.push(document.getElementById("dice4"));
+                diceDisplay.push(document.getElementById("dice6"));
+                diceDisplay.push(document.getElementById("dice8"));
+                diceDisplay.push(document.getElementById("dice10"));
+
+                for (let d of diceDisplay) {
+                    d.classList = "dice showing";
+                }
+                break;
+            case 7:
+                diceGrid.style.left = "45.7%";
+                diceDisplay.push(document.getElementById("dice0"));
+                diceDisplay.push(document.getElementById("dice1"));
+                diceDisplay.push(document.getElementById("dice4"));
+                diceDisplay.push(document.getElementById("dice5"));
+                diceDisplay.push(document.getElementById("dice6"));
+                diceDisplay.push(document.getElementById("dice8"));
+                diceDisplay.push(document.getElementById("dice9"));
+
+                for (let d of diceDisplay) {
+                    d.classList = "dice showing";
+                }
+                break;
+            case 8:
+                diceGrid.style.top = "580px";
+                diceDisplay.push(document.getElementById("dice0"));
+                diceDisplay.push(document.getElementById("dice1"));
+                diceDisplay.push(document.getElementById("dice2"));
+                diceDisplay.push(document.getElementById("dice3"));
+                diceDisplay.push(document.getElementById("dice4"));
+                diceDisplay.push(document.getElementById("dice5"));
+                diceDisplay.push(document.getElementById("dice6"));
+                diceDisplay.push(document.getElementById("dice7"));
+
+                for (let d of diceDisplay) {
+                    d.classList = "dice showing";
+                }
+                break;
+            case 9:
+                diceGrid.style.left = "45.7%";
+                diceDisplay.push(document.getElementById("dice0"));
+                diceDisplay.push(document.getElementById("dice1"));
+                diceDisplay.push(document.getElementById("dice2"));
+                diceDisplay.push(document.getElementById("dice4"));
+                diceDisplay.push(document.getElementById("dice5"));
+                diceDisplay.push(document.getElementById("dice6"));
+                diceDisplay.push(document.getElementById("dice8"));
+                diceDisplay.push(document.getElementById("dice9"));
+                diceDisplay.push(document.getElementById("dice10"));
+
+                for (let d of diceDisplay) {
+                    d.classList = "dice showing";
+                }
+                break;
+            case 10:
+                diceDisplay.push(document.getElementById("dice1"));
+                diceDisplay.push(document.getElementById("dice2"));
+                diceDisplay.push(document.getElementById("dice4"));
+                diceDisplay.push(document.getElementById("dice5"));
+                diceDisplay.push(document.getElementById("dice6"));
+                diceDisplay.push(document.getElementById("dice7"));
+                diceDisplay.push(document.getElementById("dice8"));
+                diceDisplay.push(document.getElementById("dice9"));
+                diceDisplay.push(document.getElementById("dice10"));
+                diceDisplay.push(document.getElementById("dice11"));
+
+                for (let d of diceDisplay) {
+                    d.classList = "dice showing";
+                }
+                break;
+            case 11:                
+                diceDisplay.push(document.getElementById("dice0"));
+                diceDisplay.push(document.getElementById("dice1"));
+                diceDisplay.push(document.getElementById("dice2"));
+                diceDisplay.push(document.getElementById("dice3"));
+                diceDisplay.push(document.getElementById("dice4"));
+                diceDisplay.push(document.getElementById("dice5"));
+                diceDisplay.push(document.getElementById("dice6"));
+                diceDisplay.push(document.getElementById("dice8"));
+                diceDisplay.push(document.getElementById("dice9"));
+                diceDisplay.push(document.getElementById("dice10"));
+                diceDisplay.push(document.getElementById("dice11"));
+
+                for (let d of diceDisplay) {
+                    d.classList = "dice showing";
+                }
+                break;
+            case 12:                
+                diceDisplay = document.querySelectorAll(".dice");
+
+                for (let d of diceDisplay) {
+                    d.classList = "dice showing";
+                }
+                break;
+        }
+
+
+
+
     }
 
 }());
