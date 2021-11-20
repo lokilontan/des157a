@@ -119,7 +119,10 @@
         dice_zone.classList = "hidden";
 
         // Blink the obj's
-        blinkObjs();
+        for (let i = 0; i < 40; i++) {
+            setTimeout(blinkObjs, 100 + Math.pow(i, 2.3))
+        }
+        
 
 
     }
