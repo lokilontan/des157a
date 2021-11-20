@@ -1,5 +1,5 @@
 body {
-    
+    background-color: black;
 }
 
 #canvas {
@@ -9,11 +9,14 @@ body {
     width: 1366px;
     height: 768px;
     min-width: 800px;
+    overflow: hidden;
     margin: auto;
     background-color: green;
 }
 
 header {
+    position: relative;
+    z-index: 1;
     width: 100%;
     height: 5%;
     line-height: 2.2;
@@ -64,6 +67,8 @@ header img{
 }
 
 footer {
+    position: relative;
+    z-index: 1;
     height: 5%;
     text-align:center;
     font-family: 'Sunflower', sans-serif;
@@ -102,15 +107,12 @@ button {
 .obj{
     position: absolute;
     z-index: 0;
-    top: 120px;
-    left: 674px;
     height: 20px;
     width: 20px;
     background-color:#01986d;
-
     border-radius: 50%;
     animation-name: flash;
-    animation-duration: 3s;
+    animation-duration: 4s;
     animation-iteration-count: infinite;
 }
 
@@ -121,7 +123,7 @@ button {
     }
     50%{
         background-color: #01fab3;
-        box-shadow: #01fab3 0px 0px 20px 20px ;
+        box-shadow: #01fab3 0px 0px 10px 10px ;
     }
     100%{
         background-color: #01986d;
@@ -129,7 +131,145 @@ button {
     }
 }
 
+#obj0{
+    top: 120px;
+    left: 674px;
+}
 
+#obj1{
+    top: 188px;
+    left: 62px;
+}
+
+#obj2{
+    top: 319px;
+    left: 49px;
+}
+
+#obj3{
+    top: 55px;
+    left: 351px;
+}
+
+#obj4{
+    top: 229px;
+    left: 327px;
+}
+
+#obj5{
+    top: 358px;
+    left: 324px;
+}
+
+#obj6{
+    top: 523px;
+    left: 311px;
+}
+
+#obj7{
+    top: 705px;
+    left: 311px;
+}
+
+#obj8{
+    top: 234px;
+    left: 483px;
+}
+
+#obj9{
+    top: 317.5px;
+    left: 425px;
+}
+
+#obj10{
+    top: 439px;
+    left: 460px;
+}
+
+#obj11{
+    top: 591px;
+    left: 525px;
+}
+
+#obj12{
+    top: 639px;
+    left: 526px;
+}
+
+#obj13{
+    top: 730px;
+    left: 548px;
+}
+
+#obj14{
+    top: 450px;
+    left: 572px;
+}
+
+#obj15{
+    top: 463px;
+    left: 674px;
+}
+
+#obj16{
+    top: 384px;
+    left: 702px;
+}
+
+#obj17{
+    top: 384px;
+    left: 702px;
+}
+
+#obj18{
+    top: 317px;
+    left: 842px;
+}
+
+#obj19{
+    top: 432px;
+    left: 789px;
+}
+
+#obj20{
+    top: 492px;
+    left: 801px;
+}
+
+#obj21{
+    top: 595px;
+    left: 812px;
+}
+
+#obj22{
+    top: 700px;
+    left: 810px;
+}
+
+#obj23{
+    top: 669px;
+    left: 970px;
+}
+
+#obj24{
+    top: 596px;
+    left: 1093px;
+}
+
+#obj25{
+    top: 213px;
+    left: 1242px;
+}
+
+#obj26{
+    top: 168px;
+    left: 1364px;
+}
+
+#obj27{
+    top: 270px;
+    left: 1361px;
+}
 
 #gamecontrol, #score {
     background-color: aliceblue;
