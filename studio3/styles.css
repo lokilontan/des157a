@@ -644,13 +644,13 @@ ul {
 
 }
 
-a {
+body p a {
     color: white;
     margin-left: 15%;
     font-size: 20px;;
 }
 
-body h1{
+#title-sources{
     margin-top: 5%;
     margin-left: 10%;
     margin-bottom: 3%;
