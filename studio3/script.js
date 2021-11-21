@@ -8,7 +8,9 @@
     // var game = document.getElementById('game');
     var playerZones = document.getElementById("players_zones");
     var player1Score = document.getElementById('player_1_score');
+    var player1Name = document.getElementById("player_1_name");
     var player2Score = document.getElementById('player_2_score');
+    var player2Name = document.getElementById("player_2_name");
     var diceZone = document.getElementById("dice_zone");
     var player1Zone = document.getElementById('player_1_zone');
     var player2Zone = document.getElementById('player_2_zone');
@@ -23,7 +25,7 @@
         gameEnd: 29
     };
 
-    //initGame();
+    initGame();
 
     // startGame.addEventListener('click', function () {
     //     gameData.index = Math.round(Math.random());
@@ -92,13 +94,20 @@
 
     // }
 
+    function initGame() {
+        player1Name.textContent = gameData.players[0];
+        player1Score.textContent = gameData.score[0];
+        player2Name.textContent = gameData.players[1];
+        player2Score.textContent =gameData.score[1];
+    }
+
     function checkWinningCondition() {
         if (gameData.score[gameData.index] > gameData.gameEnd) {
             console.log(
                 `${gameData.players[gameData.index]} wins with
                 ${gameData.score[gameData.index]} points!`
             );
-            
+
         } else {
             updateScores();
         }
@@ -110,45 +119,59 @@
         player2Score.textContent = gameData.score[1];
     }
 
-    player1Zone.addEventListener("mouseover", function() {
-        player1Zone.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-        document.getElementById("player_1_name").style.opacity = "0.1";
-        document.getElementById("player_1_score").style.opacity = "0.1";
-        document.getElementById("player_1_pass").classList = "pass visible";
+    player1Zone.addEventListener("mouseover", function () {
+        if (gameData.currentPlayer === 0) {
+            player1Zone.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+            player1Zone.style.border = "5px solid rgba(0, 60, 42.7, 1)";
+            player1Name.style.opacity = "0.1";
+            player1Score.style.opacity = "0.1";
+            document.getElementById("player_1_pass").classList = "pass visible";
+        } else {
+            player1Zone.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+            player1Zone.style.border = "5px solid rgba(0, 60, 42.7, 1)";
+        }
     });
 
-    player1Zone.addEventListener("mouseout", function() {
+    player1Zone.addEventListener("mouseout", function () {
         player1Zone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
-        document.getElementById("player_1_name").style.opacity = "1";
-        document.getElementById("player_1_score").style.opacity = "1";
+        player1Zone.style.border = "5px solid rgba(0, 60, 42.7, 0.0)";
+        player1Name.style.opacity = "1";
+        player1Score.style.opacity = "1";
         document.getElementById("player_1_pass").classList = "pass hidden";
     });
 
-    player2Zone.addEventListener("mouseover", function() {
-        player2Zone.style.backgroundColor = "rgba(255, 255, 255, 0.239)";
-        document.getElementById("player_2_name").style.opacity = "0.1";
-        document.getElementById("player_2_score").style.opacity = "0.1";
-        document.getElementById("player_2_pass").classList = "pass visible";
+    player2Zone.addEventListener("mouseover", function () {
+        if (gameData.currentPlayer === 1) {
+            player2Zone.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+            player2Zone.style.border = "5px solid rgba(0, 60, 42.7, 1)";
+            player2Name.style.opacity = "0.1";
+            player2Score.style.opacity = "0.1";
+            document.getElementById("player_2_pass").classList = "pass visible";
+        } else {
+            player2Zone.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+            player2Zone.style.border = "5px solid rgba(0, 60, 42.7, 1)";
+        }
     });
 
-    player2Zone.addEventListener("mouseout", function() {
+    player2Zone.addEventListener("mouseout", function () {
         player2Zone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
-        document.getElementById("player_2_name").style.opacity = "1";
-        document.getElementById("player_2_score").style.opacity = "1";
+        player2Zone.style.border = "5px solid rgba(0, 60, 42.7, 0)";
+        player2Name.style.opacity = "1";
+        player2Score.style.opacity = "1";
         document.getElementById("player_2_pass").classList = "pass hidden";
     });
 
 
     // <<<<<<<<<<<<<<<<<ROLLING DICE ANIMATION START>>>>>>>>>>>>>>>>>>>>
 
-    diceZone.addEventListener("mouseover", function() {
+    diceZone.addEventListener("mouseover", function () {
         diceZone.classList = "showing";
         diceZone.style.backgroundColor = "rgba(255, 255, 255, 0.239)";
         document.getElementById("roll").classList = "visible";
         document.getElementById("dice-grid").style.opacity = "0.2";
     });
 
-    diceZone.addEventListener("mouseout", function() {
+    diceZone.addEventListener("mouseout", function () {
         diceZone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
         document.getElementById("roll").classList = "hidden";
         document.getElementById("dice-grid").style.opacity = "1";
@@ -156,7 +179,7 @@
 
     diceZone.addEventListener("click", function (event) {
         event.preventDefault();
-            roll()
+        roll()
     });
 
     window.addEventListener("keyup", function (event) {
@@ -166,10 +189,10 @@
             diceZone.style.backgroundColor = "rgba(255, 255, 255, 0.239)";
             document.getElementById("roll").classList = "visible";
             document.getElementById("dice-grid").style.opacity = "0.2";
-            setTimeout(function(){
+            setTimeout(function () {
                 roll();
-            },100);
-            
+            }, 100);
+
         }
     });
 
@@ -189,7 +212,7 @@
 
         setTimeout(function () {
             displayDiceRoll(dice_roll);
-            gameData.roll = dice_roll+1;
+            gameData.roll = dice_roll + 1;
         }, 2000);
 
     }
@@ -356,7 +379,7 @@
                 }
             }, 300);
         }, 600);
-        setTimeout(function(){
+        setTimeout(function () {
             clearInterval(blinkDiceInterval);
             for (let d of diceDisplay) {
                 d.classList = "dice showing";
