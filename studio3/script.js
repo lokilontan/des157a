@@ -6,19 +6,24 @@
     // var startGame = document.getElementById('startgame');
     // var gameControl = document.getElementById('gamecontrol');
     // var game = document.getElementById('game');
-    // var score = document.getElementById('score');
+    var playerZones = document.getElementById("players_zones");
+    var player1Score = document.getElementById('player_1_score');
+    var player2Score = document.getElementById('player_2_score');
+    var diceZone = document.getElementById("dice_zone");
+    var player1Zone = document.getElementById('player_1_zone');
+    var player2Zone = document.getElementById('player_2_zone');
+
     // var actionArea = document.getElementById('actions');
 
-    // var gameData = {
-    //     dice: ["1die.jpg", "2die.jpg", "3die.jpg", "4die.jpg", "5die.jpg", "6die.jpg"],
-    //     players: ["player1", "player2"],
-    //     score: [0, 0],
-    //     roll1: 0,
-    //     roll2: 0,
-    //     rollSum: 0,
-    //     index: 0,
-    //     gameEnd: 29
-    // };
+    var gameData = {
+        players: ["player1", "player2"],
+        score: [0, 0],
+        roll: 0,
+        currentPlayer: 0,
+        gameEnd: 29
+    };
+
+    //initGame();
 
     // startGame.addEventListener('click', function () {
     //     gameData.index = Math.round(Math.random());
@@ -87,48 +92,69 @@
 
     // }
 
-    // function checkWinningCondition() {
-    //     if (gameData.score[gameData.index] > gameData.gameEnd) {
-    //         score.innerHTML = `<h2>${gameData.players[gameData.index]} wins with
-    //                                ${gameData.score[gameData.index]} points!</h2>`;
-    //         actionArea.innerHTML = "";
-    //         document.getElementById('quit').innerHTML = "Start a New Game?";
-    //     } else {
-    //         showCurrentScore();
-    //     }
+    function checkWinningCondition() {
+        if (gameData.score[gameData.index] > gameData.gameEnd) {
+            console.log(
+                `${gameData.players[gameData.index]} wins with
+                ${gameData.score[gameData.index]} points!`
+            );
+            
+        } else {
+            updateScores();
+        }
+    }
 
+    // Display the players's scores
+    function updateScores() {
+        player1Score.textContent = gameData.score[0];
+        player2Score.textContent = gameData.score[1];
+    }
 
-    // }
+    player1Zone.addEventListener("mouseover", function() {
+        player1Zone.style.backgroundColor = "rgba(255, 255, 255, 0.239)";
+        document.getElementById("player_1_name").style.opacity = "0.1";
+        document.getElementById("player_1_score").style.opacity = "0.1";
+        document.getElementById("player_1_pass").classList = "pass visible";
+    });
 
-    // function showCurrentScore() {
-    //     score.innerHTML = `<p>The score is currently <strong>${gameData.players[0]}
-    //                                : ${gameData.score[0]}</strong> and <strong>${gameData.players[1]}
-    //                                : ${gameData.score[1]}</strong></p>`
-    // }
+    player1Zone.addEventListener("mouseout", function() {
+        player1Zone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
+        document.getElementById("player_1_name").style.opacity = "1";
+        document.getElementById("player_1_score").style.opacity = "1";
+        document.getElementById("player_1_pass").classList = "pass hidden";
+    });
 
-    // Hide the zones
-    // Blink the obj's
-    // Start rolling animations
-    // Update the rolling value on dice zone
-    // Return the rolling value
+    player2Zone.addEventListener("mouseover", function() {
+        player2Zone.style.backgroundColor = "rgba(255, 255, 255, 0.239)";
+        document.getElementById("player_2_name").style.opacity = "0.1";
+        document.getElementById("player_2_score").style.opacity = "0.1";
+        document.getElementById("player_2_pass").classList = "pass visible";
+    });
+
+    player2Zone.addEventListener("mouseout", function() {
+        player2Zone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
+        document.getElementById("player_2_name").style.opacity = "1";
+        document.getElementById("player_2_score").style.opacity = "1";
+        document.getElementById("player_2_pass").classList = "pass hidden";
+    });
+
 
     // <<<<<<<<<<<<<<<<<ROLLING DICE ANIMATION START>>>>>>>>>>>>>>>>>>>>
-    let dice_zone = document.getElementById("dice_zone");
 
-    dice_zone.addEventListener("mouseover", function() {
-        dice_zone.classList = "showing";
-        dice_zone.style.backgroundColor = "rgba(255, 255, 255, 0.239)";
+    diceZone.addEventListener("mouseover", function() {
+        diceZone.classList = "showing";
+        diceZone.style.backgroundColor = "rgba(255, 255, 255, 0.239)";
         document.getElementById("roll").classList = "visible";
         document.getElementById("dice-grid").style.opacity = "0.2";
     });
-    
-    dice_zone.addEventListener("mouseout", function() {
-        dice_zone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
+
+    diceZone.addEventListener("mouseout", function() {
+        diceZone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
         document.getElementById("roll").classList = "hidden";
         document.getElementById("dice-grid").style.opacity = "1";
     });
 
-    dice_zone.addEventListener("click", function (event) {
+    diceZone.addEventListener("click", function (event) {
         event.preventDefault();
             roll()
     });
@@ -136,8 +162,8 @@
     window.addEventListener("keyup", function (event) {
         event.preventDefault();
         if (event.code == "Space") {
-            dice_zone.classList = "showing";
-            dice_zone.style.backgroundColor = "rgba(255, 255, 255, 0.239)";
+            diceZone.classList = "showing";
+            diceZone.style.backgroundColor = "rgba(255, 255, 255, 0.239)";
             document.getElementById("roll").classList = "visible";
             document.getElementById("dice-grid").style.opacity = "0.2";
             setTimeout(function(){
@@ -149,12 +175,10 @@
 
     function roll() {
         // Hide the zones
-        const player_zones = document.getElementById("players_zones");
-        const dice_zone = document.getElementById("dice_zone");
         const dice_roll = Math.floor(Math.random() * 11);
 
-        player_zones.classList = "hidden";
-        dice_zone.classList = "hidden";
+        playerZones.classList = "hidden";
+        diceZone.classList = "hidden";
 
         initDice();
 
@@ -164,7 +188,8 @@
         }
 
         setTimeout(function () {
-            displayDiceRoll(dice_roll)
+            displayDiceRoll(dice_roll);
+            gameData.roll = dice_roll+1;
         }, 2000);
 
     }
@@ -336,8 +361,9 @@
             for (let d of diceDisplay) {
                 d.classList = "dice showing";
             }
-            dice_zone.classList = "showing";
-            dice_zone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
+            playerZones.classList = "showing";
+            diceZone.classList = "showing";
+            diceZone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
             document.getElementById("roll").classList = "hidden";
             document.getElementById("dice-grid").style.opacity = "1";
         }, 1799);

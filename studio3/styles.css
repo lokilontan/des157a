@@ -51,6 +51,16 @@ header img{
     font-size: 100px;
     top: 10%;
     color: white;
+    transition: 0.2s;
+}
+
+.pass{
+    position: absolute;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 200px;
+    top: 25%;
+    left: 2%;
+    color: white;
 }
 
 .score{
@@ -59,7 +69,7 @@ header img{
     font-size: 200px;
     top: 13%;
     color: white;
-
+    transition: 0.2s;
 }
 
 #player_1_zone{
@@ -70,6 +80,7 @@ header img{
     font-weight: 300;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
     /* background-color: rgba(255, 255, 255, 0.239); */
 
 }
@@ -79,9 +90,11 @@ header img{
     position: relative;
     width:50%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.239);
+    /* background-color: rgba(255, 255, 255, 0.239); */
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+
 
 }
 
@@ -376,12 +389,15 @@ button {
 .hidden {
     visibility: hidden;
     opacity: 0;
+    transition: 0.2s;
 
 }
 
 .showing {
     visibility: visible;
     opacity: 1;
+    transition: 0.2s;
+
 }
 
 #gamecontrol, #score {
