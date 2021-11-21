@@ -36,7 +36,7 @@
         updateUI();
     }
 
-    function updateUI(){
+    function updateUI() {
         player1Name.textContent = gameData.players[0];
         player1Score.textContent = gameData.score[0];
         player2Name.textContent = gameData.players[1];
@@ -116,7 +116,7 @@
 
     document.getElementById("info").addEventListener("click", function () {
         infoOverLay.classList = "showing";
-        document.getElementById("continue-button").addEventListener("click", function() {
+        document.getElementById("continue-button").addEventListener("click", function () {
             infoOverLay.classList = "hidden";
         });
 
@@ -245,6 +245,42 @@
 
     window.addEventListener("keyup", function (event) {
         event.preventDefault();
+        if (event.code == "Enter") {
+            if (gameData.currentPlayer === 0) {
+                player1Zone.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+                player1Zone.style.border = "5px solid rgba(0, 60, 42.7, 1)";
+                player1Name.style.opacity = "0.1";
+                player1Score.style.opacity = "0.1";
+                document.getElementById("player_1_pass").classList = "pass visible";
+            } else {
+                player2Zone.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+                player2Zone.style.border = "5px solid rgba(0, 60, 42.7, 1)";
+                player2Name.style.opacity = "0.1";
+                player2Score.style.opacity = "0.1";
+                document.getElementById("player_2_pass").classList = "pass visible";
+            }
+            setTimeout(function () {
+                if (gameData.currentPlayer === 0) {
+                    player1Zone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
+                    player1Zone.style.border = "5px solid rgba(0, 60, 42.7, 0.0)";
+                    player1Name.style.opacity = "1";
+                    player1Score.style.opacity = "1";
+                    document.getElementById("player_1_pass").classList = "pass hidden";
+                } else {
+                    player2Zone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
+                    player2Zone.style.border = "5px solid rgba(0, 60, 42.7, 0)";
+                    player2Name.style.opacity = "1";
+                    player2Score.style.opacity = "1";
+                    document.getElementById("player_2_pass").classList = "pass hidden";
+                }
+                switchPlayers();
+            }, 200);
+
+        }
+    });
+
+    window.addEventListener("keyup", function (event) {
+        event.preventDefault();
         if (event.code == "Space") {
             diceZone.classList = "showing";
             diceZone.style.backgroundColor = "rgba(255, 255, 255, 0.239)";
@@ -252,7 +288,7 @@
             document.getElementById("dice-grid").style.opacity = "0.2";
             setTimeout(function () {
                 roll();
-            }, 100);
+            }, 200);
 
         }
     });
