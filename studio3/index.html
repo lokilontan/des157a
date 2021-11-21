@@ -25,7 +25,6 @@
 
     <link rel="shortcut icon" type="image/jpg" href="images/pig_favicon.png" />
 
-
 </head>
 
 
@@ -35,11 +34,16 @@
         <header>
             <img src="images/pig_favicon.png" alt="pig icon">
             <h1>Game of Pig</h1>
+            <div id="options">
+                <img id="info" src="images/info.png" class="func" alt="info icon">
+                <img id="settings" src="images/settings.png" class="func" alt="settings icon">
+                <img id="exit" src="images/close.png" class="func" alt="close icon">
+                <div>
         </header>
 
         <section id="welcome" class="showing">
             <p>Welcome to the Game of Pig!</p>
-            <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the
+            <p>There are two players. The player whose turn it is, rolls the dice. The total of the roll is added to the
                 current player's score, unless a die comes up as a “one”. If this happens, this player's turn is over,
                 and it is the other player’s turn. After each roll, the current player can either roll again, (assuming
                 a “one” was not rolled) or if the current player feels that luck is running thin, they can pass to the
@@ -77,7 +81,33 @@
 
             <p class="hidden" id="error">.</p>
 
-            <button id="play-button" class="button">Play</button>
+            <button id="return-button" class="button hidden">Return</button>
+            <button id="play-button" class="button showing">Play</button>
+        </section>
+
+        <section id="information" class="hidden">
+            <p>How to play?</p>
+            <ul>
+                <li>There are two players</li>
+                <li>The player whose turn it is, rolls the dice</li>
+                <li>Earn more points from each roll, unless either die comes up as a “one”</li>
+                <li>If this happens, swithc players</li>
+                <li>Current player can either roll again, or they can pass</li>
+                <li>To win earn 30 points. You can change it in settings</li>
+                <li>If a player rolls two “ones” (snake eyes), the game starts over</li>
+            </ul>
+            <p>Use your <span class="highlight">mouse</span> to play! Or...</p>
+            <p><span class="highlight">[Spacebar]</span> to ROLL </p>
+            <p><span class="highlight">[Return]</span> to PASS</p>
+            <p><span class="font-flash">Highlighted</span> is the active player</p>
+            <button id="continue-button" class="button">Continue</button>
+        </section>
+
+        <section id="game-over" class="hidden">
+            <p>Congratulations! Game of Pig is over!</p>
+            <p>Player <span id="winner"></span> won!</p>
+            <p><img src="images/pig_favicon.png" alt="pig icon"></p>
+            <button id="again-button" class="button">Play Again</button>
         </section>
 
         <div id="players_zones">

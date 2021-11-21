@@ -8,6 +8,8 @@
     // var game = document.getElementById('game');
     var welcomeOverlay = document.getElementById("welcome");
     var setupOverlay = document.getElementById("setup");
+    var gameOverLay = document.getElementById("game-over");
+    var infoOverLay = document.getElementById("information");
     var playerZones = document.getElementById("players_zones");
     var player1Score = document.getElementById('player_1_score');
     var player1Name = document.getElementById("player_1_name");
@@ -30,7 +32,11 @@
 
     function initGame() {
         gameData.currentPlayer = Math.floor(Math.random() * 2);
-        activateCurrentPlayer(gameData.currentPlayer);
+        activateCurrentPlayer();
+        updateUI();
+    }
+
+    function updateUI(){
         player1Name.textContent = gameData.players[0];
         player1Score.textContent = gameData.score[0];
         player2Name.textContent = gameData.players[1];
@@ -58,6 +64,8 @@
                 `${gameData.players[gameData.currentPlayer]} wins with
                 ${gameData.score[gameData.currentPlayer]} points!`
             );
+            gameOverLay.classList = "showing";
+            document.getElementById("winner").textContent = gameData.players[gameData.currentPlayer];
         }
         updateScores();
     }
@@ -68,12 +76,58 @@
         player2Score.textContent = gameData.score[1];
     }
 
-    document.getElementById("next-button").addEventListener("click", function(){
+    document.getElementById("exit").addEventListener("click", function () {
+        window.location.replace("https://lokilontan.github.io/des157a/");
+    });
+
+    document.getElementById("settings").addEventListener("click", function () {
+        setupOverlay.classList = "showing";
+        document.getElementById("play-button").classList = "button hidden";
+        document.getElementById("return-button").classList = "button showing";
+
+        document.getElementById("player-1-name-in").value = gameData.players[0];
+        document.getElementById("player-2-name-in").value = gameData.players[1];
+        document.getElementById("game-point-in").value = gameData.gameEnd;
+        document.getElementById("sound-in").checked = gameData.soundOn;
+
+        document.getElementById("return-button").addEventListener("click", function () {
+            let player1NameIn = document.getElementById("player-1-name-in").value;
+            let player2NameIn = document.getElementById("player-2-name-in").value;
+            let gamePointIn = document.getElementById("game-point-in").value;
+            let soundIn = document.getElementById("sound-in").checked;
+
+            console.log(player1NameIn, player2NameIn, gamePointIn, soundIn)
+
+            if (player1NameIn) {
+                gameData.players[0] = player1NameIn;
+            }
+            if (player2NameIn) {
+                gameData.players[1] = player2NameIn;
+            }
+            if (gamePointIn) {
+                gameData.gameEnd = gamePointIn;
+            }
+            gameData.soundOn = soundIn;
+            updateUI()
+            setupOverlay.classList = "hidden";
+            document.getElementById("return-button").classList = "button hidden";
+        });
+    });
+
+    document.getElementById("info").addEventListener("click", function () {
+        infoOverLay.classList = "showing";
+        document.getElementById("continue-button").addEventListener("click", function() {
+            infoOverLay.classList = "hidden";
+        });
+
+    });
+
+    document.getElementById("next-button").addEventListener("click", function () {
         welcomeOverlay.classList = "hidden";
         setupOverlay.classList = "showing";
     });
 
-    document.getElementById("play-button").addEventListener("click", function(){
+    document.getElementById("play-button").addEventListener("click", function () {
         let player1NameIn = document.getElementById("player-1-name-in").value;
         let player2NameIn = document.getElementById("player-2-name-in").value;
         let gamePointIn = document.getElementById("game-point-in").value;
@@ -91,8 +145,15 @@
         gameData.soundOn = soundIn;
 
         initGame();
-        
+
         setupOverlay.classList = "hidden";
+        document.getElementById("play-button").classList = "button hidden";
+    });
+
+    document.getElementById("again-button").addEventListener("click", function () {
+        gameOverLay.classList = "hidden";
+        gameData.score = [0, 0];
+        initGame();
     });
 
     player1Zone.addEventListener("click", function () {
@@ -248,12 +309,14 @@
         console.log("Oh snap! Snake eyes!");
         gameData.score[gameData.currentPlayer] = 0;
         gameData.currentPlayer ? (gameData.currentPlayer = 0) : (gameData.currentPlayer = 1);
+        activateCurrentPlayer();
         //show the current score
         updateScores();
     }
 
     function switchPlayers() {
         gameData.currentPlayer ? (gameData.currentPlayer = 0) : (gameData.currentPlayer = 1);
+        activateCurrentPlayer();
         console.log(
             `Sorry, one of your rolls was a one, switching to 
             ${gameData.players[gameData.currentPlayer]}`
