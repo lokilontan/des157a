@@ -111,6 +111,42 @@
     // Start rolling animations
     // Update the rolling value on dice zone
     // Return the rolling value
+
+    // <<<<<<<<<<<<<<<<<ROLLING DICE ANIMATION START>>>>>>>>>>>>>>>>>>>>
+    let dice_zone = document.getElementById("dice_zone");
+
+    dice_zone.addEventListener("mouseover", function() {
+        dice_zone.classList = "showing";
+        dice_zone.style.backgroundColor = "rgba(255, 255, 255, 0.239)";
+        document.getElementById("roll").classList = "visible";
+        document.getElementById("dice-grid").style.opacity = "0.2";
+    });
+    
+    dice_zone.addEventListener("mouseout", function() {
+        dice_zone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
+        document.getElementById("roll").classList = "hidden";
+        document.getElementById("dice-grid").style.opacity = "1";
+    });
+
+    dice_zone.addEventListener("click", function (event) {
+        event.preventDefault();
+            roll()
+    });
+
+    window.addEventListener("keyup", function (event) {
+        event.preventDefault();
+        if (event.code == "Space") {
+            dice_zone.classList = "showing";
+            dice_zone.style.backgroundColor = "rgba(255, 255, 255, 0.239)";
+            document.getElementById("roll").classList = "visible";
+            document.getElementById("dice-grid").style.opacity = "0.2";
+            setTimeout(function(){
+                roll();
+            },100);
+            
+        }
+    });
+
     function roll() {
         // Hide the zones
         const player_zones = document.getElementById("players_zones");
@@ -133,16 +169,6 @@
 
     }
 
-    window.addEventListener("keyup", function (event) {
-        event.preventDefault();
-
-        if (event.code == "Space") {
-
-            roll()
-        }
-
-    });
-
     // put grid back in case it was moved somewhere
     // (for example: one is not in the center, so I moved it there)
     function initDice() {
@@ -153,8 +179,11 @@
         let diceGrid = document.getElementById("dice-grid");
         diceGrid.style.top = "545px";
         diceGrid.style.left = "43.75%";
+        diceGrid.style.opacity = "1";
+
     }
 
+    // blinks all green spots and random dice dots
     function blinkObjs() {
 
         let objs = document.querySelectorAll(".obj");
@@ -175,6 +204,7 @@
         }, 200);
     }
 
+    // displays the right dice
     function displayDiceRoll(dice_roll) {
         let dices = document.querySelectorAll(".dice");
         let diceGrid = document.getElementById("dice-grid");
@@ -289,6 +319,7 @@
         blinkDice(diceDisplay);
     }
 
+    // blinks the right dice and finally displays it
     function blinkDice(diceDisplay) {
         let blinkDiceInterval = setInterval(function () {
             for (let d of diceDisplay) {
@@ -305,7 +336,11 @@
             for (let d of diceDisplay) {
                 d.classList = "dice showing";
             }
+            dice_zone.classList = "showing";
+            dice_zone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
+            document.getElementById("roll").classList = "hidden";
+            document.getElementById("dice-grid").style.opacity = "1";
         }, 1799);
-        
     }
+    // <<<<<<<<<<<<<<<<<ROLLING DICE ANIMATION END>>>>>>>>>>>>>>>>>>>>
 }());

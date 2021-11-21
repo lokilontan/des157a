@@ -92,6 +92,7 @@ header img{
     width: 15.5%;
     height: 27.5%;
     text-align: center;
+    cursor: pointer;
 }
 
 #roll{
@@ -335,7 +336,8 @@ button {
     background-color: white;
     border-radius: 50%;
     background-color: white;
-    box-shadow: white 0px 0px 6px 2px ;
+    box-shadow: white 0px 0px 6px 2px;
+    opacity: 1;
 }
 
 #dice-grid{
