@@ -164,6 +164,7 @@
         let player2NameIn = document.getElementById("player-2-name-in").value;
         let gamePointIn = document.getElementById("game-point-in").value;
         let soundIn = document.getElementById("sound-in").checked;
+        document.getElementById("play-button").classList = "button showing";
 
         if (player1NameIn) {
             gameData.players[0] = player1NameIn;
