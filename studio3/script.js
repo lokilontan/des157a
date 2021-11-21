@@ -3,9 +3,6 @@
 
     console.log("reading JS...");
 
-    // var startGame = document.getElementById('startgame');
-    // var gameControl = document.getElementById('gamecontrol');
-    // var game = document.getElementById('game');
     var welcomeOverlay = document.getElementById("welcome");
     var setupOverlay = document.getElementById("setup");
     var gameOverLay = document.getElementById("game-over");
@@ -19,7 +16,11 @@
     var player1Zone = document.getElementById('player_1_zone');
     var player2Zone = document.getElementById('player_2_zone');
 
-    // var actionArea = document.getElementById('actions');
+    const soundtrack = new Audio('media/soundtrack.mp3');
+    const buttonSound = new Audio('media/button.mp3');
+    const passSound = new Audio('media/pass.mp3');
+    const rollSound = new Audio('media/roll.mp3');
+    const winSound = new Audio('media/win.mp3');
 
     var gameData = {
         players: ["player1", "player2"],
@@ -34,6 +35,9 @@
         gameData.currentPlayer = Math.floor(Math.random() * 2);
         activateCurrentPlayer();
         updateUI();
+        if (gameData.soundOn) {
+            soundtrack.play();
+        }
     }
 
     function updateUI() {
@@ -66,6 +70,10 @@
             );
             gameOverLay.classList = "showing";
             document.getElementById("winner").textContent = gameData.players[gameData.currentPlayer];
+            if (gameData.soundOn) {
+                soundtrack.pause();
+                winSound.play();
+            }
         }
         updateScores();
     }
@@ -76,8 +84,17 @@
         player2Score.textContent = gameData.score[1];
     }
 
+    soundtrack.addEventListener("ended", function(){
+        if (gameData.soundOn) {
+            soundtrack.play();
+        }
+    });
+
     document.getElementById("exit").addEventListener("click", function () {
         window.location.replace("https://lokilontan.github.io/des157a/");
+        if (gameData.soundOn) {
+            buttonSound.play();
+        }
     });
 
     document.getElementById("settings").addEventListener("click", function () {
@@ -111,20 +128,35 @@
             updateUI()
             setupOverlay.classList = "hidden";
             document.getElementById("return-button").classList = "button hidden";
+            if (gameData.soundOn) {
+                buttonSound.play();
+                soundtrack.play();
+            }
         });
+        if (gameData.soundOn) {
+            buttonSound.play();
+        }
     });
 
     document.getElementById("info").addEventListener("click", function () {
         infoOverLay.classList = "showing";
         document.getElementById("continue-button").addEventListener("click", function () {
             infoOverLay.classList = "hidden";
+            if (gameData.soundOn) {
+                buttonSound.play();
+            }
         });
-
+        if (gameData.soundOn) {
+            buttonSound.play();
+        }
     });
 
     document.getElementById("next-button").addEventListener("click", function () {
         welcomeOverlay.classList = "hidden";
         setupOverlay.classList = "showing";
+        if (gameData.soundOn) {
+            buttonSound.play();
+        }
     });
 
     document.getElementById("play-button").addEventListener("click", function () {
@@ -148,12 +180,19 @@
 
         setupOverlay.classList = "hidden";
         document.getElementById("play-button").classList = "button hidden";
+        if (gameData.soundOn) {
+            buttonSound.play();
+        }
+
     });
 
     document.getElementById("again-button").addEventListener("click", function () {
         gameOverLay.classList = "hidden";
         gameData.score = [0, 0];
         initGame();
+        if (gameData.soundOn) {
+            buttonSound.play();
+        }
     });
 
     player1Zone.addEventListener("click", function () {
@@ -165,6 +204,9 @@
             player1Name.style.opacity = "1";
             player1Score.style.opacity = "1";
             document.getElementById("player_1_pass").classList = "pass hidden";
+            if (gameData.soundOn) {
+                passSound.play();
+            }
         }
     });
 
@@ -177,6 +219,9 @@
             player2Name.style.opacity = "1";
             player2Score.style.opacity = "1";
             document.getElementById("player_2_pass").classList = "pass hidden";
+            if (gameData.soundOn) {
+                passSound.play();
+            }
         }
     });
 
@@ -273,6 +318,9 @@
                     player2Score.style.opacity = "1";
                     document.getElementById("player_2_pass").classList = "pass hidden";
                 }
+                if (gameData.soundOn) {
+                    passSound.play();
+                }
                 switchPlayers();
             }, 200);
 
@@ -296,6 +344,9 @@
     function roll() {
         // Hide the zones
         const dice_roll = Math.floor(Math.random() * 11);
+        if (gameData.soundOn) {
+            rollSound.play();
+        }
 
         playerZones.classList = "hidden";
         diceZone.classList = "hidden";
@@ -311,6 +362,10 @@
             displayDiceRoll(dice_roll);
             gameData.roll = dice_roll + 1;
             updateState();
+            if (gameData.soundOn) {
+                rollSound.pause();
+            }
+
         }, 2000);
 
     }
