@@ -95,10 +95,23 @@
     // }
 
     function initGame() {
+        gameData.currentPlayer = Math.floor(Math.random() * 2);
+        activateCurrentPlayer(gameData.currentPlayer);
         player1Name.textContent = gameData.players[0];
         player1Score.textContent = gameData.score[0];
         player2Name.textContent = gameData.players[1];
         player2Score.textContent =gameData.score[1];
+    }
+
+    function activateCurrentPlayer(currentPlayer) {
+        if (currentPlayer === 0) {
+            player1Name.classList = "name font-flash";
+            player1Score.classList = "score font-flash";
+
+        } else {
+            player2Name.classList = "name font-flash"
+            player2Score.classList = "score font-flash";
+        }
     }
 
     function checkWinningCondition() {

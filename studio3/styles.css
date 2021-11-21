@@ -53,6 +53,8 @@ header img{
     top: 10%;
     color: white;
     transition: 0.2s;
+    text-shadow: 0 0 5px white, 0 0 12px #00996d;
+
 }
 
 .pass{
@@ -62,6 +64,8 @@ header img{
     top: 25%;
     left: 2%;
     color: white;
+    text-shadow: 0 0 5px white, 0 0 12px #00996d;
+
 }
 
 .score{
@@ -71,7 +75,31 @@ header img{
     top: 13%;
     color: white;
     transition: 0.2s;
+    text-shadow: 0 0 5px white, 0 0 12px #00996d;
 }
+
+.font-flash {
+    animation-name: font-flash;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes font-flash {
+    0%{
+        color: white;
+        text-shadow: 0 0 5px white, 0 0 12px white;
+    }
+    50%{
+        color: #00996d;
+        text-shadow: 0 0 5px white, 0 0 12px #00996d;
+    }
+    100%{
+        color: white;
+        text-shadow: 0 0 5px white, 0 0 12px white;
+
+    }
+}
+
 
 #player_1_zone{
     z-index: 1;
