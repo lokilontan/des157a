@@ -27,103 +27,38 @@
 
     initGame();
 
-    // startGame.addEventListener('click', function () {
-    //     gameData.index = Math.round(Math.random());
-    //     gameControl.innerHTML = "<h2>The Game Has Started</h2>";
-    //     gameControl.innerHTML += "<button id='quit'>Wanna Quit?</button>";
-    //     document.getElementById('quit').addEventListener('click', function () {
-    //         location.reload();
-    //     });
-    //     console.log('set up the turn');
-
-    //     setUpTurn();
-
-    // });
-
-    // function setUpTurn() {
-    //     game.innerHTML = `<p>Roll the dice for ${gameData.players[gameData.index]}</p>`
-    //     actionArea.innerHTML = `<button id="roll">Roll the Dice!</button>`;
-    //     document.getElementById('roll').addEventListener('click', function () {
-    //         console.log("roll the dice!");
-    //         throwDice();
-
-    //     });
-    // }
-
-    // function throwDice() {
-    //     actionArea.innerHTML = '';
-    //     gameData.roll1 = Math.floor(Math.random() * 6) + 1;
-    //     gameData.roll2 = Math.floor(Math.random() * 6) + 1;
-    //     game.innerHTML = `<p>Roll the dice for the ${gameData.players[gameData.index]}</p>`
-    //     game.innerHTML += `<img src="./images/${gameData.dice[gameData.roll1 - 1]}">
-    //                            <img src="./images/${gameData.dice[gameData.roll2 - 1]}">`;
-    //     gameData.rollSum = gameData.roll1 + gameData.roll2;
-
-    //     // if two 1's are rolled
-    //     if (gameData.rollSum === 2) {
-    //         game.innerHTML += `<p>Oh snap! Snake eyes!</p>`;
-    //         gameData.score[gameData.index] = 0;
-    //         gameData.index ? (gameData.index = 0) : (gameData.index = 1)
-    //         //show the current score
-    //         showCurrentScore();
-    //         setTimeout(setUpTurn, 2000);
-    //     }
-
-    //     // if either is 1
-    //     else if (gameData.roll1 === 1 || gameData.roll2 === 1) {
-    //         //switch player
-    //         gameData.index ? (gameData.index = 0) : (gameData.index = 1);
-    //         game.innerHTML += `<p>Sorry, one of your rolls was a one, switching to 
-    //                                ${gameData.players[gameData.index]}</p>`;
-    //         setTimeout(setUpTurn, 2000);
-    //     }
-
-    //     // proceed
-    //     else {
-    //         gameData.score[gameData.index] += gameData.rollSum;
-    //         actionArea.innerHTML = '<button id="rollagain">Roll Again</button> or <button id="pass">Pass</button>'
-    //         document.getElementById("rollagain").addEventListener('click', function () {
-    //             setUpTurn();
-    //         });
-    //         document.getElementById("pass").addEventListener('click', function () {
-    //             gameData.index ? (gameData.index = 0) : (gameData.index = 1);
-    //             setUpTurn();
-    //         })
-    //         checkWinningCondition();
-    //     }
-
-    // }
-
     function initGame() {
         gameData.currentPlayer = Math.floor(Math.random() * 2);
         activateCurrentPlayer(gameData.currentPlayer);
         player1Name.textContent = gameData.players[0];
         player1Score.textContent = gameData.score[0];
         player2Name.textContent = gameData.players[1];
-        player2Score.textContent =gameData.score[1];
+        player2Score.textContent = gameData.score[1];
     }
 
-    function activateCurrentPlayer(currentPlayer) {
-        if (currentPlayer === 0) {
+    function activateCurrentPlayer() {
+        if (gameData.currentPlayer === 0) {
             player1Name.classList = "name font-flash";
             player1Score.classList = "score font-flash";
+            player2Name.classList = "name"
+            player2Score.classList = "score";
 
         } else {
             player2Name.classList = "name font-flash"
             player2Score.classList = "score font-flash";
+            player1Name.classList = "name";
+            player1Score.classList = "score";
         }
     }
 
     function checkWinningCondition() {
-        if (gameData.score[gameData.index] > gameData.gameEnd) {
-            console.log(
-                `${gameData.players[gameData.index]} wins with
-                ${gameData.score[gameData.index]} points!`
+        if (gameData.score[gameData.currentPlayer] > gameData.gameEnd) {
+            console.log( // DO SOMETHING HERE AFTER A PLAYER WINS
+                `${gameData.players[gameData.currentPlayer]} wins with
+                ${gameData.score[gameData.currentPlayer]} points!`
             );
-
-        } else {
-            updateScores();
         }
+        updateScores();
     }
 
     // Display the players's scores
@@ -131,6 +66,30 @@
         player1Score.textContent = gameData.score[0];
         player2Score.textContent = gameData.score[1];
     }
+
+    player1Zone.addEventListener("click", function () {
+        if (gameData.currentPlayer === 0) {
+            switchPlayers();
+            activateCurrentPlayer();
+            player1Zone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
+            player1Zone.style.border = "5px solid rgba(0, 60, 42.7, 0.0)";
+            player1Name.style.opacity = "1";
+            player1Score.style.opacity = "1";
+            document.getElementById("player_1_pass").classList = "pass hidden";
+        }
+    });
+
+    player2Zone.addEventListener("click", function () {
+        if (gameData.currentPlayer === 1) {
+            switchPlayers();
+            activateCurrentPlayer();
+            player2Zone.style.backgroundColor = "rgba(255, 255, 255, 0.0)";
+            player2Zone.style.border = "5px solid rgba(0, 60, 42.7, 0)";
+            player2Name.style.opacity = "1";
+            player2Score.style.opacity = "1";
+            document.getElementById("player_2_pass").classList = "pass hidden";
+        }
+    });
 
     player1Zone.addEventListener("mouseover", function () {
         if (gameData.currentPlayer === 0) {
@@ -226,6 +185,7 @@
         setTimeout(function () {
             displayDiceRoll(dice_roll);
             gameData.roll = dice_roll + 1;
+            updateState();
         }, 2000);
 
     }
@@ -241,7 +201,35 @@
         diceGrid.style.top = "545px";
         diceGrid.style.left = "43.75%";
         diceGrid.style.opacity = "1";
+    }
 
+    function updateState() {
+        if (gameData.roll === 2) {
+            snakeEyes();
+        }
+        else if (gameData.roll === 1) {
+            switchPlayers();
+        }
+        else {
+            gameData.score[gameData.currentPlayer] += gameData.roll;
+            checkWinningCondition();
+        }
+    }
+
+    function snakeEyes() {
+        console.log("Oh snap! Snake eyes!");
+        gameData.score[gameData.currentPlayer] = 0;
+        gameData.currentPlayer ? (gameData.currentPlayer = 0) : (gameData.currentPlayer = 1);
+        //show the current score
+        updateScores();
+    }
+
+    function switchPlayers() {
+        gameData.currentPlayer ? (gameData.currentPlayer = 0) : (gameData.currentPlayer = 1);
+        console.log(
+            `Sorry, one of your rolls was a one, switching to 
+            ${gameData.players[gameData.currentPlayer]}`
+        );
     }
 
     // blinks all green spots and random dice dots
@@ -265,7 +253,7 @@
         }, 200);
     }
 
-    // displays the right dice
+    // displays the rolled dice
     function displayDiceRoll(dice_roll) {
         let dices = document.querySelectorAll(".dice");
         let diceGrid = document.getElementById("dice-grid");
@@ -380,7 +368,7 @@
         blinkDice(diceDisplay);
     }
 
-    // blinks the right dice and finally displays it
+    // blinks the rolled dice and finally displays it
     function blinkDice(diceDisplay) {
         let blinkDiceInterval = setInterval(function () {
             for (let d of diceDisplay) {
