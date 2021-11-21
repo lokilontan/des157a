@@ -111,7 +111,7 @@
     }
 
     player1Zone.addEventListener("mouseover", function() {
-        player1Zone.style.backgroundColor = "rgba(255, 255, 255, 0.239)";
+        player1Zone.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
         document.getElementById("player_1_name").style.opacity = "0.1";
         document.getElementById("player_1_score").style.opacity = "0.1";
         document.getElementById("player_1_pass").classList = "pass visible";
