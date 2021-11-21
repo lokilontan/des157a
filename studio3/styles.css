@@ -468,22 +468,24 @@ button {
 .in{
     margin-left: 1%;
     margin-top: 1%;
-    height: 1.7vh;
+    height: 50px;
     border: none;
-    border-bottom: 2px solid #00996d;
+    border-bottom: 3px solid #00996d;
     background-color: black;
     color: white;
 }
 
 input[type=text]:focus {
     outline: none !important;
-    border:1px solid #00996d;
+    height: 50px;
+
+    border:3px solid #00996d;
     box-shadow: 0 0 10px white;
   }
 
 #game-point-in{
     margin-left: 4.45%;
-    width: 1.5vw;
+    width: 70px;
 }
 
 /* Customize the label (the container) */
