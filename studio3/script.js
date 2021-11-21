@@ -6,6 +6,8 @@
     // var startGame = document.getElementById('startgame');
     // var gameControl = document.getElementById('gamecontrol');
     // var game = document.getElementById('game');
+    var welcomeOverlay = document.getElementById("welcome");
+    var setupOverlay = document.getElementById("setup");
     var playerZones = document.getElementById("players_zones");
     var player1Score = document.getElementById('player_1_score');
     var player1Name = document.getElementById("player_1_name");
@@ -22,10 +24,9 @@
         score: [0, 0],
         roll: 0,
         currentPlayer: 0,
-        gameEnd: 29
+        gameEnd: 29,
+        soundOn: true
     };
-
-    initGame();
 
     function initGame() {
         gameData.currentPlayer = Math.floor(Math.random() * 2);
@@ -66,6 +67,33 @@
         player1Score.textContent = gameData.score[0];
         player2Score.textContent = gameData.score[1];
     }
+
+    document.getElementById("next-button").addEventListener("click", function(){
+        welcomeOverlay.classList = "hidden";
+        setupOverlay.classList = "showing";
+    });
+
+    document.getElementById("play-button").addEventListener("click", function(){
+        let player1NameIn = document.getElementById("player-1-name-in").value;
+        let player2NameIn = document.getElementById("player-2-name-in").value;
+        let gamePointIn = document.getElementById("game-point-in").value;
+        let soundIn = document.getElementById("sound-in").checked;
+
+        if (player1NameIn) {
+            gameData.players[0] = player1NameIn;
+        }
+        if (player2NameIn) {
+            gameData.players[1] = player2NameIn;
+        }
+        if (gamePointIn) {
+            gameData.gameEnd = gamePointIn;
+        }
+        gameData.soundOn = soundIn;
+
+        initGame();
+        
+        setupOverlay.classList = "hidden";
+    });
 
     player1Zone.addEventListener("click", function () {
         if (gameData.currentPlayer === 0) {

@@ -37,6 +37,45 @@
             <h1>Game of Pig</h1>
         </header>
 
+        <section id="welcome" class="showing">
+            <p>Welcome to the Game of Pig!</p>
+            <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the
+                current player's score, unless a die comes up as a “one”. If this happens, this player's turn is over,
+                and it is the other player’s turn. After each roll, the current player can either roll again, (assuming
+                a “one” was not rolled) or if the current player feels that luck is running thin, they can pass to the
+                other player. The first player to get 30 points or higher wins.</p>
+            <p>Oh, and if you roll two “ones” (snake eyes), your current score gets zeroed out. So don’t do that.</p>
+            <button id="next-button" class="button">Next</button>
+        </section>
+
+        <section id="setup" class="hidden">
+            <p>
+                <label id="player-1-name-label" for="player-1-name-in">Player 1 Name </label>
+                <input type="text" id="player-1-name-in" class="in" autocomplete="off">
+            </p>
+
+            <p>
+                <label id="player-2-name-label" for="player-2-name-in">Player 2 Name </label>
+                <input type="text" id="player-2-name-in" class="in" autocomplete="off">
+            </p>
+
+            <p>
+                <label id="game-point-label" for="game-point-in">Game Point </label>
+                <input type="text" id="game-point-in" class="in" autocomplete="off">
+            </p>
+
+            <p>
+                <label class="container">Sound
+                    <input type="checkbox" checked="checked" id="sound-in">
+                    <span class="checkmark"></span>
+                </label>
+            </p>
+
+            <p class="hidden" id="error">.</p>
+
+            <button id="play-button" class="button">Play</button>
+        </section>
+
         <div id="players_zones">
             <section id="player_1_zone">
                 <span id="player_1_name" class="name"></span>
