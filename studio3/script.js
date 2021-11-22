@@ -131,6 +131,8 @@
             if (gameData.soundOn) {
                 buttonSound.play();
                 soundtrack.play();
+            } else {
+                soundtrack.play();
             }
         });
         if (gameData.soundOn) {
