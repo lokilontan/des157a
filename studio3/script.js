@@ -132,7 +132,7 @@
                 buttonSound.play();
                 soundtrack.play();
             } else {
-                soundtrack.play();
+                soundtrack.pause();
             }
         });
         if (gameData.soundOn) {
