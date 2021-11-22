@@ -1,0 +1,14 @@
+body {
+    
+}
+
+#canvas {
+    position: relative;
+    background-size: 1366px 768px;
+    width: 1366px;
+    height: 768px;
+    min-width: 800px;
+    overflow: hidden;
+    margin: auto;
+    background-color: green;
+}
