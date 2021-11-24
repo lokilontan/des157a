@@ -25,7 +25,7 @@ figure {
 
 figure img {
     transition:transform 2s ,width 2s;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: linear;
     
 }
 
@@ -393,8 +393,8 @@ article h2{
 
 .hidden {
     visibility: hidden;
-    transition: visibility 1s;
-
+    opacity: 0;
+    transition: all 1.5s;
 }
 
 .showing {
@@ -468,7 +468,13 @@ article h2{
 .state-main {
     position: absolute;
     width: 100%;
-    
+}
+
+.state-heading {
+    width: 220%;
+    transform:translateX(-20%) translateY(-3%);
+    transition: all 100s;
+
 }
 
 .state-engine {
@@ -525,7 +531,7 @@ article h2{
     width: 300%;
     transform: translateX(-8%) translateY(-8%);
 }
-/* ZOOMING-STATES START */
+/* ZOOMING-STATES END */
 
 /* HIGHLIGHTED ZONES START */
 .sect {
@@ -770,6 +776,46 @@ article h2{
 	100% {
 		opacity: 0;
 	}
+}
+
+.fadein {
+	animation-name: fadein;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadein {
+	0%{
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+#dimmed{
+    width: 1366px;
+	height: 768px;
+    min-width: 800px;
+    position: relative;
+    margin: auto;
+	top: 0;
+	left: 0;
+    display: flex;
+    justify-content: space-around;
+	background-color: rgba(0, 0, 0, 0.575);
+    color: rgba(255, 255, 255, 0.657);
+	font-size: 8em;
+	text-align: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+
+#heading {
+	position: fixed;
+    top: 310px;
+    
 }
 
 .line {
