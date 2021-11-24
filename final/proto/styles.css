@@ -1,0 +1,808 @@
+body {
+    background-color: black;
+}
+
+#canvas {
+    width: 1366px;
+    height: 768px;
+    min-width: 800px;
+    margin: auto;
+    display:flex; 
+    flex-direction: column;
+    background-color:black;
+    position: relative;
+}
+
+figure {
+	display: block;
+	margin: 0;
+	width: 1366px;
+    height: 768px;
+	position: fixed;
+	top:0;
+	overflow: hidden;
+}
+
+figure img {
+    transition:transform 2s ,width 2s;
+    transition-timing-function: ease-in-out;
+    
+}
+
+/* ARTICLES START */
+.overlay{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.605);
+    color:white;
+    border-radius: 30px;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    animation-duration: 700ms;
+	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+
+/* engine article stuff */
+#article-engine{
+    width: 400px;
+    height: 580px;
+    right: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.enter-engine {
+    animation-name: enter-engine;
+}
+
+@keyframes enter-engine {
+    0%{
+        right: -50%;
+
+    }
+    100% {
+        right: 8%;
+    }
+}
+
+.exit-engine {
+    animation-name: exit-engine;
+}
+
+@keyframes exit-engine {
+    0%{
+        right: 8%;
+
+    }
+    100% {
+        right: -50%;
+    }
+}
+
+/* tank article stuff */
+#article-tank{
+    width: 400px;
+    height: 300px;
+    left: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.enter-tank {
+    animation-name: enter-tank;
+}
+
+@keyframes enter-tank {
+    0%{
+        left: -50%;
+
+    }
+    100% {
+        left: 8%;
+    }
+}
+
+.exit-tank {
+    animation-name: exit-tank;
+}
+
+@keyframes exit-tank {
+    0%{
+        left: 8%;
+
+    }
+    100% {
+        left: -50%;
+    }
+}
+
+/* exhaust article stuff */
+#article-exhaust{
+    width: 400px;
+    height: 220px;
+    left: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.enter-exhaust {
+    animation-name: enter-exhaust;
+}
+
+@keyframes enter-exhaust {
+    0%{
+        left: -50%;
+
+    }
+    100% {
+        left: 60%;
+    }
+}
+
+.exit-exhaust {
+    animation-name: exit-exhaust;
+}
+
+@keyframes exit-exhaust {
+    0%{
+        left: 60%;
+
+    }
+    100% {
+        left: -50%;
+    }
+}
+
+/* rwheel article stuff */
+#article-rwheel{
+    width: 400px;
+    height: 350px;
+    left: 50%;
+    top: -50%;
+    transform: translateY(-50%);
+}
+
+.enter-rwheel {
+    animation-name: enter-rwheel;
+}
+
+@keyframes enter-rwheel {
+    0%{
+        top: -50%;
+
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+.exit-rwheel {
+    animation-name: exit-rwheel;
+}
+
+@keyframes exit-rwheel {
+    0%{
+        top: 50%;
+
+    }
+    100% {
+        top: -50%;
+    }
+}
+
+/* fwheel article stuff */
+#article-fwheel{
+    width: 400px;
+    height: 350px;
+    left: 2%;
+    top: 150%;
+    transform: translateY(-50%);
+}
+
+.enter-fwheel {
+    animation-name: enter-fwheel;
+}
+
+@keyframes enter-fwheel {
+    0%{
+        top: 150%;
+
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+.exit-fwheel {
+    animation-name: exit-fwheel;
+}
+
+@keyframes exit-fwheel {
+    0%{
+        top: 50%;
+
+    }
+    100% {
+        top: 150%;
+    }
+}
+
+/* brake article stuff */
+#article-brake{
+    width: 430px;
+    height: 340px;
+    left: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.enter-brake {
+    animation-name: enter-brake;
+}
+
+@keyframes enter-brake {
+    0%{
+        left: -50%;
+
+    }
+    100% {
+        left: 3%;
+    }
+}
+
+.exit-brake {
+    animation-name: exit-brake;
+}
+
+@keyframes exit-brake {
+    0%{
+        left: 3%;
+
+    }
+    100% {
+        left: -50%;
+    }
+}
+
+/* headlight article stuff */
+#article-headlight{
+    width: 400px;
+    height: 220px;
+    right: -50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.enter-headlight {
+    animation-name: enter-headlight;
+}
+
+@keyframes enter-headlight {
+    0%{
+        right: -50%;
+
+    }
+    100% {
+        right: 20%;
+    }
+}
+
+.exit-headlight {
+    animation-name: exit-headlight;
+}
+
+@keyframes exit-headlight {
+    0%{
+        right: 20%;
+
+    }
+    100% {
+        right: -50%;
+    }
+}
+
+/* speedometer article stuff */
+#article-speedometer{
+    width: 400px;
+    height: 465px;
+    right: 15%;
+    top: 150%;
+    transform: translateY(-50%);
+}
+
+.enter-speedometer {
+    animation-name: enter-speedometer;
+}
+
+@keyframes enter-speedometer {
+    0%{
+        top: 150%;
+
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+.exit-speedometer {
+    animation-name: exit-speedometer;
+}
+
+@keyframes exit-speedometer {
+    0%{
+        top: 50%;
+
+    }
+    100% {
+        top: 150%;
+    }
+}
+
+/* seat article stuff */
+#article-seat{
+    width: 400px;
+    height: 360px;
+    right: 15%;
+    top: -50%;
+    transform: translateY(-50%);
+}
+
+.enter-seat {
+    animation-name: enter-seat;
+}
+
+@keyframes enter-seat {
+    0%{
+        top: -50%;
+
+    }
+    100% {
+        top: 40%;
+    }
+}
+
+.exit-seat {
+    animation-name: exit-seat;
+}
+
+@keyframes exit-seat {
+    0%{
+        top: 40%;
+
+    }
+    100% {
+        top: -50%;
+    }
+}
+
+section article{
+    padding:10px;
+}
+
+article p {
+    margin: 0;
+    margin-bottom: 3.9%;
+    margin-left: 15px;
+    font-size: 19px;
+}
+
+article h2{
+    text-align: center;
+    margin-bottom:6%;
+    font-size: 27px;
+}
+
+.hidden {
+    visibility: hidden;
+    transition: visibility 1s;
+
+}
+
+.showing {
+    visibility: visible;
+}
+
+/* ARTICLES END */
+
+
+/* GRADIENTS START */
+.fade {
+    display: block;
+	margin: 0;
+	width: 1366px;
+    height: 768px;
+	position: fixed;
+	top:0;
+    opacity: 0;
+    transition: opacity 2s;
+    transition-timing-function: linear;
+}
+
+.engine {
+    opacity: 1;
+    background: radial-gradient(circle at 36% 43%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.tank {
+    opacity: 1;
+    background: radial-gradient(circle at 68% 50%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.exhaust {
+    opacity: 1;
+    background: radial-gradient(ellipse at 40% 60%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.rwheel {
+    opacity: 1;
+    background: radial-gradient(circle at 20% 40%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.fwheel {
+    opacity: 1;
+    background: radial-gradient(circle at 60% 60%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.brake {
+    opacity: 1;
+    background: radial-gradient(circle at 65% 35%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.headlight {
+    opacity: 1;
+    background: radial-gradient(circle at 33% 47%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.speedometer {
+    opacity: 1;
+    background: radial-gradient(circle at 23% -10%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+.seat {
+    opacity: 1;
+    background: radial-gradient(ellipse at 30% 65%, rgba(255,255,255,0) 1%,rgba(133,133,133,0) 1%,rgba(0,0,0,1) 100%);
+}
+
+/* GRADIENTS END */
+
+/* ZOOMING-STATES START */
+.state-main {
+    position: absolute;
+    width: 100%;
+    
+}
+
+.state-engine {
+    width: 200%;
+    transform:translateX(-15%) translateY(-33.5%);
+}
+
+.state-tank {
+    width: 220%;
+    transform:translateX(-10%) translateY(-3%);
+}
+
+.state-exhaust {
+    width: 240%;
+    transform: translateY(-20%);
+}
+
+.state-exhaust {
+    width: 240%;
+    transform: translateY(-20%);
+}
+
+.state-rwheel {
+    width: 230%;
+    transform: translateX(0%) translateY(-48%);
+}
+
+.state-fwheel {
+    width: 200%;
+    transform: translateX(-38%) translateY(-48%);
+}
+
+.state-brake {
+    width: 300%;
+    transform: translateX(-48%) translateY(-64%);
+}
+
+.state-headlight {
+    width: 250%;
+    transform: translateX(-48%) translateY(-2%);
+}
+
+.state-headlight {
+    width: 250%;
+    transform: translateX(-48%) translateY(-2%);
+}
+
+.state-speedometer {
+    width: 280%;
+    transform: translateX(-50%) translateY(0%);
+}
+
+.state-seat {
+    width: 300%;
+    transform: translateX(-8%) translateY(-8%);
+}
+/* ZOOMING-STATES START */
+
+/* HIGHLIGHTED ZONES START */
+.sect {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 350ms;
+    transition-timing-function: linear;
+    visibility: visible;
+}
+
+.sect:hover {
+    opacity: 0.2;
+}
+   
+#engine {
+    width: 26.5%;
+    top: 285px;
+    left: 245px;
+}
+
+#tank {
+    width: 21.5%;
+    top: 120px;
+    left:410px;
+}
+
+#exhaust {
+    width: 29%;
+    top: 247px;
+    left:7px;
+}
+
+#rwheel {
+    width: 18%;
+    top: 368px;
+    left:8px;
+}
+#fwheel {
+    width: 34%;
+    bottom: 0;
+    right: 160px;
+}
+
+#brake {
+    width: 16.2%;
+    bottom: 0px;
+    right: 288px;
+}
+
+#headlight {
+    width: 11.3%;
+    top: 85px;
+    right: 450px;
+}
+
+#speedometer {
+    width: 8.2%;
+    top: 10px;
+    right: 510px;
+}
+
+#seat {
+    width: 20.2%;
+    top: 187px;
+    left: 138px;
+}
+/* HIGHLIGHTED ZONES END */
+
+.btn{
+    display: inline-block;
+    position: absolute;
+    right: 1vw;
+    bottom: 45%;
+    width: 100px;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #000000;/*Button Color*/
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+    border: 0;
+    border-bottom: solid 5px #333333;
+    border-radius: 3px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.801);
+}
+
+.btn:hover {
+    border-bottom: solid 3px #333333;
+}
+
+.btn:active   {
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);
+    border-bottom: solid 0px #333333;
+    text-shadow: none;
+    
+}
+
+.active {
+    color: red;
+    text-shadow: 1px 1px 1px rgba(253, 153, 153, 0.801);
+}
+
+.inactive {
+    color: white;
+}
+
+/* PRELOADER START */
+
+#preloader{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: black;
+	color: #fff;
+	font-size: 1em;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+    font-family: 'Nixie One', cursive;
+    letter-spacing: 1em;
+}
+
+
+
+#preloading-biker{
+    width:50px;
+    /*  */
+    animation-name: wheelie;
+    animation-duration: 8s;
+    animation-fill-mode:forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes wheelie {
+    0%{
+        transform:  translateX(calc(-50vw - 100px)) translateY(5px);
+    }
+    50%{
+        transform:  translateX(calc(+50vw + 100px)) translateY(5px);
+    }
+    50.01%{
+        transform: rotateY(180deg) translateX(calc(-50vw - 100px)) translateY(5px);
+    }
+    100%{
+        transform: rotateY(180deg) translateX(calc(50vw + 100px)) translateY(5px);
+    }
+}
+
+#dot1{
+    animation-name: dot1;
+    animation-duration: 3s;
+    animation-fill-mode:forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dot1 {
+    0%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#dot2{
+    animation-name: dot2;
+    animation-duration: 3s;
+    animation-fill-mode:forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dot2 {
+    0%{
+        opacity: 0;
+    }
+    29%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+#dot3{
+    animation-name: dot3;
+    animation-duration: 3s;
+    animation-fill-mode:forwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes dot3 {
+    0%{
+        opacity: 0;
+    }
+    49%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
+#preloader div:first-of-type {
+	margin-bottom: 50px;
+}
+
+.fadeout {
+	animation-name: fadeout;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeout {
+	0%{
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.line {
+    width: 100%;
+    border-top: 2px white solid;
+}
+/* PRELOADER END */
+
+
+footer {
+    position: fixed;
+    bottom:0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    width: 1366px;
+    text-align: center;
+    background-color:black;
+    font-family: 'Nixie One', cursive;
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: white;
+    
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    font-size: 12px;
+    transition: all 0.3s;
+}
