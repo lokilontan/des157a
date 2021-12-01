@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Normalize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Exo+2:wght@800&family=Nixie+One&family=Rajdhani:wght@500;700&family=Anton&family=M+PLUS+Rounded+1c:wght@100;300&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="styles.css" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+
+    <title>Prototype I</title>
+</head>
+
+<body>
+    <div id="canvas">
+
+
+        <header>
+            <!-- <h1>Every Picture</h1> -->
+        </header>
+
+        <main>
+            <figure>
+                <img src="./images/background.jpg" alt="bike" id="main" class="state-main">
+                
+
+                <div id="fade" class="fade nofade">
+                </div>
+                <div class="icons">
+                    <img src="./images/question.png" alt="question icon" id="question" class="attention">
+                    <img src="./images/dollar.png" alt="dollar icon" id="dollar" class="">
+                </div>
+                <div class="hint hidden" id='hint-engine'>i</div>
+                <div class="hint hidden" id='hint-tank'>i</div>
+                <div class="hint hidden" id='hint-exhaust'>i</div>
+                <div class="hint hidden" id='hint-rwheel'>i</div>
+                <div class="hint hidden" id='hint-fwheel'>i</div>
+                <div class="hint hidden" id='hint-brake'>i</div>
+                <div class="hint hidden" id='hint-headlight'>i</div>
+                <div class="hint hidden" id='hint-speedometer'>i</div>
+                <div class="hint hidden" id='hint-seat'>i</div>
+
+                <img src="./images/engine.png" alt="engien area" id="engine" class="sect">
+                <img src="./images/tank.png" alt="fuel tank area" id="tank" class="sect">
+                <img src="./images/exhaust.png" alt="exhaust area" id="exhaust" class="sect">
+                <img src="./images/rwheel.png" alt="rear wheel area" id="rwheel" class="sect">
+                <img src="./images/fwheel.png" alt="front wheel area" id="fwheel" class="sect">
+                <img src="./images/brake.png" alt="front brake area" id="brake" class="sect">
+                <img src="./images/headlight.png" alt="headlight area" id="headlight" class="sect">
+                <img src="./images/speedometer.png" alt="speedometer area" id="speedometer" class="sect">
+                <img src="./images/seat.png" alt="seat area" id="seat" class="sect">
+
+            </figure>
+
+            <section id="article-engine" class="overlay hidden">
+                <article>
+                    <h2>Engine and Transmission</h2>
+                    <p>Type: Liquid cooled, 8 valve, parallel twin</p>
+                    <p>Engine Displacement: 900 cc</p>
+                    <p>Max Power: 65 PS @ 7250 rpm</p>
+                    <p>Max Torque: 80 Nm @ 3250 rpm</p>
+                    <p>No Of Cylinders: 2</p>
+                    <p>Engine Immobilizer: Yes</p>
+                    <p>Drive Type: Chain Drive</p>
+                    <p>Compression Ratio: 11.0:1</p>
+                    <p>Emission Type: bs6</p>
+                    <p>Stroke: 80 mm</p>
+                    <p>Transmission Type: Manual</p>
+                    <p>No Of Gears: 5-speed</p>
+                    <p>Starter: Electric</p>
+                </article>
+            </section>
+
+            <section id="article-tank" class="overlay hidden">
+                <article>
+                    <h2>Fuel</h2>
+                    <p>Type: Petrol</p>
+                    <p>Capacity: 12.11 litres (3.20 US gallons)</p>
+                    <p>Consumption: 61.90 mpg</p>
+                    <p>System: Multipoint electronic fuel injection</p>
+                    <p>Control: Single Overhead Cams (SOHC)</p>
+                </article>
+            </section>
+
+            <section id="article-exhaust" class="overlay hidden">
+                <article>
+                    <h2>Exhaust system</h2>
+                    <p>Material: Brushed stainless steel</p>
+                    <p>Type: 2 into 2</p>
+                    <p>Modifications: twin silencers</p>
+                </article>
+            </section>
+
+            <section id="article-rwheel" class="overlay hidden">
+                <article>
+                    <h2>Rear Wheel</h2>
+                    <p>Wheel: 32-spoke</p>
+                    <p>Suspension: KYB twin shocks (adjustable)</p>
+                    <p>Wheel travel: 120 mm (4.7 inches)</p>
+                    <p>Tire: 150/70-R17</p>
+                    <p>Tire Type: Tubeless</p>
+                    <p>Radial Tyre: Yes</p>
+                    <p>Diameter: 310 mm (12.2 inches)</p>
+                </article>
+            </section>
+
+            <section id="article-fwheel" class="overlay hidden">
+                <article>
+                    <h2>Front Wheel</h2>
+                    <p>Wheel: 32-spoke</p>
+                    <p>Suspension: KYB 41mm cartidge forks</p>
+                    <p>Wheel travel: 120 mm (4.7 inches)</p>
+                    <p>Tire: 100/90-19</p>
+                    <p>Tire Type: Tubeless</p>
+                    <p>Radial Tyre: Yes</p>
+                    <p>Diameter: 310 mm (12.2 inches)</p>
+                </article>
+            </section>
+
+            <section id="article-brake" class="overlay hidden">
+                <article>
+                    <h2>Brakes</h2>
+                    <p>Disk: Single</p>
+                    <p>Front caliper: Brembo four piston fixed caliper</p>
+                    <p>Rear caliper: Nissin 2-piston floating caliper</p>
+                    <p>Front disk diameter: 310 mm (12.2 inches)</p>
+                    <p>Rear disk diameter: 255 mm (10.0 inches)</p>
+                    <p>ABS: Yes</p>
+                </article>
+            </section>
+
+            <section id="article-headlight" class="overlay hidden">
+                <article>
+                    <h2>Lighting</h2>
+                    <p>Headlight: Halogen, 55W</p>
+                    <p>Tail Light: LED</p>
+                    <p>Turn Signal Lamps: LED</p>
+                </article>
+            </section>
+
+            <section id="article-speedometer" class="overlay hidden">
+                <article>
+                    <h2>Electronics and Indicators</h2>
+                    <p>Low Fuel Warning Lamp</p>
+                    <p>Odometer: Digital</p>
+                    <p>Gear Position</p>
+                    <p>Fuel Gauge</p>
+                    <p>Clock: Digital</p>
+                    <p>Pass Switch</p>
+                    <p>Average Fuel Economy</p>
+                    <p>Distance to Empty</p>
+                    <p>Passenger Footrest</p>
+                    <p>Service Indicator</p>
+                </article>
+            </section>
+
+            <section id="article-seat" class="overlay hidden">
+                <article>
+                    <h2>Base and Dimensions</h2>
+                    <p>Dry Weight: 203.0 kg (447.5 pounds)</p>
+                    <p>Seat Height: 790 mm (31.1 inches)</p>
+                    <p>Overall Height: 1120 mm (44.1 inches)</p>
+                    <p>Overall Width: 831mm (32.7 inches)</p>
+                    <p>Frame Type: Tubular steel cradle</p>
+                    <p>Rake (fork angle): 25.6°</p>
+                    <p>Trail: 109 mm (4.3 inches)</p>
+                </article>
+            </section>
+
+        </main>
+
+        <div id="dimmed" class="showing">
+            <span id="heading"></span>
+        </div>
+
+        <div id="preloader">
+            <div>
+                <img id="preloading-biker" src="images/preloading-biker.png" alt="wheelie preloader">
+                <div class="line"></div>
+                <h1>loading<span id="dot1">.</span><span id="dot2">.</span><span id="dot3">.</span>
+                </h1>
+            </div>
+        </div>
+
+
+        <footer>
+            <a id="emailMe"
+                href="mailto:&#118;&#112;&#108;&#097;&#103;&#111;&#118;&#064;&#117;&#099;&#100;&#097;&#118;&#105;&#115;&#046;&#101;&#100;&#117;">Email
+                Me</a> or
+            Validate: <a id="validateHTML"
+                href="https://validator.w3.org/check?uri=https://lokilontan.github.io/des157a/studio2/"
+                target="blank">HTML 5</a> | <a id="validateCSS" href="https://jigsaw.w3.org/css-validator/check/referer"
+                target="blank">CSS</a>
+        </footer>
+
+
+
+    </div>
+</body>
+
+</html>
