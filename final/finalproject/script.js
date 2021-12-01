@@ -28,33 +28,56 @@
 
     let questionIcon = document.getElementById("question");
     let buyIcon = document.getElementById("dollar");
+    let hints = document.querySelectorAll('.hint');
+    let infoOverlay = document.getElementById('info');
+    let buyOverlay = document.getElementById('buy');
+
+
 
     questionIcon.addEventListener("click", function () {
-        if (questionIcon.classList.contains("active-icon"))
+        if (questionIcon.classList.contains("active-icon")) {
             questionIcon.className = "";
-        else
+            infoOverlay.className = "helper-overlay hide-helper";
+        }
+        else {
             questionIcon.className = "active-icon";
-        if (buyIcon.classList.contains("active-icon"))
+            showHints(hints);
+            infoOverlay.className = "helper-overlay show-helper";
+        }
+        if (buyIcon.classList.contains("active-icon")) {
             buyIcon.className = "";
+            buyOverlay.className = "helper-overlay hide-helper";
+            infoOverlay.className = "helper-overlay show-helper";
+        }
+
     });
 
     questionIcon.addEventListener("mouseover", function () {
-        let hints = document.querySelectorAll('.hint');
         showHints(hints);
     });
 
     questionIcon.addEventListener("mouseout", function () {
-        let hints = document.querySelectorAll('.hint');
-        hideHints(hints);
+        if (!questionIcon.classList.contains("active-icon")) {
+            hideHints(hints);
+        }
     });
 
     buyIcon.addEventListener("click", function () {
-        if (buyIcon.classList.contains("active-icon"))
+        if (buyIcon.classList.contains("active-icon")) {
             buyIcon.className = "";
-        else
+            buyOverlay.className = "helper-overlay hide-helper";
+        }
+        else {
             buyIcon.className = "active-icon";
-        if (questionIcon.classList.contains("active-icon"))
+            buyOverlay.className = "helper-overlay show-helper";
+        }
+        if (questionIcon.classList.contains("active-icon")) {
             questionIcon.className = "";
+            hideHints(hints);
+            infoOverlay.className = "helper-overlay hide-helper";
+            buyOverlay.className = "helper-overlay show-helper";
+        }
+            
     });
 
     function showHints(hints) {
@@ -66,7 +89,7 @@
 
     function hideHints(hints) {
         for (let hint of hints) {
-            hint.className="hint hidden";
+            hint.className="hint hidden-fast";
         }
     }
 
@@ -117,6 +140,15 @@
             articleOut();
             this.setTimeout(unhideSectors, 2000);
         } else if (event.target.className == "sect") {
+            if (questionIcon.classList.contains("active-icon")) {
+                hideHints(hints);
+                infoOverlay.className = "helper-overlay hide-helper";
+            }
+            if (buyIcon.classList.contains("active-icon")) {
+                buyOverlay.className = "helper-overlay hide-helper";
+            }
+            questionIcon.className = "";
+            buyIcon.className = "";
             mainImage.className = `state-${event.target.id}`;
             fade.className = `fade ${event.target.id}`;
             icons.style.visibility = "hidden";

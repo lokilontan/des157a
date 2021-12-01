@@ -138,6 +138,77 @@ figure img {
     left: 260px;
 }
 
+.helper-overlay{
+    position: absolute;
+    top: -40%;
+    right: -40%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.605);
+    color:white;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    animation-duration: 700ms;
+	animation-fill-mode: forwards;
+	animation-timing-function: cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+
+.highlight{
+    color: red;
+    text-shadow:
+    0px 0px 4px rgb(255, 255, 255),
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+} 
+
+.price {
+    font-size: 50px;
+}
+
+.show-helper {
+    animation-name: show-helper;
+}
+
+@keyframes show-helper {
+    0%{
+        top: -40%;
+        right: -40%;
+    }
+    100% {
+        top: -7%;
+        right: -7%;
+    }
+}
+
+.hide-helper {
+    animation-name: hide-helper;
+}
+
+@keyframes hide-helper {
+    0%{
+        top: -7%;
+        right: -7%;
+    }
+    100% {
+        top: -40%;
+        right: -40%;
+    }
+}
+
+.helper-text{
+    padding-top: 150px;
+    padding-left: 40px;
+    padding-right: 100px;
+}
+
+.helper-text-buy{
+    padding-top: 180px;
+    padding-left: 40px;
+    padding-right: 100px;
+}
+
 /* ARTICLES START */
 .overlay{
     position: fixed;
@@ -504,6 +575,11 @@ article h2{
     visibility: hidden;
     opacity: 0;
     transition: all 1.5s;
+}
+
+.hidden-fast {
+    visibility: hidden;
+    opacity: 0;
 }
 
 .showing {
